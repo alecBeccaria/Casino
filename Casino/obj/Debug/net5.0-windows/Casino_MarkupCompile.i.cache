@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\abeccaria\Documents\InClass\Casino\Casino\obj\Debug\net5.0-windows\
+C:\Users\dlarmore\Source\Repos\alecBeccaria\Casino\Casino\obj\Debug\net5.0-windows\
 Casino
 none
 false
 TRACE;DEBUG;NET;NET5_0;NETCOREAPP
-C:\Users\abeccaria\Documents\InClass\Casino\Casino\App.xaml
-11407045341
+C:\Users\dlarmore\Source\Repos\alecBeccaria\Casino\Casino\App.xaml
+71204840003
 
-51810393453
-193-1891726104
-MainWindow.xaml;
+11343053661
+1931087635918
+BlackJack.xaml;Craps.xaml;Dashboard.xaml;MainWindow.xaml;Poker.xaml;Roulette.xaml;Slots.xaml;
 
-False
+True
 
