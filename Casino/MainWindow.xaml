@@ -7,6 +7,9 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
+        
+        <TextBlock Text="Gimme Your Money Casino" TextWrapping="Wrap" FontSize="50" Margin="178,10,178,291" TextAlignment="Center"/>
+       
 
     </Grid>
 </Window>
