@@ -5,10 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Casino"
         mc:Ignorable="d"
+        Background="Aqua"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         
-        <TextBlock Text="Gimme Your Money Casino" TextWrapping="Wrap" FontSize="50" Margin="178,10,178,291" TextAlignment="Center"/>
+        <TextBlock Text="Gimme Your Money Casino" TextWrapping="Wrap" FontSize="50" Margin="178,10,178,287" TextAlignment="Center"/>
        
 
     </Grid>
