@@ -5,12 +5,26 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Casino"
         mc:Ignorable="d"
-        Background="Aqua"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
         
-        <TextBlock Text="Gimme Your Money Casino" TextWrapping="Wrap" FontSize="50" Margin="178,10,178,287" TextAlignment="Center"/>
-       
+        Title="MainWindow" Height="450" Width="800"
+        MinHeight="450"
+        MinWidth="800">
+    <Window.Background>
+        <ImageBrush ImageSource="Resources\Overall UI\Generic Felt Mat.jpeg" Stretch="UniformToFill"/>
+    </Window.Background>
+    <DockPanel>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50*"/>
+                <RowDefinition Height="167*"/>
+            </Grid.RowDefinitions>
+            <Label Content="Gimme Your Money Casino" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="36" Foreground="White" Height="58" Width="440"/>
 
-    </Grid>
+            <Button Content="Slots" HorizontalAlignment="Left" Margin="217,117,0,0" VerticalAlignment="Top" Grid.Row="1"/>
+            <Button Content="Blackjack" HorizontalAlignment="Left" Margin="547,117,0,0" VerticalAlignment="Top" Grid.Row="1"/>
+            <Button Content="Roulette" HorizontalAlignment="Left" Margin="208,244,0,0" VerticalAlignment="Top" Grid.Row="1"/>
+            <Button Content="Poker" HorizontalAlignment="Center" Margin="0,176,0,0" VerticalAlignment="Top" Grid.Row="1"/>
+            <Button Content="Craps" HorizontalAlignment="Left" Margin="556,244,0,0" VerticalAlignment="Top" Grid.Row="1"/>
+        </Grid>
+    </DockPanel>
 </Window>
