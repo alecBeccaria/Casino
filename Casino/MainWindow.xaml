@@ -15,17 +15,21 @@
     <DockPanel>
         <Grid>
             <Grid.RowDefinitions>
-                <RowDefinition Height="50*"/>
-                <RowDefinition Height="167*"/>
+                <RowDefinition Height="113*"/>
+                <RowDefinition Height="321*"/>
             </Grid.RowDefinitions>
-            <Label Content="Gimme Your Money Casino" HorizontalContentAlignment="Center"  HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="36" Foreground="White" Height="58" Width="440"/>
-    
-            <Button Content="Slots" HorizontalAlignment="Left" Margin="217,117,0,0" Width="80" VerticalAlignment="Top" Grid.Row="1"/>
-            <Button Content="Blackjack" HorizontalAlignment="Left" Margin="547,117,0,0" Width="80" VerticalAlignment="Top" Grid.Row="1"/>
-            <Button Content="Roulette" HorizontalAlignment="Left" Margin="208,244,0,0" Width="80" VerticalAlignment="Top" Grid.Row="1"/>
-            <Button Content="Poker" HorizontalAlignment="Center" Margin="0,176,0,0" Width="80" VerticalAlignment="Top" Grid.Row="1"/>
-            <Button Content="Craps" HorizontalAlignment="Left" Margin="556,244,0,0" Width="80" VerticalAlignment="Top" Grid.Row="1"/>
-            <Button Content="Dashboard" HorizontalAlignment="Left" Margin="700, 290,0,0" Width="80" VerticalAlignment="Top" Grid.Row="1"></Button>
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="129*"/>
+                    <ColumnDefinition Width="142*"/>
+                    <ColumnDefinition Width="129*"/>
+                </Grid.ColumnDefinitions>
+                <Button Content="Exit" HorizontalAlignment="Center" Margin="0,224,0,0" VerticalAlignment="Top" Height="43" Width="94" Click="Exit"/>
+                <Button Content="Settings" HorizontalAlignment="Center" Margin="0,224,0,0" VerticalAlignment="Top" Height="43" Width="94" Grid.Column="2" Click="Settings"/>
+                <Button Content="Play!" HorizontalAlignment="Center" Margin="0,87,0,0" VerticalAlignment="Top" Height="74" Width="175" Grid.Column="1" FontSize="40" Click="Play"/>
+
+            </Grid>
+            <Label Content="Gimme Your Money Casino" HorizontalAlignment="Center" VerticalAlignment="Center" Height="75" Width="594" Foreground="#FFEADA39" FontSize="48"/>
         </Grid>
     </DockPanel>
 </Window>
