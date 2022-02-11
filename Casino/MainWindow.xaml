@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Casino"
         mc:Ignorable="d"
-        
+        ResizeMode="NoResize"
         Title="MainWindow" Height="450" Width="800"
         MinHeight="450"
         MinWidth="800">
@@ -18,14 +18,14 @@
                 <RowDefinition Height="50*"/>
                 <RowDefinition Height="167*"/>
             </Grid.RowDefinitions>
-            <Label Content="Gimme Your Money Casino" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="36" Foreground="White" Height="58" Width="440"/>
-
-            <Button Content="Slots" HorizontalAlignment="Left" Margin="217,117,0,0" VerticalAlignment="Top" Grid.Row="1"/>
-            <Button Content="Blackjack" HorizontalAlignment="Left" Margin="547,117,0,0" VerticalAlignment="Top" Grid.Row="1"/>
-            <Button Content="Roulette" HorizontalAlignment="Left" Margin="208,244,0,0" VerticalAlignment="Top" Grid.Row="1"/>
-            <Button Content="Poker" HorizontalAlignment="Center" Margin="0,176,0,0" VerticalAlignment="Top" Grid.Row="1"/>
-            <Button Content="Craps" HorizontalAlignment="Left" Margin="556,244,0,0" VerticalAlignment="Top" Grid.Row="1"/>
-            <Button Content="Login" HorizontalAlignment="Left" Margin="700, 290,0,0" VerticalAlignment="Top" Grid.Row="1"></Button>
+            <Label Content="Gimme Your Money Casino" HorizontalContentAlignment="Center"  HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="36" Foreground="White" Height="58" Width="440"/>
+    
+            <Button Content="Slots" HorizontalAlignment="Left" Margin="217,117,0,0" Width="80" VerticalAlignment="Top" Grid.Row="1"/>
+            <Button Content="Blackjack" HorizontalAlignment="Left" Margin="547,117,0,0" Width="80" VerticalAlignment="Top" Grid.Row="1"/>
+            <Button Content="Roulette" HorizontalAlignment="Left" Margin="208,244,0,0" Width="80" VerticalAlignment="Top" Grid.Row="1"/>
+            <Button Content="Poker" HorizontalAlignment="Center" Margin="0,176,0,0" Width="80" VerticalAlignment="Top" Grid.Row="1"/>
+            <Button Content="Craps" HorizontalAlignment="Left" Margin="556,244,0,0" Width="80" VerticalAlignment="Top" Grid.Row="1"/>
+            <Button Content="Dashboard" HorizontalAlignment="Left" Margin="700, 290,0,0" Width="80" VerticalAlignment="Top" Grid.Row="1"></Button>
         </Grid>
     </DockPanel>
 </Window>

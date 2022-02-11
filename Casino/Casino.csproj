@@ -7,7 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Resources\" />
+    <None Remove="Resources\Overall UI\Generic Felt Mat.jpeg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\Overall UI\Generic Felt Mat.jpeg" />
   </ItemGroup>
 
 </Project>
