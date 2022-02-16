@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-<<<<<<< Updated upstream
+
     <None Remove="Resources\BlackJack\BlackJackTable.png" />
     <None Remove="Resources\BlackJack\Cards\cardBack_blue1.png" />
     <None Remove="Resources\BlackJack\Cards\cardBack_blue2.png" />
@@ -254,13 +254,11 @@
     <Resource Include="Resources\Slots\Wheel - Orange.png" />
     <Resource Include="Resources\Slots\Wheel - Plum.png" />
     <Resource Include="Resources\Slots\Wheel - Seven.png" />
-=======
     <None Remove="Resources\Overall UI\Generic Felt Mat.jpeg" />
   </ItemGroup>
 
   <ItemGroup>
     <Resource Include="Resources\Overall UI\Generic Felt Mat.jpeg" />
->>>>>>> Stashed changes
   </ItemGroup>
 
 </Project>
