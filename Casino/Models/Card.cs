@@ -28,6 +28,28 @@ namespace Casino.Models
             this.color = color;
         }
 
-
+        public string getCardImage()
+        {
+            string image = "Resources/Cards/card" + suit;
+            if (value == 13)
+            {
+                image += "K";
+            } else if (value == 12) 
+            {
+                image += "Q";
+            } else if (value == 11)
+            {
+                image += "J";
+            } else if (value == 1)
+            {
+                image += "A";
+            } else
+            {
+                image += value.ToString();
+            }
+            image += ".png";
+            
+            return image;
+        }
     }
 }
