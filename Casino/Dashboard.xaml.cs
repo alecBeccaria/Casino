@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -28,52 +29,41 @@ namespace Casino
             LblBank.Text = "Bank Chips: " + player.cash;
         }
 
-        private void OnDeposit(object sender, RoutedEventArgs e)
+        private void NumberValidationTextBox(object sender, TextCompositionEventArgs e)
         {
-            int numChips = player.chips;
-            int numCash = player.cash;
+            Regex regex = new Regex("([^0-9]+)");
+            e.Handled = regex.IsMatch(e.Text);
+        }
 
-            int value;
-            bool success = int.TryParse(txtChips.Text, out value);
-            Console.WriteLine(success);
-            if (success)
+        private void OnWithdrawBank(object sender, RoutedEventArgs e)
+        {
+            if (txtBank.Text.Length != 0)
             {
-                value = int.Parse(txtChips.Text);
-                numChips = numChips - value; ;
-                numCash = numCash + value;
+                Button button = (Button)sender;
+                int result = int.Parse(txtBank.Text);
+                MessageBox.Show(result.ToString());
+                player.chips = player.chips - result;
+                player.cash = player.cash + result;
+                LblChips.Text = "Casino Chips: " + player.chips;
+                LblBank.Text = "Bank Chips: " + player.cash;
 
-                player.cash = numCash;
-                player.chips = numChips;
-            }
-            else
-            {
-                MessageBox.Show("Please enter number only!");
+                txtBank.Clear();
             }
         }
 
-        private void OnWithdraw(object sender, RoutedEventArgs e)
+        private void OnDepositChips(object sender, RoutedEventArgs e)
         {
-            int numChips = player.chips;
-            int numCash = player.cash;
-
-            int value;
-            bool success = int.TryParse(txtChips.Text, out value);
-            Console.WriteLine(success);
-            if (success)
+            if (txtChips.Text.Length != 0)
             {
-                value = int.Parse(txtChips.Text);
-                numChips = numChips + value;
-                numCash = numCash - value;
+                Button button = (Button)sender;
+                int result = int.Parse(txtChips.Text);
+                MessageBox.Show(result.ToString());
+                player.chips = player.chips + result;
+                player.cash = player.cash - result;
+                LblChips.Text = "Casino Chips: " + player.chips;
+                LblBank.Text = "Bank Chips: " + player.cash;
 
-                player.cash = numCash;
-                player.chips = numChips;
-
-                LblChips.Text = "Casino Chips: " + numCash;
-                LblBank.Text = "Bank Chips: " + numChips;
-            }
-            else
-            {
-                MessageBox.Show("Please enter number only!");
+                txtChips.Clear();
             }
         }
     }
