@@ -14,7 +14,8 @@ namespace Casino
 
         private void Play(object sender, RoutedEventArgs e)
         {
-
+            SlotsGame.SlotsGame game = new SlotsGame.SlotsGame();
+            titleLabel.Content = game.StartGame();
         }
 
         private void Settings(object sender, RoutedEventArgs e)

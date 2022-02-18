@@ -29,7 +29,7 @@
                 <Button Content="Play!" HorizontalAlignment="Center" Margin="0,87,0,0" VerticalAlignment="Top" Height="74" Width="175" Grid.Column="1" FontSize="40" Click="Play"/>
 
             </Grid>
-            <Label Content="Gimme Your Money Casino" HorizontalAlignment="Center" VerticalAlignment="Center" Height="75" Width="594" Foreground="#FFEADA39" FontSize="48"/>
+            <Label x:Name="titleLabel" Content="Gimme Your Money Casino" HorizontalAlignment="Center" VerticalAlignment="Center" Height="75" Width="594" Foreground="#FFEADA39" FontSize="48"/>
         </Grid>
     </DockPanel>
 </Window>

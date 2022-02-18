@@ -227,13 +227,11 @@
     <Resource Include="Resources\Overall UI\Chip5000.png" />
     <Resource Include="Resources\Overall UI\ComingSoonStamp.png" />
     <Resource Include="Resources\Overall UI\Craps Icon.png" />
-    <Resource Include="Resources\Overall UI\Generic Felt Mat.jpeg" />
     <Resource Include="Resources\Overall UI\Poker Icon.png" />
     <Resource Include="Resources\Overall UI\Roulette Icon.png" />
     <Resource Include="Resources\Overall UI\Slot Machine Icon.png" />
     <Resource Include="Resources\Poker\PokerTable.png" />
     <Resource Include="Resources\Roulette\CircleBlack.png" />
-    <Resource Include="Resources\Roulette\CircleRed.png" />
   </ItemGroup>
 
   <ItemGroup>
