@@ -8,8 +8,8 @@ namespace Casino
 {
     class Player
     {
-        private int cash { get; set; }
-        private int chips { get; set; }
+        public int cash { get; set; }
+        public int chips { get; set; }
 
         public Player()
         {

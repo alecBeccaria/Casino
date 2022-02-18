@@ -3,7 +3,6 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Casino"
         ResizeMode="NoResize"
         mc:Ignorable="d"
         Title="Dashboard" Height="450" Width="800"
@@ -28,21 +27,21 @@
                     <RowDefinition Height=".25*"/>
                     <RowDefinition Height=".75*"/>
                 </Grid.RowDefinitions>
-                <TextBlock Foreground="White" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center"  Grid.Column="0">
+                <TextBlock x:Name="LblChips" Foreground="White" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center"  Grid.Column="0">
                     Casino Chips:
                     <Span>0000</Span>
                 </TextBlock>
-                <TextBlock Foreground="White" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center"  Grid.Column="1">
+                <TextBlock x:Name="LblBank" Foreground="White" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center"  Grid.Column="1">
                     Bank Account: 
                     <Span>0000</Span>
                 </TextBlock>
                 <StackPanel Grid.Row="1" Grid.Column="0">
-                    <TextBox Height="50" Margin="25,0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="15"></TextBox>
-                    <Button Width="200" Margin="0,10">Deposit</Button>
+                    <TextBox x:Name="txtChips" Height="50" Margin="25,0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="15" PreviewTextInput="NumberValidationTextBox"></TextBox>
+                    <Button Width="200" Margin="0,10" Click="OnDepositChips">Deposit</Button>
                 </StackPanel>
                 <StackPanel Grid.Row="1" Grid.Column="1">
-                    <TextBox Height="50" Margin="25,0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="15"></TextBox>
-                    <Button Width="200" Margin="0,10">Withdraw</Button>
+                    <TextBox x:Name="txtBank" Height="50" Margin="25,0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="15" PreviewTextInput="NumberValidationTextBox"></TextBox>
+                    <Button Width="200" Margin="0,10" Click="OnWithdrawBank">Withdraw</Button>
                 </StackPanel>
             </Grid>
             <Button Content="Main Menu" HorizontalAlignment="Left" Margin="700, 290,0,0" VerticalAlignment="Top" Grid.Row="1"></Button>
