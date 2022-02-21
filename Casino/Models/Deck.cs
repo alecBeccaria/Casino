@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Casino.Models
 {
@@ -10,15 +7,15 @@ namespace Casino.Models
     {
         private List<Card> deck = new List<Card>();
 
-        private string[] cardNames = { "Ace", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Jack", "Queen", "King" };
+        public string[] cardNames = { "Ace", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Jack", "Queen", "King" };
 
 
-        public Deck() 
+        public Deck()
         {
         }
         public void createDeck()
         {
-            for(int i = 0; i < 13; i++)
+            for (int i = 0; i < 13; i++)
             {
                 deck.Add(new Card((i + 1), cardNames[i], Card.Suit.Spades, Card.Color.Black));
                 deck.Add(new Card((i + 1), cardNames[i], Card.Suit.Clubs, Card.Color.Black));
@@ -44,6 +41,11 @@ namespace Casino.Models
         public List<Card> getDeck()
         {
             return deck;
+        }
+
+        public void removeCard(Card card)
+        {
+            deck.Remove(card);
         }
     }
 }

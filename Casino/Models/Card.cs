@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Casino.Models
+﻿namespace Casino.Models
 {
     class Card
     {
@@ -17,7 +11,7 @@ namespace Casino.Models
 
         public Card()
         {
-            
+
         }
 
         public Card(int value, string name, Suit suit, Color color)
