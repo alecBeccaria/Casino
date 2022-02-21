@@ -6,4 +6,16 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Resources\Overall UI\Generic Felt Mat.jpeg" />
+    <None Remove="Resources\PokerTable.png" />
+    <None Remove="Resources\Poker\PokerTable.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\Overall UI\Generic Felt Mat.jpeg" />
+    <Resource Include="Resources\PokerTable.png" />
+    <Resource Include="Resources\Poker\PokerTable.png" />
+  </ItemGroup>
+
 </Project>

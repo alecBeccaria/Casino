@@ -9,7 +9,7 @@
         MinHeight="450"
         MinWidth="800">
     <Window.Background>
-        <ImageBrush ImageSource="Resources\Overall UI\Generic Felt Mat.jpeg" Stretch="UniformToFill"/>
+        <ImageBrush ImageSource="\Resources\Overall UI\Generic Felt Mat.jpeg" Stretch="UniformToFill"/>
     </Window.Background>
     <DockPanel>
         <Grid>
