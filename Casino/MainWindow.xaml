@@ -3,32 +3,39 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Casino" xmlns:viewModel="clr-namespace:Casino.ViewModels"
         mc:Ignorable="d"
         ResizeMode="NoResize"
         Title="MainWindow" Height="450" Width="800"
         MinHeight="450"
         MinWidth="800">
-    <Window.Background>
-        <ImageBrush ImageSource="Resources\Overall UI\Generic Felt Mat.jpeg" Stretch="UniformToFill"/>
-    </Window.Background>
-    <DockPanel>
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="113*"/>
-                <RowDefinition Height="321*"/>
-            </Grid.RowDefinitions>
-            <Grid Grid.Row="1">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="129*"/>
-                    <ColumnDefinition Width="142*"/>
-                    <ColumnDefinition Width="129*"/>
-                </Grid.ColumnDefinitions>
-                <Button Content="Exit" HorizontalAlignment="Center" Margin="0,224,0,0" VerticalAlignment="Top" Height="43" Width="94" Click="Exit"/>
-                <Button Content="Settings" HorizontalAlignment="Center" Margin="0,224,0,0" VerticalAlignment="Top" Height="43" Width="94" Grid.Column="2" Click="Settings"/>
-                <Button Content="Play!" HorizontalAlignment="Center" Margin="0,87,0,0" VerticalAlignment="Top" Height="74" Width="175" Grid.Column="1" FontSize="40" Click="Play"/>
+    <Window.DataContext>
+        <viewModel:MainViewModel/>
+    </Window.DataContext>
 
-            </Grid>
-            <Label Content="Gimme Your Money Casino" HorizontalAlignment="Center" VerticalAlignment="Center" Height="75" Width="594" Foreground="#FFEADA39" FontSize="48"/>
-        </Grid>
-    </DockPanel>
+    <Grid>
+        <!--
+        <Grid.Resources>
+            <DataTemplate DataType="{x:Type ViewModels:DashboardViewModel}">
+                <local:MainWindowControl/>
+            </DataTemplate>
+        </Grid.Resources>
+        <ContentControl Content="{Binding CurrentViewModel}"/>
+        -->
+        
+        <Button x:Name="mainViewButton" Command="{Binding dashViewCommand}" Content="Main View" HorizontalAlignment="Left" Margin="40,120,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="playViewButton" Command="{Binding playViewCommand}" Content="Play View" HorizontalAlignment="Left" Margin="40,150,0,0" VerticalAlignment="Top"/>
+        
+        
+        
+        
+         
+        <!-- Focusable is important. Not sure if entirely needed, but it was recommended to use on anything implementing commands. 
+        <RadioButton Focusable="False" Content="Main View" HorizontalAlignment="Left" Margin="50,150,0,0" VerticalAlignment="Top" Command="{Binding dashViewCommand}"/>
+        <RadioButton Focusable="False" Content="Play View" HorizontalAlignment="Left" Margin="50,175,0,0" VerticalAlignment="Top" Command="{Binding playViewCommand}"/>
+        -->
+        <ContentControl Content="{Binding CurrentView}"></ContentControl>
+
+
+    </Grid>
 </Window>
