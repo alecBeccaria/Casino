@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Casino.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,18 @@ namespace Casino
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            BlackJack bj = new BlackJack();
+            bj.NewGame();
+            bj.PlayGame();
+        }
+
+        private void btnBJTurn_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

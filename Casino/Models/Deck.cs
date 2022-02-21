@@ -12,11 +12,10 @@ namespace Casino.Models
 
         private string[] cardNames = { "Ace", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Jack", "Queen", "King" };
 
-
         public Deck() 
         {
         }
-        public void createDeck()
+        public void CreateDeck()
         {
             for(int i = 0; i < 13; i++)
             {
@@ -27,7 +26,7 @@ namespace Casino.Models
             }
         }
 
-        public void shuffleDeck()
+        public void ShuffleDeck()
         {
             Random random = new Random();
 
@@ -41,9 +40,14 @@ namespace Casino.Models
             }
         }
 
-        public List<Card> getDeck()
+        public List<Card> GetDeck()
         {
             return deck;
+        }
+
+        public void ClearDeck()
+        {
+            deck.Clear();
         }
     }
 }

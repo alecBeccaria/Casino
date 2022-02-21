@@ -19,9 +19,9 @@
                 <RowDefinition Height="167*"/>
             </Grid.RowDefinitions>
             <Label Content="Gimme Your Money Casino" HorizontalContentAlignment="Center"  HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="36" Foreground="White" Height="58" Width="440"/>
-    
+
             <Button Content="Slots" HorizontalAlignment="Left" Margin="217,117,0,0" Width="80" VerticalAlignment="Top" Grid.Row="1"/>
-            <Button Content="Blackjack" HorizontalAlignment="Left" Margin="547,117,0,0" Width="80" VerticalAlignment="Top" Grid.Row="1"/>
+            <Button Content="Blackjack" HorizontalAlignment="Left" Margin="547,117,0,0" Width="80" VerticalAlignment="Top" Grid.Row="1" Click="Button_Click"/>
             <Button Content="Roulette" HorizontalAlignment="Left" Margin="208,244,0,0" Width="80" VerticalAlignment="Top" Grid.Row="1"/>
             <Button Content="Poker" HorizontalAlignment="Center" Margin="0,176,0,0" Width="80" VerticalAlignment="Top" Grid.Row="1"/>
             <Button Content="Craps" HorizontalAlignment="Left" Margin="556,244,0,0" Width="80" VerticalAlignment="Top" Grid.Row="1"/>

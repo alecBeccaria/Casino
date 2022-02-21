@@ -28,7 +28,11 @@ namespace Casino.Models
             this.color = color;
         }
 
-        public string getCardImage()
+        public int GetValue()
+        {
+            return value;
+        }
+        public string GetCardImage()
         {
             string image = "Resources/Cards/card" + suit;
             if (value == 13)
@@ -50,6 +54,12 @@ namespace Casino.Models
             image += ".png";
             
             return image;
+        }
+
+        public string PrintCard()
+        {
+            string card = name + " of " + suit;
+            return card;
         }
     }
 }
