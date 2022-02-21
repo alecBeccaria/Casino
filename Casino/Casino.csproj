@@ -4,18 +4,25 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>net5.0-windows</TargetFramework>
     <UseWPF>true</UseWPF>
+    <ApplicationIcon />
+    <Win32Resource />
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Resources\Overall UI\Generic Felt Mat.jpeg" />
-    <None Remove="Resources\PokerTable.png" />
-    <None Remove="Resources\Poker\PokerTable.png" />
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Resources\Overall UI\Generic Felt Mat.jpeg" />
-    <Resource Include="Resources\PokerTable.png" />
-    <Resource Include="Resources\Poker\PokerTable.png" />
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
+
+
 
 </Project>
