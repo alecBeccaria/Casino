@@ -15,10 +15,6 @@ namespace Casino
         private void Button_Click(object sender, RoutedEventArgs e)
         {
 
-            //SlotsWindow window1 = new SlotsWindow();
-            //window1.Show();
-
-            //Actions
 
         }
     }
