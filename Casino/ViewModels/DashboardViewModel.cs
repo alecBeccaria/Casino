@@ -9,6 +9,8 @@ namespace Casino.ViewModels
 {
     public class DashboardViewModel : ViewModelBase
     {
+
+
         public DashboardViewModel()
         {
 

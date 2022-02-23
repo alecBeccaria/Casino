@@ -6,12 +6,7 @@
              xmlns:local="clr-namespace:Casino" xmlns:viewModel="clr-namespace:Casino.ViewModels"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    
-    <UserControl.DataContext>
-        <viewModel:MainViewModel/>
-    </UserControl.DataContext>
-    
-    
+
     <DockPanel>
         <Label Content="CONTROLS" FontSize="32" DockPanel.Dock="Top" HorizontalAlignment="Center"/>
         <Border BorderBrush="Black" BorderThickness="3">
@@ -39,7 +34,7 @@
                 <Button Content="Slots" Grid.Column="3" Grid.Row="3"/>
                 <Button Content="Craps" Grid.Column="5" Grid.Row="5"/>
                 <Button Content="Rolutte" Grid.Column="5" Grid.Row="1"/>
-                <Button Focusable="False"  Content="Go Back" Grid.Column="0" Grid.Row="6" Command="{Binding dashViewCommand}"/>
+                <Button Focusable="False"  Content="Go Back" Grid.Column="0" Grid.Row="6" Command="{Binding DataContext.dashViewCommand, RelativeSource={RelativeSource AncestorType={x:Type local:MainWindow}}}"/>
                 <Button Content="Bank" Grid.Column="6" Grid.Row="6"/>
             </Grid>
         </Border>

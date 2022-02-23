@@ -28,8 +28,6 @@ namespace Casino.ViewModels
         }*/
 
         private object currentView;
-
-
         public object CurrentView
         {
             get { return currentView; }
@@ -43,6 +41,9 @@ namespace Casino.ViewModels
 
         public MainViewModel()
         {
+
+            Instance = this;
+
             //currentViewModel = new ViewModelBase();
             dashViewModel = new DashboardViewModel();
             playViewmodel = new PlayViewmodel();
@@ -66,7 +67,7 @@ namespace Casino.ViewModels
 
         }
 
-
+        public static MainViewModel Instance { get; private set; }
 
 
     }
