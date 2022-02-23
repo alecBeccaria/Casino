@@ -6,4 +6,54 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Resources\Overall UI\ArrowDown.png" />
+    <None Remove="Resources\Overall UI\Blackjack Icon.png" />
+    <None Remove="Resources\Overall UI\ButtonDown.png" />
+    <None Remove="Resources\Overall UI\ButtonUp.png" />
+    <None Remove="Resources\Overall UI\Casino Icon.png" />
+    <None Remove="Resources\Overall UI\Checkbox.png" />
+    <None Remove="Resources\Overall UI\Checkbox_mark.png" />
+    <None Remove="Resources\Overall UI\Chip1.png" />
+    <None Remove="Resources\Overall UI\Chip10.png" />
+    <None Remove="Resources\Overall UI\Chip100.png" />
+    <None Remove="Resources\Overall UI\Chip1000.png" />
+    <None Remove="Resources\Overall UI\Chip20.png" />
+    <None Remove="Resources\Overall UI\Chip5.png" />
+    <None Remove="Resources\Overall UI\Chip50.png" />
+    <None Remove="Resources\Overall UI\Chip500.png" />
+    <None Remove="Resources\Overall UI\Chip5000.png" />
+    <None Remove="Resources\Overall UI\ComingSoonStamp.png" />
+    <None Remove="Resources\Overall UI\Craps Icon.png" />
+    <None Remove="Resources\Overall UI\Generic Felt Mat.jpeg" />
+    <None Remove="Resources\Overall UI\Poker Icon.png" />
+    <None Remove="Resources\Overall UI\Roulette Icon.png" />
+    <None Remove="Resources\Overall UI\Slot Machine Icon.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\Overall UI\ArrowDown.png" />
+    <Resource Include="Resources\Overall UI\Blackjack Icon.png" />
+    <Resource Include="Resources\Overall UI\ButtonDown.png" />
+    <Resource Include="Resources\Overall UI\ButtonUp.png" />
+    <Resource Include="Resources\Overall UI\Casino Icon.png" />
+    <Resource Include="Resources\Overall UI\Checkbox.png" />
+    <Resource Include="Resources\Overall UI\Checkbox_mark.png" />
+    <Resource Include="Resources\Overall UI\Chip1.png" />
+    <Resource Include="Resources\Overall UI\Chip10.png" />
+    <Resource Include="Resources\Overall UI\Chip100.png" />
+    <Resource Include="Resources\Overall UI\Chip1000.png" />
+    <Resource Include="Resources\Overall UI\Chip20.png" />
+    <Resource Include="Resources\Overall UI\Chip5.png" />
+    <Resource Include="Resources\Overall UI\Chip50.png" />
+    <Resource Include="Resources\Overall UI\Chip500.png" />
+    <Resource Include="Resources\Overall UI\Chip5000.png" />
+    <Resource Include="Resources\Overall UI\ComingSoonStamp.png" />
+    <Resource Include="Resources\Overall UI\Craps Icon.png" />
+    <Resource Include="Resources\Overall UI\Generic Felt Mat.jpeg" />
+    <Resource Include="Resources\Overall UI\Poker Icon.png" />
+    <Resource Include="Resources\Overall UI\Roulette Icon.png" />
+    <Resource Include="Resources\Overall UI\Slot Machine Icon.png" />
+  </ItemGroup>
+
 </Project>

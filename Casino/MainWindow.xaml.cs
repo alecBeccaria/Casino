@@ -7,6 +7,7 @@ namespace Casino
     /// </summary>
     public partial class MainWindow : Window
     {
+        SlotsGame.SlotsGame game = new SlotsGame.SlotsGame();
         public MainWindow()
         {
             InitializeComponent();
@@ -14,8 +15,9 @@ namespace Casino
 
         private void Play(object sender, RoutedEventArgs e)
         {
-            SlotsGame.SlotsGame game = new SlotsGame.SlotsGame();
-            titleLabel.Content = game.StartGame();
+            //Randomize the slots
+            game.Spin();
+            titleLabel.Content = game.GetSlotsText();
         }
 
         private void Settings(object sender, RoutedEventArgs e)

@@ -10,6 +10,11 @@ namespace Casino.SlotsGame
     {
         int SlotWins = 0;
         bool ActiveGame = false;
+        public SlotsPlayer(Player player)
+        {
+            this.cash = player.cash;
+            this.chips = player.chips;
+        }
 
     }
 }
