@@ -4,29 +4,41 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Casino"
+             xmlns:viewModel="clr-namespace:Casino.ViewModels"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <UserControl.Background>
-        <ImageBrush ImageSource="\Resources\Overall UI\Generic Felt Mat.jpeg" Stretch="UniformToFill"/>
+        <ImageBrush ImageSource="/Resources/PokerTable.png" Stretch="Fill"/>
     </UserControl.Background>
+
+    <UserControl.DataContext>
+        <viewModel:MainViewModel/>
+    </UserControl.DataContext>
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="133*"/>
-            <RowDefinition Height="17*"/>
+            <RowDefinition Height="98*"/>
+            <RowDefinition Height="127*"/>
         </Grid.RowDefinitions>
-        <Image Margin="18,29,8,29" Source="/Resources/PokerTable.png" Stretch="Uniform"/>
-        <Button x:Name="btnHold1" Content="Hold" HorizontalAlignment="Left" Margin="50,0,0,0" VerticalAlignment="Center" Grid.Row="1" Height="50" Width="57"/>
-        <Button x:Name="btnHold2" Content="Hold" HorizontalAlignment="Left" Margin="216,0,0,0" VerticalAlignment="Center" Grid.Row="1" Height="50" Width="57"/>
-        <Button x:Name="btnHold3" Content="Hold" HorizontalAlignment="Left" Margin="376,0,0,0" VerticalAlignment="Center" Grid.Row="1" Height="50" Width="58"/>
-        <Button x:Name="btnHold4" Content="Hold" HorizontalAlignment="Left" Margin="539,0,0,0" VerticalAlignment="Center" Grid.Row="1" Height="50" Width="58"/>
-        <Button x:Name="btnHold5" Content="Hold" HorizontalAlignment="Left" Margin="703,0,0,0" VerticalAlignment="Center" Grid.Row="1" Height="50" Width="58"/>
-        <Image x:Name="card1" HorizontalAlignment="Left" Height="121" Margin="38,247,0,0" VerticalAlignment="Top" Width="82"/>
-        <Image x:Name="card2" HorizontalAlignment="Left" Height="121" Margin="201,247,0,0" VerticalAlignment="Top" Width="82"/>
-        <Image x:Name="card3" HorizontalAlignment="Left" Height="121" Margin="364,247,0,0" VerticalAlignment="Top" Width="82"/>
-        <Image x:Name="card4" HorizontalAlignment="Left" Height="121" Margin="526,247,0,0" VerticalAlignment="Top" Width="82"/>
-        <Image x:Name="card5" HorizontalAlignment="Left" Height="121" Margin="689,247,0,0" VerticalAlignment="Top" Width="82"/>
-        <Image x:Name="deck" HorizontalAlignment="Left" Height="121" Margin="689,29,0,0" VerticalAlignment="Top" Width="82"/>
-        <Label x:Name="txtBalance" Content="Balance: " FontSize="20" HorizontalAlignment="Left" Margin="50,29,0,0" VerticalAlignment="Top" Width="201" Height="77" Foreground="White"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="67*"/>
+            <ColumnDefinition Width="90*"/>
+            <ColumnDefinition Width="90*"/>
+            <ColumnDefinition Width="88*"/>
+            <ColumnDefinition Width="65*"/>
+        </Grid.ColumnDefinitions>
+
+        <Button x:Name="btnHold1" Content="Hold" HorizontalAlignment="Left" Margin="23,10,0,0" VerticalAlignment="Top" Height="50" Width="57" Grid.Row="1"/>
+        <Button x:Name="btnHold2" Content="Hold" HorizontalAlignment="Left" Margin="60,10,0,0" VerticalAlignment="Top" Height="50" Width="57" Grid.Row="1" Grid.Column="1"/>
+        <Button x:Name="btnHold3" Content="Hold" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" Height="50" Width="58" Grid.Row="1" Grid.Column="2"/>
+        <Button x:Name="btnHold4" Content="Hold" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" Height="50" Width="58" Grid.Row="1" Grid.Column="3"/>
+        <Button x:Name="btnHold5" Content="Hold" HorizontalAlignment="Left" Margin="62,10,0,0" VerticalAlignment="Top" Height="50" Width="58" Grid.Row="1" Grid.Column="4"/>
+        <Image x:Name="card1" HorizontalAlignment="Left" Height="155" Margin="0,93,0,0" VerticalAlignment="Top" Width="88" Grid.Row="1"/>
+        <Image x:Name="card2" HorizontalAlignment="Left" Height="155" Margin="44,93,0,0" VerticalAlignment="Top" Width="87" Grid.Row="1" Grid.Column="1"/>
+        <Image x:Name="card3" HorizontalAlignment="Left" Height="158" Margin="42,93,0,0" VerticalAlignment="Top" Width="88" Grid.Row="1" Grid.Column="2"/>
+        <Image x:Name="card4" HorizontalAlignment="Left" Height="155" Margin="39,93,0,0" VerticalAlignment="Top" Width="86" Grid.Row="1" Grid.Column="3"/>
+        <Image x:Name="card5" HorizontalAlignment="Left" Height="155" Margin="40,93,0,0" VerticalAlignment="Top" Width="91" Grid.Row="1" Grid.Column="4"/>
+        <Image x:Name="deck" HorizontalAlignment="Left" Height="121" Margin="49,29,0,0" VerticalAlignment="Top" Width="82" Grid.Column="4"/>
+        <Label x:Name="txtBalance" Content="Balance: " FontSize="20" HorizontalAlignment="Left" Margin="50,29,0,0" VerticalAlignment="Top" Width="201" Height="77" Foreground="White" Grid.ColumnSpan="2"/>
     </Grid>
 
 

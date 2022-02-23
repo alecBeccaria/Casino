@@ -1,6 +1,4 @@
 ﻿using Casino.Commands;
-using Casino.NavStore;
-using System;
 using System.Diagnostics;
 
 namespace Casino.ViewModels
@@ -12,20 +10,24 @@ namespace Casino.ViewModels
 
         public BaseCommand playViewCommand { get; set; }
 
-        public DashboardViewModel dashViewModel { get; set; } 
+        public BaseCommand pokerViewCommand { get; set; }
+
+        public DashboardViewModel dashViewModel { get; set; }
 
         public PlayViewmodel playViewmodel { get; set; }
 
-/*        private ViewModels.ViewModelBase currentViewModel;
-        public ViewModels.ViewModelBase CurrentViewModel
-        {
-            get => currentViewModel;
-            set
-            {
-                currentViewModel = value;
-                OnPropertyChanged();
-            }
-        }*/
+        public PokerViewModel pokerViewModel { get; set; }
+
+        /*        private ViewModels.ViewModelBase currentViewModel;
+                public ViewModels.ViewModelBase CurrentViewModel
+                {
+                    get => currentViewModel;
+                    set
+                    {
+                        currentViewModel = value;
+                        OnPropertyChanged();
+                    }
+                }*/
 
         private object currentView;
 
@@ -46,19 +48,27 @@ namespace Casino.ViewModels
             //currentViewModel = new ViewModelBase();
             dashViewModel = new DashboardViewModel();
             playViewmodel = new PlayViewmodel();
-            
+            pokerViewModel = new PokerViewModel();
+
 
 
             currentView = dashViewModel;
 
-            dashViewCommand = new BaseCommand(o => {
-                Debug.WriteLine("DashCommand fired");
+            dashViewCommand = new BaseCommand(o =>
+            {
+                Debug.WriteLine("Select Game Command fired");
                 CurrentView = dashViewModel;
             });
 
             playViewCommand = new BaseCommand(o =>
             {
-                Debug.WriteLine("PlayCommand fired");
+                Debug.WriteLine("Play Command fired");
+                CurrentView = playViewmodel;
+            });
+
+            pokerViewCommand = new BaseCommand(o =>
+            {
+                Debug.WriteLine("Poker Command fired");
                 CurrentView = playViewmodel;
             });
 

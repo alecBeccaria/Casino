@@ -1,5 +1,4 @@
-﻿using Casino.Models;
-using System.Windows.Controls;
+﻿using System.Windows.Controls;
 
 namespace Casino
 {
@@ -8,14 +7,14 @@ namespace Casino
     /// </summary>
     public partial class Poker : UserControl
     {
-        private Card card;
+
         public Poker()
         {
             InitializeComponent();
 
         }
 
-        public void
+
     }
 }
 
