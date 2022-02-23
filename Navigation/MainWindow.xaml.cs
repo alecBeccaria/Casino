@@ -16,11 +16,14 @@ namespace Navigation
 
         private void btnClickP1(object sender, RoutedEventArgs e)
         {
+            Main.Content = null;
             Main.Content = new Page1();
+            
         }
 
         private void btnClickP2(object sender, RoutedEventArgs e)
         {
+            Main.Content = null;
             Main.Content = new Page2();
         }
     }

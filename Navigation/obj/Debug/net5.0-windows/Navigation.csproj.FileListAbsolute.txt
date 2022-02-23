@@ -24,3 +24,29 @@ C:\Users\abeccaria\Documents\InClass\Casino\Navigation\obj\Debug\net5.0-windows\
 C:\Users\abeccaria\Documents\InClass\Casino\Navigation\obj\Debug\net5.0-windows\ref\Navigation.dll
 C:\Users\abeccaria\Documents\InClass\Casino\Navigation\obj\Debug\net5.0-windows\Navigation.pdb
 C:\Users\abeccaria\Documents\InClass\Casino\Navigation\obj\Debug\net5.0-windows\Navigation.genruntimeconfig.cache
+C:\Users\abecc\Documents\InClass\Principles of Software Engineering\Casino\Navigation\bin\Debug\net5.0-windows\Navigation.exe
+C:\Users\abecc\Documents\InClass\Principles of Software Engineering\Casino\Navigation\bin\Debug\net5.0-windows\Navigation.deps.json
+C:\Users\abecc\Documents\InClass\Principles of Software Engineering\Casino\Navigation\bin\Debug\net5.0-windows\Navigation.runtimeconfig.json
+C:\Users\abecc\Documents\InClass\Principles of Software Engineering\Casino\Navigation\bin\Debug\net5.0-windows\Navigation.runtimeconfig.dev.json
+C:\Users\abecc\Documents\InClass\Principles of Software Engineering\Casino\Navigation\bin\Debug\net5.0-windows\Navigation.dll
+C:\Users\abecc\Documents\InClass\Principles of Software Engineering\Casino\Navigation\bin\Debug\net5.0-windows\ref\Navigation.dll
+C:\Users\abecc\Documents\InClass\Principles of Software Engineering\Casino\Navigation\bin\Debug\net5.0-windows\Navigation.pdb
+C:\Users\abecc\Documents\InClass\Principles of Software Engineering\Casino\Navigation\obj\Debug\net5.0-windows\Navigation.csproj.AssemblyReference.cache
+C:\Users\abecc\Documents\InClass\Principles of Software Engineering\Casino\Navigation\obj\Debug\net5.0-windows\MainWindow.g.cs
+C:\Users\abecc\Documents\InClass\Principles of Software Engineering\Casino\Navigation\obj\Debug\net5.0-windows\Page1.g.cs
+C:\Users\abecc\Documents\InClass\Principles of Software Engineering\Casino\Navigation\obj\Debug\net5.0-windows\Page2.g.cs
+C:\Users\abecc\Documents\InClass\Principles of Software Engineering\Casino\Navigation\obj\Debug\net5.0-windows\App.g.cs
+C:\Users\abecc\Documents\InClass\Principles of Software Engineering\Casino\Navigation\obj\Debug\net5.0-windows\Navigation_MarkupCompile.cache
+C:\Users\abecc\Documents\InClass\Principles of Software Engineering\Casino\Navigation\obj\Debug\net5.0-windows\Navigation_MarkupCompile.lref
+C:\Users\abecc\Documents\InClass\Principles of Software Engineering\Casino\Navigation\obj\Debug\net5.0-windows\MainWindow.baml
+C:\Users\abecc\Documents\InClass\Principles of Software Engineering\Casino\Navigation\obj\Debug\net5.0-windows\Page1.baml
+C:\Users\abecc\Documents\InClass\Principles of Software Engineering\Casino\Navigation\obj\Debug\net5.0-windows\Page2.baml
+C:\Users\abecc\Documents\InClass\Principles of Software Engineering\Casino\Navigation\obj\Debug\net5.0-windows\Navigation.g.resources
+C:\Users\abecc\Documents\InClass\Principles of Software Engineering\Casino\Navigation\obj\Debug\net5.0-windows\Navigation.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\abecc\Documents\InClass\Principles of Software Engineering\Casino\Navigation\obj\Debug\net5.0-windows\Navigation.AssemblyInfoInputs.cache
+C:\Users\abecc\Documents\InClass\Principles of Software Engineering\Casino\Navigation\obj\Debug\net5.0-windows\Navigation.AssemblyInfo.cs
+C:\Users\abecc\Documents\InClass\Principles of Software Engineering\Casino\Navigation\obj\Debug\net5.0-windows\Navigation.csproj.CoreCompileInputs.cache
+C:\Users\abecc\Documents\InClass\Principles of Software Engineering\Casino\Navigation\obj\Debug\net5.0-windows\Navigation.dll
+C:\Users\abecc\Documents\InClass\Principles of Software Engineering\Casino\Navigation\obj\Debug\net5.0-windows\ref\Navigation.dll
+C:\Users\abecc\Documents\InClass\Principles of Software Engineering\Casino\Navigation\obj\Debug\net5.0-windows\Navigation.pdb
+C:\Users\abecc\Documents\InClass\Principles of Software Engineering\Casino\Navigation\obj\Debug\net5.0-windows\Navigation.genruntimeconfig.cache

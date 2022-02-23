@@ -1,27 +1,28 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\abeccaria\\Documents\\InClass\\Casino\\Navigation\\Navigation.csproj": {}
+    "C:\\Users\\abecc\\Documents\\InClass\\Principles of Software Engineering\\Casino\\Navigation\\Navigation.csproj": {}
   },
   "projects": {
-    "C:\\Users\\abeccaria\\Documents\\InClass\\Casino\\Navigation\\Navigation.csproj": {
+    "C:\\Users\\abecc\\Documents\\InClass\\Principles of Software Engineering\\Casino\\Navigation\\Navigation.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\abeccaria\\Documents\\InClass\\Casino\\Navigation\\Navigation.csproj",
+        "projectUniqueName": "C:\\Users\\abecc\\Documents\\InClass\\Principles of Software Engineering\\Casino\\Navigation\\Navigation.csproj",
         "projectName": "Navigation",
-        "projectPath": "C:\\Users\\abeccaria\\Documents\\InClass\\Casino\\Navigation\\Navigation.csproj",
-        "packagesPath": "C:\\Users\\abeccaria\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\abeccaria\\Documents\\InClass\\Casino\\Navigation\\obj\\",
+        "projectPath": "C:\\Users\\abecc\\Documents\\InClass\\Principles of Software Engineering\\Casino\\Navigation\\Navigation.csproj",
+        "packagesPath": "C:\\Users\\abecc\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\abecc\\Documents\\InClass\\Principles of Software Engineering\\Casino\\Navigation\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\abeccaria\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\abecc\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0-windows7.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {}
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net5.0-windows7.0": {
