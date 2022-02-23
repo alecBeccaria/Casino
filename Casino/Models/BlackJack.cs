@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Casino.Models
 {
-    class BlackJack
+    public class BlackJack
     {
         private Deck deck = new Deck();
         private BJPlayer player = new BJPlayer();
@@ -47,7 +47,7 @@ namespace Casino.Models
                 Card current = deck.GetDeck()[deck.GetDeck().Count() - 1];
                 deck.GetDeck().Remove(current);
                 player.AddCardToHand(current);
-                player.PrintHand();
+                //player.PrintHand();
             //} else
             //{
                 //playerActive = false;
@@ -86,5 +86,14 @@ namespace Casino.Models
             return typedValue;
         }
 
+        public Deck GetDeck()
+        {
+            return deck;
+        }
+
+        public BJPlayer GetPlayer()
+        {
+            return player;
+        }
     }
 }

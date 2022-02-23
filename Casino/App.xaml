@@ -13,7 +13,11 @@
         <DataTemplate DataType="{x:Type viewModel:DashboardViewModel}">
             <local:MainWindowControl></local:MainWindowControl>
         </DataTemplate>
-                      
-        
+
+        <DataTemplate DataType="{x:Type viewModel:BJViewModel}">
+            <local:BJControl></local:BJControl>
+        </DataTemplate>
+
+
     </Application.Resources>
 </Application>

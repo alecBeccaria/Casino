@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Casino.Models
 {
-    class BJPlayer : Player
+    public class BJPlayer : Player
     {
         private Deck hand = new Deck();
 

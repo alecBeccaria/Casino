@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Casino.Models
 {
-    class Deck
+    public class Deck
     {
         private List<Card> deck = new List<Card>();
 

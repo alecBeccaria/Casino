@@ -1,0 +1,22 @@
+﻿<UserControl x:Class="Casino.BJControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Casino"
+             xmlns:viewmodel="clr-namespace:Casino.ViewModels"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.DataContext>
+        <viewmodel:BJViewModel/>
+
+    </UserControl.DataContext>
+    <Grid>
+        <Button x:Name="btnNewBJGame" Content="New Game" HorizontalAlignment="Left" Margin="134,281,0,0" VerticalAlignment="Top" Click="btnNewBJGame_Click" Height="29" Width="69" Command="{Binding CardGetCommand}"/>
+        <Label x:Name="lblCardDisplay1" Content="{Binding Card1}" HorizontalAlignment="Left" Margin="331,157,0,0" VerticalAlignment="Top" Height="42" Width="107"/>
+        <Label x:Name="lblCardDisplay2" Content="{Binding Card2}" HorizontalAlignment="Left" Margin="331,207,0,0" VerticalAlignment="Top" Height="42" Width="107"/>
+        <Button x:Name="btnDrawCard" Content="Draw Card" HorizontalAlignment="Left" Margin="295,336,0,0" VerticalAlignment="Top" Height="50" Width="143" Command="{Binding DrawCardCommand}" Click="btnDrawCard_Click"/>
+        <Image x:Name="imgLastCard" HorizontalAlignment="Left" Height="121" Margin="564,228,0,0" VerticalAlignment="Top" Width="90" Source="{Binding PicturePath, Converter={StaticResource ImgCon}}"/>
+
+    </Grid>
+</UserControl>

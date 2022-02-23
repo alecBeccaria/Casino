@@ -1,6 +1,6 @@
 ﻿namespace Casino.Models
 {
-    class Card
+    public class Card
     {
         private int value { get; set; }
         private string name { get; set; }
@@ -28,7 +28,7 @@
         }
         public string GetCardImage()
         {
-            string image = "Resources/Cards/card" + suit;
+            string image = "/Resources/Cards/card" + suit;
             if (value == 13)
             {
                 image += "K";
