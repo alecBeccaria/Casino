@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using Casino.ViewModels;
+using System.Windows;
 
 namespace Casino
 {
@@ -7,24 +8,22 @@ namespace Casino
     /// </summary>
     public partial class MainWindow : Window
     {
+
+        MainViewModel model = new MainViewModel();
+
         public MainWindow()
         {
             InitializeComponent();
         }
 
-        private void Play(object sender, RoutedEventArgs e)
+        private void mainViewButton_Click(object sender, RoutedEventArgs e)
         {
-
+            model.CurrentView = new DashboardViewModel();
         }
 
-        private void Settings(object sender, RoutedEventArgs e)
+        private void playViewButton_Click(object sender, RoutedEventArgs e)
         {
-
-        }
-
-        private void Exit(object sender, RoutedEventArgs e)
-        {
-
+            model.CurrentView = new PlayViewmodel();
         }
     }
 }
