@@ -34,7 +34,7 @@ namespace Casino
             card3.Source = deck[2].image.Source;
             card4.Source = deck[3].image.Source;
             card5.Source = deck[4].image.Source;
-            
+            txtBalance.Content = "Balance: Add bank connection";
             
 
         }

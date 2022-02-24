@@ -9,16 +9,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="cardBack_blue5.png" />
-    <None Remove="Chip1.png" />
-    <None Remove="Chip10.png" />
-    <None Remove="Chip100.png" />
-    <None Remove="Chip1000.png" />
-    <None Remove="Chip20.png" />
-    <None Remove="Chip5.png" />
-    <None Remove="Chip50.png" />
-    <None Remove="Chip500.png" />
-    <None Remove="Chip5000.png" />
     <None Remove="Resources\BlackJack\BlackJackTable.png" />
     <None Remove="Resources\BlackJack\Cards\cardBack_blue1.png" />
     <None Remove="Resources\BlackJack\Cards\cardBack_blue2.png" />
@@ -94,16 +84,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="cardBack_blue5.png" />
-    <Resource Include="Chip1.png" />
-    <Resource Include="Chip10.png" />
-    <Resource Include="Chip100.png" />
-    <Resource Include="Chip1000.png" />
-    <Resource Include="Chip20.png" />
-    <Resource Include="Chip5.png" />
-    <Resource Include="Chip50.png" />
-    <Resource Include="Chip500.png" />
-    <Resource Include="Chip5000.png" />
     <Resource Include="Resources\BlackJack\BlackJackTable.png" />
     <Resource Include="Resources\BlackJack\Cards\cardBack_blue1.png" />
     <Resource Include="Resources\BlackJack\Cards\cardBack_blue2.png" />

@@ -18,6 +18,10 @@
             <local:PokerControl/>
         </DataTemplate>
 
+        <DataTemplate DataType="{x:Type viewModel:BankViewModel}">
+            <local:BankControl/>
+        </DataTemplate>
+
 
     </Application.Resources>
 </Application>

@@ -1,14 +1,10 @@
 ﻿namespace Casino
 {
-    class Player
+    public static class Player
     {
-        public int cash { get; set; }
-        public int chips { get; set; }
+        public static int cash { get; set; } = 1000; 
+        public static int chips { get; set; } = 1000;
 
-        public Player()
-        {
-            cash = 1000;
-            cash = 1000;
-        }
+        
     }
 }

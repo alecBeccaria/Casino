@@ -8,7 +8,7 @@ namespace Casino.SlotsGame
 {
     class SlotsGame
     {
-        SlotsPlayer player;
+        
         enum SlotType
         {
             Cherry,
