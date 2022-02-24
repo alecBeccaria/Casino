@@ -12,6 +12,7 @@ namespace Casino.Models
 
         public Deck()
         {
+            createDeck();
         }
         public void createDeck()
         {

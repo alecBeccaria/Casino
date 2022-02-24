@@ -13,7 +13,11 @@
         <DataTemplate DataType="{x:Type viewModel:DashboardViewModel}">
             <local:MainWindowControl></local:MainWindowControl>
         </DataTemplate>
-                      
-        
+
+        <DataTemplate DataType="{x:Type viewModel:PokerViewModel}">
+            <local:PokerControl/>
+        </DataTemplate>
+
+
     </Application.Resources>
 </Application>

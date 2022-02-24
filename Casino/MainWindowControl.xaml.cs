@@ -1,5 +1,6 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
+using Casino.ViewModels;
 
 namespace Casino
 {
@@ -13,11 +14,8 @@ namespace Casino
             InitializeComponent();
         }
 
-        private void Play(object sender, RoutedEventArgs e)
-        {
 
-        }
-
+        
         private void Settings(object sender, RoutedEventArgs e)
         {
 
@@ -27,5 +25,7 @@ namespace Casino
         {
 
         }
+
+        
     }
 }

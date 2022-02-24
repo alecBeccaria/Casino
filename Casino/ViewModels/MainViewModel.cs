@@ -12,20 +12,25 @@ namespace Casino.ViewModels
 
         public BaseCommand playViewCommand { get; set; }
 
+        public BaseCommand pokerViewCommand { get; set; }
+
+
         public DashboardViewModel dashViewModel { get; set; } 
 
         public PlayViewmodel playViewmodel { get; set; }
 
-/*        private ViewModels.ViewModelBase currentViewModel;
-        public ViewModels.ViewModelBase CurrentViewModel
-        {
-            get => currentViewModel;
-            set
-            {
-                currentViewModel = value;
-                OnPropertyChanged();
-            }
-        }*/
+        public PokerViewModel pokerViewModel { get; set; }
+
+        /*        private ViewModels.ViewModelBase currentViewModel;
+                public ViewModels.ViewModelBase CurrentViewModel
+                {
+                    get => currentViewModel;
+                    set
+                    {
+                        currentViewModel = value;
+                        OnPropertyChanged();
+                    }
+                }*/
 
         private object currentView;
         public object CurrentView
@@ -47,6 +52,7 @@ namespace Casino.ViewModels
             //currentViewModel = new ViewModelBase();
             dashViewModel = new DashboardViewModel();
             playViewmodel = new PlayViewmodel();
+            pokerViewModel = new PokerViewModel();
             
 
 
@@ -61,6 +67,12 @@ namespace Casino.ViewModels
             {
                 Debug.WriteLine("PlayCommand fired");
                 CurrentView = playViewmodel;
+            });
+
+            pokerViewCommand = new BaseCommand(o =>
+            {
+                Debug.WriteLine("Poker Command fired");
+                CurrentView = pokerViewModel;
             });
 
 

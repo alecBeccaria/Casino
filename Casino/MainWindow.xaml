@@ -9,6 +9,12 @@
         Title="MainWindow" Height="450" Width="800"
         MinHeight="450"
         MinWidth="800">
+
+    <Window.Background>
+        <ImageBrush ImageSource="\Resources\Overall UI\Generic Felt Mat.jpeg"/>
+    </Window.Background>
+
+
     <Window.DataContext>
         <viewModel:MainViewModel/>
     </Window.DataContext>
@@ -23,13 +29,7 @@
         <ContentControl Content="{Binding CurrentViewModel}"/>
         -->
         
-        <Button x:Name="mainViewButton" Command="{Binding dashViewCommand}" Content="Main View" HorizontalAlignment="Left" Margin="40,120,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="playViewButton" Command="{Binding playViewCommand}" Content="Play View" HorizontalAlignment="Left" Margin="40,150,0,0" VerticalAlignment="Top"/>
-        
-        
-        
-        
-         
+    
         <!-- Focusable is important. Not sure if entirely needed, but it was recommended to use on anything implementing commands. 
         <RadioButton Focusable="False" Content="Main View" HorizontalAlignment="Left" Margin="50,150,0,0" VerticalAlignment="Top" Command="{Binding dashViewCommand}"/>
         <RadioButton Focusable="False" Content="Play View" HorizontalAlignment="Left" Margin="50,175,0,0" VerticalAlignment="Top" Command="{Binding playViewCommand}"/>

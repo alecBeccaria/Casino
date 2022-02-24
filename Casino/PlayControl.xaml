@@ -30,7 +30,7 @@
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
                 <Button Content="Blackjack" Grid.Column="1" Grid.Row="1"/>
-                <Button Content="5 Hard Poker" Grid.Column="1" Grid.Row="5"/>
+                <Button Content="5 Hard Poker" Command="{Binding DataContext.pokerViewCommand, RelativeSource={RelativeSource AncestorType={x:Type local:MainWindow}}}" Grid.Column="1" Grid.Row="5"/>
                 <Button Content="Slots" Grid.Column="3" Grid.Row="3"/>
                 <Button Content="Craps" Grid.Column="5" Grid.Row="5"/>
                 <Button Content="Rolutte" Grid.Column="5" Grid.Row="1"/>
