@@ -26,18 +26,18 @@
 
         <Image Source="/Resources/PokerTable.png" Grid.RowSpan="2" Grid.ColumnSpan="5"></Image>
 
-        <Button x:Name="btnHold1" Content="Hold" HorizontalAlignment="Left" Margin="19,10,0,0" VerticalAlignment="Top" Height="50" Width="57" Grid.Row="1" Click="btnHold1_Click"/>
+        <Button x:Name="btnHold1" Content="Hold" HorizontalAlignment="Left" Margin="12,10,0,0" VerticalAlignment="Top" Height="50" Width="58" Grid.Row="1" Click="btnHold1_Click"/>
         <Button x:Name="btnHold2" Content="Hold" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" Height="50" Width="56" Grid.Row="1" Grid.Column="1" Click="btnHold2_Click"/>
         <Button x:Name="btnHold3" Content="Hold" HorizontalAlignment="Left" Margin="54,10,0,0" VerticalAlignment="Top" Height="50" Width="58" Grid.Row="1" Grid.Column="2" Click="btnHold3_Click"/>
         <Button x:Name="btnHold4" Content="Hold" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" Height="50" Width="58" Grid.Row="1" Grid.Column="3" Click="btnHold4_Click"/>
         <Button x:Name="btnHold5" Content="Hold" HorizontalAlignment="Left" Margin="61,10,0,0" VerticalAlignment="Top" Height="50" Width="58" Grid.Row="1" Grid.Column="4" Click="btnHold5_Click"/>
-        <Image x:Name="card1" HorizontalAlignment="Left" Height="129" Margin="0,81,0,0" VerticalAlignment="Top" Width="88" Grid.Row="1"/>
-        <Image x:Name="card2" HorizontalAlignment="Left" Height="129" Margin="44,81,0,0" VerticalAlignment="Top" Width="88" Grid.Row="1" Grid.Column="1"/>
-        <Image x:Name="card3" HorizontalAlignment="Left" Height="129" Margin="39,81,0,0" VerticalAlignment="Top" Width="88" Grid.Row="1" Grid.Column="2"/>
-        <Image x:Name="card4" HorizontalAlignment="Left" Height="129" Margin="36,81,0,0" VerticalAlignment="Top" Width="88" Grid.Row="1" Grid.Column="3"/>
-        <Image x:Name="card5" HorizontalAlignment="Left" Height="129" Margin="40,81,0,0" VerticalAlignment="Top" Width="88" Grid.Row="1" Grid.Column="4"/>
-        <Image x:Name="deck" HorizontalAlignment="Left" Height="129" Margin="40,46,0,0" VerticalAlignment="Top" Width="88" Grid.Column="4"/>
-        <Label x:Name="txtBalance" Content="Balance: " FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Top" Width="119" Height="110" Foreground="White" Grid.ColumnSpan="2" Margin="10,10,0,0"/>
+        <Image x:Name="card1" Margin="-4,75,38,43" Grid.Row="1"/>
+        <Image x:Name="card2" Margin="38,75,43,43" Grid.Row="1" Grid.Column="1"/>
+        <Image x:Name="card3" Margin="25,75,44,42" Grid.Row="1" Grid.Column="2"/>
+        <Image x:Name="card4" HorizontalAlignment="Left" Height="136" Margin="31,75,0,0" VerticalAlignment="Top" Width="95" Grid.Row="1" Grid.Column="3"/>
+        <Image x:Name="card5" HorizontalAlignment="Left" Height="136" Margin="35,75,0,0" VerticalAlignment="Top" Width="95" Grid.Row="1" Grid.Column="4"/>
+        <Image x:Name="imgDeck" HorizontalAlignment="Left" Height="136" Margin="35,34,0,0" VerticalAlignment="Top" Width="95" Grid.Column="4" Source="/cardBack_blue5.png"/>
+        <Label x:Name="txtBalance" Content="Balance: " FontSize="15" HorizontalAlignment="Center" VerticalAlignment="Top" Width="129" Height="54" Foreground="White" Margin="0,10,0,0"/>
         <Grid Grid.Column="1" Grid.ColumnSpan="3">
             <Grid.RowDefinitions>
                 <RowDefinition Height="11*"/>
@@ -66,8 +66,43 @@
             <Image Grid.Column="7" Source="/Chip1000.png" Height="60" VerticalAlignment="Center"/>
             <Image Margin="1,0,1,0" Grid.Column="8" Grid.ColumnSpan="1" Source="/Chip5000.png" Height="60" VerticalAlignment="Center"/>
             <Button Focusable="False"  Content="Go Back" Command="{Binding DataContext.playViewCommand, RelativeSource={RelativeSource AncestorType={x:Type local:MainWindow}}}" Margin="0,0,57,0" Grid.Row="2" Grid.ColumnSpan="2"/>
+            <Border Grid.Row="1" >
+                <Label x:Name="txtChip1" Content="0" Grid.Row="1" Margin="0,0,3,0" Foreground="White" HorizontalAlignment="Center" />
+            </Border>
+            <Border Grid.Row="1" Grid.Column="2">
+                <Label x:Name="txtChip10" Content="0" Grid.Row="1" Margin="1,0,1,0"  Foreground="White" HorizontalAlignment="Center"/>
+
+            </Border>
+            <Border Grid.Row="1"  Grid.Column="3">
+                <Label x:Name="txtChip20" Content="0" Grid.Row="1" Margin="0,0,1,0" Foreground="White" HorizontalAlignment="Center"/>
+            </Border >
+            <Border Grid.Row="1" Grid.Column="4">
+                <Label x:Name="txtChip50" Content="0" Grid.Row="1" Margin="1,0,1,0"  Foreground="White" HorizontalAlignment="Center"/>
+            </Border>
+            <Border Grid.Row="1" Grid.Column="5">
+                <Label x:Name="txtChip100" Content="0" Grid.Row="1" Margin="1,0,1,0"  Foreground="White" HorizontalAlignment="Center"/>
+            </Border>
+            <Border Grid.Row="1"  Grid.Column="6">
+                <Label x:Name="txtChip500" Content="0" Grid.Row="1" Margin="1,0,1,0"  Foreground="White" HorizontalAlignment="Center"/>
+            </Border>
+            <Border Grid.Row="1" Grid.Column="7">
+                <Label x:Name="txtChip1K" Content="0" Grid.Row="1" Margin="1,0,1,0"  Foreground="White" HorizontalAlignment="Center"/>
+            </Border>
+            <Border Grid.Row="1" Grid.Column="8">
+                <Label x:Name="txtChip5K" Content="0" Grid.Row="1" Margin="1,0,1,0"  Foreground="White" HorizontalAlignment="Center"/>
+            </Border>
+            <Border Grid.Column="1" Grid.Row="1">
+                <Label x:Name="txtChip5" Content="0"  Margin="1,0,1,0"  Foreground="White" HorizontalAlignment="Center"/>
+            </Border>
+
+
+
+
+
+
 
         </Grid>
+        <Label x:Name="txtBalance_Copy" Content="Pot: " FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Top" Width="129" Height="37" Foreground="White" Margin="-5,77,0,0"/>
     </Grid>
 
 </UserControl>

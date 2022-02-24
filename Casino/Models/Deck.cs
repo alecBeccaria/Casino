@@ -1,5 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.Windows.Controls;
+using System.Windows.Media.Imaging;
 
 namespace Casino.Models
 {
@@ -13,6 +16,7 @@ namespace Casino.Models
         public Deck()
         {
             createDeck();
+            setCardImages();
         }
         public void createDeck()
         {
@@ -39,9 +43,56 @@ namespace Casino.Models
             }
         }
 
+        public void setCardImages()
+        {
+            
+            foreach (Card card in deck)
+            {
+
+                Image image = new Image();
+               
+                if (card.name.Equals("Ace"))
+                {
+                    image.Source = new BitmapImage(
+                    new Uri($"pack://application:,,,/Resources/BlackJack/Cards/card{card.suit.ToString()}A.png"));
+                }
+                else if (card.name.Equals("Jack"))
+                {
+                    image.Source = new BitmapImage(
+                    new Uri($"pack://application:,,,/Resources/BlackJack/Cards/card{card.suit.ToString()}J.png"));
+                }
+                else if (card.name.Equals("King"))
+                {
+                    image.Source = new BitmapImage(
+                    new Uri($"pack://application:,,,/Resources/BlackJack/Cards/card{card.suit.ToString()}K.png"));
+                }
+                else if (card.name.Equals("Queen"))
+                {
+                    image.Source = new BitmapImage(
+                    new Uri($"pack://application:,,,/Resources/BlackJack/Cards/card{card.suit.ToString()}Q.png"));
+                }
+                else
+                {
+                    string suit = card.suit.ToString();
+                    
+                    Trace.WriteLine(card.name);
+                    
+                    image.Source = new BitmapImage(
+                    new Uri($"pack://application:,,,/Resources/BlackJack/Cards/card{suit}{card.value.ToString()}.png"));
+                    
+                }
+
+                card.image = image;
+
+
+            }
+        }
+
         public List<Card> getDeck()
         {
             return deck;
         }
     }
+
+
 }

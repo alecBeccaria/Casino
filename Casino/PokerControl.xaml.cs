@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Casino.Models;
+using Casino.PokerGame;
 
 namespace Casino
 {
@@ -20,9 +22,20 @@ namespace Casino
     /// </summary>
     public partial class PokerControl : UserControl
     {
+        Poker pokerGame;
         public PokerControl()
         {
             InitializeComponent();
+            pokerGame = new Poker();
+            pokerGame.initialize();
+            List<Card> deck = pokerGame.deck.getDeck();
+            card1.Source = deck[0].image.Source;
+            card2.Source = deck[1].image.Source;
+            card3.Source = deck[2].image.Source;
+            card4.Source = deck[3].image.Source;
+            card5.Source = deck[4].image.Source;
+            
+            
 
         }
 
