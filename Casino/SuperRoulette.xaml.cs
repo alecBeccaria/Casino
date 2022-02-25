@@ -26,6 +26,7 @@ namespace Casino
         public SuperRoulette()
         {
             InitializeComponent();
+            chipTXT.Text = "Chips: " + Player.chips;
         }
 
         private void onBetClick(object sender, RoutedEventArgs e)
@@ -522,6 +523,7 @@ namespace Casino
 
             MessageBox.Show("Congratulations, you have won: " + amountWon + " chips!!!");
             Player.chips += amountWon;
+            chipTXT.Text = "Chips: " + Player.chips;
         }
     }
 }
