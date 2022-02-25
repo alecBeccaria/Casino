@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,23 +10,20 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace Casino
 {
     /// <summary>
-    /// Interaction logic for Roulettez.xaml
+    /// Interaction logic for SuperRoulette.xaml
     /// </summary>
-    /// 
-
-    public partial class Roulettez : Window
+    public partial class SuperRoulette : UserControl
     {
         int numChoice = 0;
-        int[] betChoices = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+        int[] betChoices = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
         Random rng = new Random();
-        Player player = new Player();
-
-        public Roulettez()
+        public SuperRoulette()
         {
             InitializeComponent();
         }
@@ -490,7 +486,7 @@ namespace Casino
             //Check for thirds
             if (betChoices[40] != 0)
             {
-                if (num <= 12) 
+                if (num <= 12)
                 {
                     amountWon += 3 * betChoices[40];
                 }
@@ -525,7 +521,7 @@ namespace Casino
             }
 
             MessageBox.Show("Congratulations, you have won: " + amountWon + " chips!!!");
-            player.chips += amountWon;
+            Player.chips += amountWon;
         }
     }
 }
