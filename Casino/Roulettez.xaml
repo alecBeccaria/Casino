@@ -1,0 +1,153 @@
+﻿<Window x:Class="Casino.Roulettez"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Casino"
+        mc:Ignorable="d"
+        Title="Roulette" Height="450" Width="800">
+        <Window.Background>
+            <ImageBrush ImageSource="/Generic Felt Mat.jpeg" Stretch="UniformToFill"/>
+        </Window.Background>
+    <DockPanel>
+        <Grid Panel.ZIndex="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width=".4*"/>
+                <ColumnDefinition Width=".6*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height=".8*"/>
+                <RowDefinition Height=".2*"/>
+            </Grid.RowDefinitions>
+            <Image Source="/RouletteWheel_SingleZero.png" Grid.Row="0" Grid.Column="0"/>
+            <Image Source="/Roulette_SingleZero.png" Grid.Row="0" Grid.Column="1" Panel.ZIndex="-15"/>
+            <TextBlock FontSize="20" FontWeight="Bold" Grid.Column="1" VerticalAlignment="Bottom" HorizontalAlignment="Center" Foreground="White">Chips: 000</TextBlock>
+            <Grid Panel.ZIndex="-10" Grid.Column="1" Grid.Row="0" Margin="0 70">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1.5*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height=".27*"/>
+                    <RowDefinition Height=".27*"/>
+                    <RowDefinition Height=".27*"/>
+                    <RowDefinition Height=".2*"/>
+                    <RowDefinition Height=".16*"/>
+                </Grid.RowDefinitions>
+                <Button Background="#00000001" x:Name="_0Bet" Grid.RowSpan="3" BorderBrush="#00000000" Click="ClickAddBetAmt"/>
+
+                <Button Background="#00000001" x:Name="_3Bet" Grid.Column="1" BorderBrush="#00000000" Click="ClickAddBetAmt"/>
+                <Button Background="#00000001" x:Name="_6Bet"  Grid.Column="2" BorderBrush="#00000000" Click="ClickAddBetAmt"/>
+                <Button Background="#00000001" x:Name="_9Bet" Grid.Column="3" BorderBrush="#00000000" Click="ClickAddBetAmt"/>
+                <Button Background="#00000001" x:Name="_12Bet" Grid.Column="4" BorderBrush="#00000000" Click="ClickAddBetAmt"/>
+                <Button Background="#00000001" x:Name="_15Bet" Grid.Column="5" BorderBrush="#00000000" Click="ClickAddBetAmt"/>
+                <Button Background="#00000001" x:Name="_18Bet" Grid.Column="6" BorderBrush="#00000000" Click="ClickAddBetAmt"/>
+                <Button Background="#00000001" x:Name="_21Bet" Grid.Column="7" BorderBrush="#00000000" Click="ClickAddBetAmt"/>
+                <Button Background="#00000001" x:Name="_24Bet" Grid.Column="8" BorderBrush="#00000000" Click="ClickAddBetAmt"/>
+                <Button Background="#00000001" x:Name="_27Bet" Grid.Column="9" BorderBrush="#00000000" Click="ClickAddBetAmt"/>
+                <Button Background="#00000001" x:Name="_30Bet" Grid.Column="10" BorderBrush="#00000000" Click="ClickAddBetAmt"/>
+                <Button Background="#00000001" x:Name="_33Bet" Grid.Column="11" BorderBrush="#00000000" Click="ClickAddBetAmt"/>
+                <Button Background="#00000001" x:Name="_36Bet" Grid.Column="12" BorderBrush="#00000000" Click="ClickAddBetAmt"/>
+                <Button Background="#00000001" x:Name="_2TO1Bet1" Grid.Column="13" BorderBrush="#00000000" Click="ClickAddBetAmt"/>
+
+                <Button Background="#00000001" x:Name="_2Bet" Grid.Column="1" BorderBrush="#00000000" Grid.Row="1" Click="ClickAddBetAmt"/>
+                <Button Background="#00000001" x:Name="_5Bet" Grid.Column="2" BorderBrush="#00000000" Grid.Row="1" Click="ClickAddBetAmt"/>
+                <Button Background="#00000001" x:Name="_8Bet" Grid.Column="3" BorderBrush="#00000000" Grid.Row="1" Click="ClickAddBetAmt"/>
+                <Button Background="#00000001" x:Name="_11Bet" Grid.Column="4" BorderBrush="#00000000" Grid.Row="1" Click="ClickAddBetAmt"/>
+                <Button Background="#00000001" x:Name="_14Bet" Grid.Column="5" BorderBrush="#00000000" Grid.Row="1" Click="ClickAddBetAmt"/>
+                <Button Background="#00000000" x:Name="_17Bet" Grid.Column="6" BorderBrush="#00000000" Grid.Row="1" Click="ClickAddBetAmt"/>
+                <Button Background="#00000001" x:Name="_20Bet" Grid.Column="7" BorderBrush="#00000000" Grid.Row="1" Click="ClickAddBetAmt"/>
+                <Button Background="#00000001" x:Name="_23Bet" Grid.Column="8" BorderBrush="#00000000" Grid.Row="1" Click="ClickAddBetAmt"/>
+                <Button Background="#00000001" x:Name="_26Bet" Grid.Column="9" BorderBrush="#00000000" Grid.Row="1" Click="ClickAddBetAmt"/>
+                <Button Background="#00000001" x:Name="_29Bet" Grid.Column="10" BorderBrush="#00000000" Grid.Row="1" Click="ClickAddBetAmt"/>
+                <Button Background="#00000001" x:Name="_32Bet" Grid.Column="11" BorderBrush="#00000000" Grid.Row="1" Click="ClickAddBetAmt"/>
+                <Button Background="#00000001" x:Name="_35Bet" Grid.Column="12" BorderBrush="#00000000" Grid.Row="1" Click="ClickAddBetAmt"/>
+                <Button Background="#00000001" x:Name="_2TO1Bet2" Grid.Column="13" BorderBrush="#00000000" Grid.Row="1" Click="ClickAddBetAmt"/>
+
+                <Button Background="#00000001" x:Name="_1Bet" Grid.Column="1" BorderBrush="#00000000" Grid.Row="2" Click="ClickAddBetAmt"/>
+                <Button Background="#00000001" x:Name="_4Bet" Grid.Column="2" BorderBrush="#00000000" Grid.Row="2" Click="ClickAddBetAmt"/>
+                <Button Background="#00000001" x:Name="_7Bet" Grid.Column="3" BorderBrush="#00000000" Grid.Row="2" Click="ClickAddBetAmt"/>
+                <Button Background="#00000001" x:Name="_10Bet" Grid.Column="4" BorderBrush="#00000000" Grid.Row="2" Click="ClickAddBetAmt"/>
+                <Button Background="#00000001" x:Name="_13Bet" Grid.Column="5" BorderBrush="#00000000" Grid.Row="2" Click="ClickAddBetAmt"/>
+                <Button Background="#00000001" x:Name="_16Bet" Grid.Column="6" BorderBrush="#00000000" Grid.Row="2" Click="ClickAddBetAmt"/>
+                <Button Background="#00000001" x:Name="_19Bet" Grid.Column="7" BorderBrush="#00000000" Grid.Row="2" Click="ClickAddBetAmt"/>
+                <Button Background="#00000001" x:Name="_22Bet" Grid.Column="8" BorderBrush="#00000000" Grid.Row="2" Click="ClickAddBetAmt"/>
+                <Button Background="#00000001" x:Name="_25Bet" Grid.Column="9" BorderBrush="#00000000" Grid.Row="2" Click="ClickAddBetAmt"/>
+                <Button Background="#00000001" x:Name="_28Bet" Grid.Column="10" BorderBrush="#00000000" Grid.Row="2" Click="ClickAddBetAmt"/>
+                <Button Background="#00000001" x:Name="_31Bet" Grid.Column="11" BorderBrush="#00000000" Grid.Row="2" Click="ClickAddBetAmt"/>
+                <Button Background="#00000001" x:Name="_34Bet" Grid.Column="12" BorderBrush="#00000000" Grid.Row="2" Click="ClickAddBetAmt"/>
+                <Button Background="#00000001" x:Name="_2TO1Bet3" Grid.Column="13" BorderBrush="#00000000" Grid.Row="2" Click="ClickAddBetAmt"/>
+
+                <Button Background="#00000001" x:Name="_12Bet1" BorderBrush="#00000000" Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="4" Click="ClickAddBetAmt"/>
+                <Button Background="#00000001" x:Name="_12Bet2" BorderBrush="#00000000" Grid.Column="5" Grid.Row="3" Grid.ColumnSpan="4" Click="ClickAddBetAmt"/>
+                <Button Background="#00000001" x:Name="_12Bet3" BorderBrush="#00000000" Grid.Column="9" Grid.Row="3" Grid.ColumnSpan="4" Click="ClickAddBetAmt"/>
+
+
+                <Button Background="#00000001" x:Name="_HalfBet1" BorderBrush="#00000000" Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="2" Click="ClickAddBetAmt"/>
+                <Button Background="#00000001" x:Name="_EvenBet" BorderBrush="#00000000" Grid.Column="3" Grid.Row="4" Grid.ColumnSpan="2" Click="ClickAddBetAmt"/>
+                <Button Background="#00000001" x:Name="_RedBet" BorderBrush="#00000000" Grid.Column="5" Grid.Row="4" Grid.ColumnSpan="2" Click="ClickAddBetAmt"/>
+                <Button Background="#00000001" x:Name="_BlackBet" BorderBrush="#00000000" Grid.Column="7" Grid.Row="4" Grid.ColumnSpan="2" Click="ClickAddBetAmt"/>
+                <Button Background="#00000001" x:Name="_OddBet" BorderBrush="#00000000" Grid.Column="9" Grid.Row="4" Grid.ColumnSpan="2" Click="ClickAddBetAmt"/>
+                <Button Background="#00000001" x:Name="_HalfBet2" BorderBrush="#00000000" Grid.Column="11" Grid.Row="4" Grid.ColumnSpan="2" Click="ClickAddBetAmt"/>
+            </Grid>
+            <Grid Grid.Row="1" Grid.ColumnSpan="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Button Content="Back" FontSize="30" FontWeight="Bold" Grid.ColumnSpan="2" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <Button Margin="10" Width="50" Height="50" Name="_1Button" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="2" Background="#00000000" BorderBrush="#00000000" Click="onBetClick">
+                    <Image x:Name="_1" Source="/Chip1.png"></Image>
+                </Button>
+                <Button Margin="10" Width="50" Height="50" Name="_5Button" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="3" Background="#00000000" BorderBrush="#00000000" Click="onBetClick" >
+                    <Image x:Name="_5" Source="/Chip5.png"></Image>
+                </Button>
+                <Button Margin="10" Width="50" Height="50" Name="_10Button" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="4" Background="#00000000" BorderBrush="#00000000" Click="onBetClick" >
+                    <Image x:Name="_10" Source="/Chip10.png"></Image>
+                </Button>
+                <Button Margin="10" Width="50" Height="50" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="5" Background="#00000000" BorderBrush="#00000000" Click="onBetClick" >
+                    <Image x:Name="_20" Source="/Chip20.png"></Image>
+                </Button>
+                <Button Margin="10" Width="50" Height="50" Name="_50Button" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="6" Background="#00000000" BorderBrush="#00000000" Click="onBetClick" >
+                    <Image x:Name="_50" Source="/Chip50.png"></Image>
+                </Button>
+                <Button Margin="10" Width="50" Height="50" Name="_100Button" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="7" Background="#00000000" BorderBrush="#00000000" Click="onBetClick" >
+                    <Image x:Name="_100" Source="/Chip100.png"></Image>
+                </Button>
+                <Button Margin="10" Width="50" Height="50" Name="_500Button" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="8" Background="#00000000" BorderBrush="#00000000" Click="onBetClick">
+                    <Image x:Name="_500" Source="/Chip500.png"></Image>
+                </Button>
+                <Button Margin="10" Width="50" Height="50" Name="_1000Button" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="9" Background="#00000000" BorderBrush="#00000000" Click="onBetClick" >
+                    <Image x:Name="_1000" Source="/Chip1000.png"></Image>
+                </Button>
+                <Button Margin="10" Width="50" Height="50" Name="_5000Button" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="10" Background="#00000000" BorderBrush="#00000000" Click="onBetClick" >
+                    <Image x:Name="_5000" Source="/Chip5000.png"></Image>
+                </Button>
+                <Button Content="Spin" FontSize="30" FontWeight="Bold" Grid.ColumnSpan="2" Grid.Column="11" HorizontalAlignment="Center" VerticalAlignment="Center" Click="Spin_Click"/>
+            </Grid>
+        </Grid>
+    </DockPanel>
+</Window>
