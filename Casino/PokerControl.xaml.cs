@@ -1,19 +1,9 @@
-﻿using System;
+﻿using Casino.Models;
+using Casino.PokerGame;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using Casino.Models;
-using Casino.PokerGame;
 
 namespace Casino
 {
@@ -32,7 +22,7 @@ namespace Casino
             pokerGame.initialize();
             List<Card> deck = pokerGame.deck.getDeck();
             updateBalance(0);
-            for(int i = 0; i < 5; i++)
+            for (int i = 0; i < 5; i++)
             {
                 switch (i)
                 {
@@ -52,7 +42,7 @@ namespace Casino
                         card5.Source = deck[i].image.Source;
                         break;
 
-                }  
+                }
             }
         }
 
@@ -199,7 +189,54 @@ namespace Casino
 
         private void btnHold_Click(object sender, RoutedEventArgs e)
         {
-             
+
         }
+
+        private void btnRemoveChip1_Click(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+
+        private void btnRemoveChip5_Click(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+
+        private void btnRemoveChip10_Click(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+
+        private void btnRemoveChip20_Click(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+
+        private void btnRemoveChip50_Click(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+
+        private void btnRemoveChip100_Click(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+
+        private void btnRemoveChip500_Click(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+
+        private void btnRemoveChip1K_Click(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+
+        private void btnRemoveChip5K_Click(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+
+
     }
 }

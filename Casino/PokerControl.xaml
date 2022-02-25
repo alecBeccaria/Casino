@@ -10,7 +10,7 @@
     <UserControl.DataContext>
         <viewModel:MainViewModel/>
     </UserControl.DataContext>
-    <Grid Margin="14,0,14,0">
+    <Grid>
 
         <Grid.RowDefinitions>
             <RowDefinition Height="98*"/>
@@ -24,19 +24,19 @@
             <ColumnDefinition Width="129*"/>
         </Grid.ColumnDefinitions>
 
-        <Image Source="/Resources/PokerTable.png" Grid.RowSpan="2" Grid.ColumnSpan="5"></Image>
+        <Image Source="/Resources/PokerTable.png" Grid.RowSpan="2" Grid.ColumnSpan="5" Margin="14,0,14,0"></Image>
 
-        <Button x:Name="btnHold1" Content="Hold" HorizontalAlignment="Left" Margin="12,10,0,0" VerticalAlignment="Top" Height="50" Width="58" Grid.Row="1" Click="btnHold1_Click"/>
-        <Button x:Name="btnHold2" Content="Hold" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" Height="50" Width="56" Grid.Row="1" Grid.Column="1" Click="btnHold2_Click"/>
-        <Button x:Name="btnHold3" Content="Hold" HorizontalAlignment="Left" Margin="54,10,0,0" VerticalAlignment="Top" Height="50" Width="58" Grid.Row="1" Grid.Column="2" Click="btnHold3_Click"/>
-        <Button x:Name="btnHold4" Content="Hold" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" Height="50" Width="58" Grid.Row="1" Grid.Column="3" Click="btnHold4_Click"/>
+        <Button x:Name="btnHold1" Content="Hold" HorizontalAlignment="Left" Margin="32,10,0,0" VerticalAlignment="Top" Height="50" Width="58" Grid.Row="1" Click="btnHold1_Click"/>
+        <Button x:Name="btnHold2" Content="Hold" HorizontalAlignment="Left" Margin="71,10,0,0" VerticalAlignment="Top" Height="50" Width="56" Grid.Row="1" Grid.Column="1" Click="btnHold2_Click"/>
+        <Button x:Name="btnHold3" Content="Hold" HorizontalAlignment="Left" Margin="58,10,0,0" VerticalAlignment="Top" Height="50" Width="58" Grid.Row="1" Grid.Column="2" Click="btnHold3_Click"/>
+        <Button x:Name="btnHold4" Content="Hold" Margin="49,11,67,0" VerticalAlignment="Top" Height="50" Grid.Row="1" Grid.Column="3" Click="btnHold4_Click"/>
         <Button x:Name="btnHold5" Content="Hold" HorizontalAlignment="Left" Margin="61,10,0,0" VerticalAlignment="Top" Height="50" Width="58" Grid.Row="1" Grid.Column="4" Click="btnHold5_Click"/>
-        <Image x:Name="card1" Margin="-4,75,38,43" Grid.Row="1"/>
-        <Image x:Name="card2" Margin="38,75,43,43" Grid.Row="1" Grid.Column="1"/>
-        <Image x:Name="card3" Margin="25,75,44,42" Grid.Row="1" Grid.Column="2"/>
-        <Image x:Name="card4" HorizontalAlignment="Left" Height="136" Margin="31,75,0,0" VerticalAlignment="Top" Width="95" Grid.Row="1" Grid.Column="3"/>
-        <Image x:Name="card5" HorizontalAlignment="Left" Height="136" Margin="35,75,0,0" VerticalAlignment="Top" Width="95" Grid.Row="1" Grid.Column="4"/>
-        <Image x:Name="imgDeck" HorizontalAlignment="Left" Height="136" Margin="35,0,0,0" VerticalAlignment="Center" Width="95" Grid.Column="4" Source="/Resources/BlackJack/Cards/cardBack_blue5.png"/>
+        <Image x:Name="card1" Margin="10,68,27,34" Grid.Row="1" />
+        <Image x:Name="card2" Margin="43,64,32,30" Grid.Row="1" Grid.Column="1"/>
+        <Image x:Name="card3" Margin="28,70,41,32" Grid.Row="1" Grid.Column="2"/>
+        <Image x:Name="card4" Margin="27,63,52,25" Width="95" Grid.Row="1" Grid.Column="3"/>
+        <Image x:Name="card5" Margin="25,66,10,21" Width="95" Grid.Row="1" Grid.Column="4"/>
+        <Image x:Name="imgDeck" Height="136" Margin="25,42,10,18" Width="95" Grid.Column="4" Source="/Resources/BlackJack/Cards/cardBack_blue5.png"/>
         <Label x:Name="txtBalance" Content="Balance: " FontSize="15" HorizontalAlignment="Center" VerticalAlignment="Top" Width="129" Height="54" Foreground="White" Margin="0,10,0,0"/>
         <Grid Grid.Column="1" Grid.ColumnSpan="3">
             <Grid.RowDefinitions>
@@ -56,15 +56,15 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
-            <Image Margin="1,8,1,9" Source="/Resources/Overall UI/Chip1.png" MouseDown="chip1Click" />
-            <Image Grid.Column="1" Source="/Resources/Overall UI/Chip5.png" Margin="0,8,0,9" MouseDown="chip5Click"/>
-            <Image Margin="57,8,1,9" Grid.Column="1" Grid.ColumnSpan="2" Source="/Resources/Overall UI/Chip10.png" MouseDown="chip10Click"/>
-            <Image Grid.Column="3" Source="/Resources/Overall UI/Chip20.png" Margin="0,8,0,9" MouseDown="chip20Click"/>
-            <Image Margin="57,8,1,9" Grid.Column="3" Grid.ColumnSpan="2" Source="/Resources/Overall UI/Chip50.png" MouseDown="chip50Click"/>
-            <Image Grid.Column="5" Source="/Resources/Overall UI/Chip100.png" Margin="0,8,0,9" MouseDown="chip100Click"/>
-            <Image Margin="57,8,1,9" Grid.Column="5" Grid.ColumnSpan="2" Source="/Resources/Overall UI/Chip500.png" MouseDown="chip500Click"/>
-            <Image Grid.Column="7" Source="/Resources/Overall UI/Chip1000.png" Margin="0,8,0,9" MouseDown="chip1KClick"/>
-            <Image Margin="1,8,1,9" Grid.Column="8" Grid.ColumnSpan="1" Source="/Resources/Overall UI/Chip5000.png" MouseDown="chip5KClick"/>
+            <Image Margin="1,8,1,9" Source="/Resources/Overall UI/Chip1.png" MouseLeftButtonDown="chip1Click" MouseRightButtonDown="btnRemoveChip1_Click" RenderTransformOrigin="9372430429.799,2634071657.633" />
+            <Image Grid.Column="1" Source="/Resources/Overall UI/Chip5.png" Margin="0,8,0,9" MouseLeftButtonDown="chip5Click" MouseRightButtonDown="btnRemoveChip5_Click"/>
+            <Image Margin="57,8,1,9" Grid.Column="1" Grid.ColumnSpan="2" Source="/Resources/Overall UI/Chip10.png" MouseLeftButtonDown="chip10Click" MouseRightButtonDown="btnRemoveChip10_Click"/>
+            <Image Grid.Column="3" Source="/Resources/Overall UI/Chip20.png" Margin="0,8,0,9" MouseLeftButtonDown="chip20Click" MouseRightButtonDown="btnRemoveChip20_Click"/>
+            <Image Margin="57,8,1,9" Grid.Column="3" Grid.ColumnSpan="2" Source="/Resources/Overall UI/Chip50.png" MouseLeftButtonDown="chip50Click" MouseRightButtonDown="btnRemoveChip50_Click"/>
+            <Image Grid.Column="5" Source="/Resources/Overall UI/Chip100.png" Margin="0,8,0,9" MouseLeftButtonDown="chip100Click" MouseRightButtonDown="btnRemoveChip100_Click"/>
+            <Image Margin="57,8,1,9" Grid.Column="5" Grid.ColumnSpan="2" Source="/Resources/Overall UI/Chip500.png" MouseLeftButtonDown="chip500Click" MouseRightButtonDown="btnRemoveChip500_Click"/>
+            <Image Grid.Column="7" Source="/Resources/Overall UI/Chip1000.png" Margin="0,8,0,9" MouseLeftButtonDown="chip1KClick" MouseRightButtonDown="btnRemoveChip1K_Click"/>
+            <Image Margin="1,8,1,9" Grid.Column="8" Grid.ColumnSpan="1" Source="/Resources/Overall UI/Chip5000.png" MouseLeftButtonDown="chip5KClick" MouseRightButtonDown="btnRemoveChip5K_Click"/>
             <Border Grid.Row="1" >
                 <Label x:Name="txtChip1" Content="0" Grid.Row="1" Margin="0,0,3,0" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" />
             </Border>
@@ -93,15 +93,15 @@
             <Border Grid.Column="1" Grid.Row="1">
                 <Label x:Name="txtChip5" Content="0"  Margin="1,0,1,0"  Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
             </Border>
-            <Button Content="Remove Chip" Margin="0,0,57,24" Grid.Row="2" Grid.ColumnSpan="2" FontSize="9"/>
-            <Button Content="Remove Chip" Margin="0,0,57,24" Grid.Row="2" Grid.ColumnSpan="2" Grid.Column="1" FontSize="9"/>
-            <Button Content="Remove Chip" Margin="57,0,57,24" Grid.Row="2" Grid.ColumnSpan="3" Grid.Column="1" FontSize="9"/>
-            <Button Content="Remove Chip" Margin="0,0,57,24" Grid.Row="2" Grid.ColumnSpan="2" Grid.Column="3" FontSize="9"/>
-            <Button Content="Remove Chip" Margin="57,0,57,24" Grid.Row="2" Grid.ColumnSpan="3" Grid.Column="3" FontSize="9"/>
-            <Button Content="Remove Chip" Margin="57,0,57,24" Grid.Row="2" Grid.ColumnSpan="3" Grid.Column="4" FontSize="9"/>
-            <Button Content="Remove Chip" Margin="57,0,57,24" Grid.Row="2" Grid.ColumnSpan="3" Grid.Column="5" FontSize="9"/>
-            <Button Content="Remove Chip" Margin="0,0,57,24" Grid.Row="2" Grid.ColumnSpan="2" Grid.Column="7" FontSize="9"/>
-            <Button Content="Remove Chip" Margin="57,0,0,24" Grid.Row="2" Grid.ColumnSpan="2" Grid.Column="7" FontSize="9" />
+            <Button x:Name="btnRemoveChip1" Content="Remove Chip" Margin="0,0,59,24" Grid.Row="2" Grid.ColumnSpan="2" FontSize="9" Click="btnRemoveChip1_Click"/>
+            <Button x:Name="btnRemoveChip2" Content="Remove Chip" Margin="0,0,0,24" Grid.Row="2" Grid.Column="1" FontSize="9" Click="btnRemoveChip2_Click"/>
+            <Button x:Name="btnRemoveChip3" Content="Remove Chip" Margin="59,0,59,24" Grid.Row="2" Grid.ColumnSpan="3" Grid.Column="1" FontSize="9" Click="btnRemoveChip3_Click"/>
+            <Button x:Name="btnRemoveChip4" Content="Remove Chip" Grid.Row="2" Grid.Column="3" FontSize="9" Click="btnRemoveChip4_Click" Height="25" VerticalAlignment="Top"/>
+            <Button x:Name="btnRemoveChip5" Content="Remove Chip" Margin="59,0,60,24" Grid.Row="2" Grid.ColumnSpan="3" Grid.Column="3" FontSize="9" Click="btnRemoveChip5_Click"/>
+            <Button x:Name="btnRemoveChip6" Content="Remove Chip" Margin="0,0,59,24" Grid.Row="2" Grid.ColumnSpan="2" Grid.Column="5" FontSize="9" Click="btnRemoveChip6_Click"/>
+            <Button x:Name="btnRemoveChip7" Content="Remove Chip" Margin="0,0,57,24" Grid.Row="2" Grid.ColumnSpan="2" Grid.Column="6" FontSize="9" Click="btnRemoveChip7_Click"/>
+            <Button x:Name="btnRemoveChip8" Content="Remove Chip" Margin="59,0,59,24" Grid.Row="2" Grid.ColumnSpan="3" Grid.Column="6" FontSize="9" Click="btnRemoveChip8_Click"/>
+            <Button x:Name="btnRemoveChip9" Content="Remove Chip" Margin="0,0,0,24" Grid.Row="2" Grid.Column="8" FontSize="9" Click="btnRemoveChip9_Click" />
 
 
 

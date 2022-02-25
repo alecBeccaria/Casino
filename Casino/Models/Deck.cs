@@ -13,6 +13,8 @@ namespace Casino.Models
         private string[] cardNames = { "Ace", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Jack", "Queen", "King" };
 
 
+
+
         public Deck()
         {
             createDeck();
@@ -45,12 +47,12 @@ namespace Casino.Models
 
         public void setCardImages()
         {
-            
+
             foreach (Card card in deck)
             {
 
                 Image image = new Image();
-               
+
                 if (card.name.Equals("Ace"))
                 {
                     image.Source = new BitmapImage(
@@ -74,12 +76,10 @@ namespace Casino.Models
                 else
                 {
                     string suit = card.suit.ToString();
-                    
                     Trace.WriteLine(card.name);
-                    
                     image.Source = new BitmapImage(
                     new Uri($"pack://application:,,,/Resources/BlackJack/Cards/card{suit}{card.value.ToString()}.png"));
-                    
+
                 }
 
                 card.image = image;
