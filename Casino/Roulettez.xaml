@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="Roulette" Height="450" Width="800">
         <Window.Background>
-            <ImageBrush ImageSource="/Generic Felt Mat.jpeg" Stretch="UniformToFill"/>
+        <ImageBrush ImageSource="Resources/Overall UI/Generic Felt Mat.jpeg" Stretch="UniformToFill"/>
         </Window.Background>
     <DockPanel>
         <Grid Panel.ZIndex="0">
@@ -19,8 +19,8 @@
                 <RowDefinition Height=".8*"/>
                 <RowDefinition Height=".2*"/>
             </Grid.RowDefinitions>
-            <Image Source="/RouletteWheel_SingleZero.png" Grid.Row="0" Grid.Column="0"/>
-            <Image Source="/Roulette_SingleZero.png" Grid.Row="0" Grid.Column="1" Panel.ZIndex="-15"/>
+            <Image Source="Resources/Overall UI/RouletteWheel_SingleZero.png" Grid.Row="0" Grid.Column="0"/>
+            <Image Source="Resources/Overall UI/Roulette_SingleZero.png" Grid.Row="0" Grid.Column="1" Panel.ZIndex="-15"/>
             <TextBlock FontSize="20" FontWeight="Bold" Grid.Column="1" VerticalAlignment="Bottom" HorizontalAlignment="Center" Foreground="White">Chips: 000</TextBlock>
             <Grid Panel.ZIndex="-10" Grid.Column="1" Grid.Row="0" Margin="0 70">
                 <Grid.ColumnDefinitions>
@@ -120,31 +120,31 @@
                 </Grid.ColumnDefinitions>
                 <Button Content="Back" FontSize="30" FontWeight="Bold" Grid.ColumnSpan="2" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                 <Button Margin="10" Width="50" Height="50" Name="_1Button" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="2" Background="#00000000" BorderBrush="#00000000" Click="onBetClick">
-                    <Image x:Name="_1" Source="/Chip1.png"></Image>
+                    <Image x:Name="_1" Source="Resources/Overall UI/Chip1.png"></Image>
                 </Button>
                 <Button Margin="10" Width="50" Height="50" Name="_5Button" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="3" Background="#00000000" BorderBrush="#00000000" Click="onBetClick" >
-                    <Image x:Name="_5" Source="/Chip5.png"></Image>
+                    <Image x:Name="_5" Source="Resources/Overall UI/Chip5.png"></Image>
                 </Button>
                 <Button Margin="10" Width="50" Height="50" Name="_10Button" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="4" Background="#00000000" BorderBrush="#00000000" Click="onBetClick" >
-                    <Image x:Name="_10" Source="/Chip10.png"></Image>
+                    <Image x:Name="_10" Source="Resources/Overall UI/Chip10.png"></Image>
                 </Button>
                 <Button Margin="10" Width="50" Height="50" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="5" Background="#00000000" BorderBrush="#00000000" Click="onBetClick" >
-                    <Image x:Name="_20" Source="/Chip20.png"></Image>
+                    <Image x:Name="_20" Source="Resources/Overall UI/Chip20.png"></Image>
                 </Button>
                 <Button Margin="10" Width="50" Height="50" Name="_50Button" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="6" Background="#00000000" BorderBrush="#00000000" Click="onBetClick" >
-                    <Image x:Name="_50" Source="/Chip50.png"></Image>
+                    <Image x:Name="_50" Source="Resources/Overall UI/Chip50.png"></Image>
                 </Button>
                 <Button Margin="10" Width="50" Height="50" Name="_100Button" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="7" Background="#00000000" BorderBrush="#00000000" Click="onBetClick" >
-                    <Image x:Name="_100" Source="/Chip100.png"></Image>
+                    <Image x:Name="_100" Source="Resources/Overall UI/Chip100.png"></Image>
                 </Button>
                 <Button Margin="10" Width="50" Height="50" Name="_500Button" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="8" Background="#00000000" BorderBrush="#00000000" Click="onBetClick">
-                    <Image x:Name="_500" Source="/Chip500.png"></Image>
+                    <Image x:Name="_500" Source="Resources/Overall UI/Chip500.png"></Image>
                 </Button>
                 <Button Margin="10" Width="50" Height="50" Name="_1000Button" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="9" Background="#00000000" BorderBrush="#00000000" Click="onBetClick" >
-                    <Image x:Name="_1000" Source="/Chip1000.png"></Image>
+                    <Image x:Name="_1000" Source="Resources/Overall UI/Chip1000.png"></Image>
                 </Button>
                 <Button Margin="10" Width="50" Height="50" Name="_5000Button" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="10" Background="#00000000" BorderBrush="#00000000" Click="onBetClick" >
-                    <Image x:Name="_5000" Source="/Chip5000.png"></Image>
+                    <Image x:Name="_5000" Source="Resources/Overall UI/Chip5000.png"></Image>
                 </Button>
                 <Button Content="Spin" FontSize="30" FontWeight="Bold" Grid.ColumnSpan="2" Grid.Column="11" HorizontalAlignment="Center" VerticalAlignment="Center" Click="Spin_Click"/>
             </Grid>
