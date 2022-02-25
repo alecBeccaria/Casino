@@ -93,15 +93,6 @@
             <Border Grid.Column="1" Grid.Row="1">
                 <Label x:Name="txtChip5" Content="0"  Margin="1,0,1,0"  Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
             </Border>
-            <Button x:Name="btnRemoveChip1" Content="Remove Chip" Margin="0,0,59,24" Grid.Row="2" Grid.ColumnSpan="2" FontSize="9" Click="btnRemoveChip1_Click"/>
-            <Button x:Name="btnRemoveChip2" Content="Remove Chip" Margin="0,0,0,24" Grid.Row="2" Grid.Column="1" FontSize="9" Click="btnRemoveChip2_Click"/>
-            <Button x:Name="btnRemoveChip3" Content="Remove Chip" Margin="59,0,59,24" Grid.Row="2" Grid.ColumnSpan="3" Grid.Column="1" FontSize="9" Click="btnRemoveChip3_Click"/>
-            <Button x:Name="btnRemoveChip4" Content="Remove Chip" Grid.Row="2" Grid.Column="3" FontSize="9" Click="btnRemoveChip4_Click" Height="25" VerticalAlignment="Top"/>
-            <Button x:Name="btnRemoveChip5" Content="Remove Chip" Margin="59,0,60,24" Grid.Row="2" Grid.ColumnSpan="3" Grid.Column="3" FontSize="9" Click="btnRemoveChip5_Click"/>
-            <Button x:Name="btnRemoveChip6" Content="Remove Chip" Margin="0,0,59,24" Grid.Row="2" Grid.ColumnSpan="2" Grid.Column="5" FontSize="9" Click="btnRemoveChip6_Click"/>
-            <Button x:Name="btnRemoveChip7" Content="Remove Chip" Margin="0,0,57,24" Grid.Row="2" Grid.ColumnSpan="2" Grid.Column="6" FontSize="9" Click="btnRemoveChip7_Click"/>
-            <Button x:Name="btnRemoveChip8" Content="Remove Chip" Margin="59,0,59,24" Grid.Row="2" Grid.ColumnSpan="3" Grid.Column="6" FontSize="9" Click="btnRemoveChip8_Click"/>
-            <Button x:Name="btnRemoveChip9" Content="Remove Chip" Margin="0,0,0,24" Grid.Row="2" Grid.Column="8" FontSize="9" Click="btnRemoveChip9_Click" />
 
 
 
