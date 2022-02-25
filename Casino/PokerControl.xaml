@@ -36,7 +36,7 @@
         <Image x:Name="card3" Margin="25,75,44,42" Grid.Row="1" Grid.Column="2"/>
         <Image x:Name="card4" HorizontalAlignment="Left" Height="136" Margin="31,75,0,0" VerticalAlignment="Top" Width="95" Grid.Row="1" Grid.Column="3"/>
         <Image x:Name="card5" HorizontalAlignment="Left" Height="136" Margin="35,75,0,0" VerticalAlignment="Top" Width="95" Grid.Row="1" Grid.Column="4"/>
-        <Image x:Name="imgDeck" HorizontalAlignment="Left" Height="136" Margin="35,34,0,0" VerticalAlignment="Top" Width="95" Grid.Column="4" Source="/cardBack_blue5.png"/>
+        <Image x:Name="imgDeck" HorizontalAlignment="Left" Height="136" Margin="35,0,0,0" VerticalAlignment="Center" Width="95" Grid.Column="4" Source="/Resources/BlackJack/Cards/cardBack_blue5.png"/>
         <Label x:Name="txtBalance" Content="Balance: " FontSize="15" HorizontalAlignment="Center" VerticalAlignment="Top" Width="129" Height="54" Foreground="White" Margin="0,10,0,0"/>
         <Grid Grid.Column="1" Grid.ColumnSpan="3">
             <Grid.RowDefinitions>
@@ -56,44 +56,52 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
-            <Image Margin="0,0,1,0" Source="/Chip1.png" Height="60" VerticalAlignment="Center"/>
-            <Image Grid.Column="1" Source="/Chip5.png" Height="60" VerticalAlignment="Center"/>
-            <Image Margin="57,0,1,0" Grid.Column="1" Grid.ColumnSpan="2" Source="/Chip10.png" Height="60" VerticalAlignment="Center"/>
-            <Image Grid.Column="3" Source="/Chip20.png" Height="60" VerticalAlignment="Center"/>
-            <Image Margin="57,0,1,0" Grid.Column="3" Grid.ColumnSpan="2" Source="/Chip50.png" Height="60" VerticalAlignment="Center"/>
-            <Image Grid.Column="5" Source="/Chip100.png" Height="60" VerticalAlignment="Center"/>
-            <Image Margin="57,0,1,0" Grid.Column="5" Grid.ColumnSpan="2" Source="/Chip500.png" Height="60" VerticalAlignment="Center"/>
-            <Image Grid.Column="7" Source="/Chip1000.png" Height="60" VerticalAlignment="Center"/>
-            <Image Margin="1,0,1,0" Grid.Column="8" Grid.ColumnSpan="1" Source="/Chip5000.png" Height="60" VerticalAlignment="Center"/>
-            <Button Focusable="False"  Content="Go Back" Command="{Binding DataContext.playViewCommand, RelativeSource={RelativeSource AncestorType={x:Type local:MainWindow}}}" Margin="0,0,57,0" Grid.Row="2" Grid.ColumnSpan="2"/>
+            <Image Margin="1,8,1,9" Source="/Resources/Overall UI/Chip1.png" MouseDown="chip1Click" />
+            <Image Grid.Column="1" Source="/Resources/Overall UI/Chip5.png" Margin="0,8,0,9" MouseDown="chip5Click"/>
+            <Image Margin="57,8,1,9" Grid.Column="1" Grid.ColumnSpan="2" Source="/Resources/Overall UI/Chip10.png" MouseDown="chip10Click"/>
+            <Image Grid.Column="3" Source="/Resources/Overall UI/Chip20.png" Margin="0,8,0,9" MouseDown="chip20Click"/>
+            <Image Margin="57,8,1,9" Grid.Column="3" Grid.ColumnSpan="2" Source="/Resources/Overall UI/Chip50.png" MouseDown="chip50Click"/>
+            <Image Grid.Column="5" Source="/Resources/Overall UI/Chip100.png" Margin="0,8,0,9" MouseDown="chip100Click"/>
+            <Image Margin="57,8,1,9" Grid.Column="5" Grid.ColumnSpan="2" Source="/Resources/Overall UI/Chip500.png" MouseDown="chip500Click"/>
+            <Image Grid.Column="7" Source="/Resources/Overall UI/Chip1000.png" Margin="0,8,0,9" MouseDown="chip1KClick"/>
+            <Image Margin="1,8,1,9" Grid.Column="8" Grid.ColumnSpan="1" Source="/Resources/Overall UI/Chip5000.png" MouseDown="chip5KClick"/>
             <Border Grid.Row="1" >
-                <Label x:Name="txtChip1" Content="0" Grid.Row="1" Margin="0,0,3,0" Foreground="White" HorizontalAlignment="Center" />
+                <Label x:Name="txtChip1" Content="0" Grid.Row="1" Margin="0,0,3,0" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" />
             </Border>
             <Border Grid.Row="1" Grid.Column="2">
-                <Label x:Name="txtChip10" Content="0" Grid.Row="1" Margin="1,0,1,0"  Foreground="White" HorizontalAlignment="Center"/>
+                <Label x:Name="txtChip10" Content="0" Grid.Row="1" Margin="1,0,1,0"  Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 
             </Border>
             <Border Grid.Row="1"  Grid.Column="3">
-                <Label x:Name="txtChip20" Content="0" Grid.Row="1" Margin="0,0,1,0" Foreground="White" HorizontalAlignment="Center"/>
+                <Label x:Name="txtChip20" Content="0" Grid.Row="1" Margin="0,0,1,0" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
             </Border >
             <Border Grid.Row="1" Grid.Column="4">
-                <Label x:Name="txtChip50" Content="0" Grid.Row="1" Margin="1,0,1,0"  Foreground="White" HorizontalAlignment="Center"/>
+                <Label x:Name="txtChip50" Content="0" Grid.Row="1" Margin="1,0,1,0"  Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
             </Border>
             <Border Grid.Row="1" Grid.Column="5">
-                <Label x:Name="txtChip100" Content="0" Grid.Row="1" Margin="1,0,1,0"  Foreground="White" HorizontalAlignment="Center"/>
+                <Label x:Name="txtChip100" Content="0" Grid.Row="1" Margin="1,0,1,0"  Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
             </Border>
             <Border Grid.Row="1"  Grid.Column="6">
-                <Label x:Name="txtChip500" Content="0" Grid.Row="1" Margin="1,0,1,0"  Foreground="White" HorizontalAlignment="Center"/>
+                <Label x:Name="txtChip500" Content="0" Grid.Row="1" Margin="1,0,1,0"  Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
             </Border>
             <Border Grid.Row="1" Grid.Column="7">
-                <Label x:Name="txtChip1K" Content="0" Grid.Row="1" Margin="1,0,1,0"  Foreground="White" HorizontalAlignment="Center"/>
+                <Label x:Name="txtChip1K" Content="0" Grid.Row="1" Margin="1,0,1,0"  Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
             </Border>
             <Border Grid.Row="1" Grid.Column="8">
-                <Label x:Name="txtChip5K" Content="0" Grid.Row="1" Margin="1,0,1,0"  Foreground="White" HorizontalAlignment="Center"/>
+                <Label x:Name="txtChip5K" Content="0" Grid.Row="1" Margin="1,0,1,0"  Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
             </Border>
             <Border Grid.Column="1" Grid.Row="1">
-                <Label x:Name="txtChip5" Content="0"  Margin="1,0,1,0"  Foreground="White" HorizontalAlignment="Center"/>
+                <Label x:Name="txtChip5" Content="0"  Margin="1,0,1,0"  Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
             </Border>
+            <Button Content="Remove Chip" Margin="0,0,57,24" Grid.Row="2" Grid.ColumnSpan="2" FontSize="9"/>
+            <Button Content="Remove Chip" Margin="0,0,57,24" Grid.Row="2" Grid.ColumnSpan="2" Grid.Column="1" FontSize="9"/>
+            <Button Content="Remove Chip" Margin="57,0,57,24" Grid.Row="2" Grid.ColumnSpan="3" Grid.Column="1" FontSize="9"/>
+            <Button Content="Remove Chip" Margin="0,0,57,24" Grid.Row="2" Grid.ColumnSpan="2" Grid.Column="3" FontSize="9"/>
+            <Button Content="Remove Chip" Margin="57,0,57,24" Grid.Row="2" Grid.ColumnSpan="3" Grid.Column="3" FontSize="9"/>
+            <Button Content="Remove Chip" Margin="57,0,57,24" Grid.Row="2" Grid.ColumnSpan="3" Grid.Column="4" FontSize="9"/>
+            <Button Content="Remove Chip" Margin="57,0,57,24" Grid.Row="2" Grid.ColumnSpan="3" Grid.Column="5" FontSize="9"/>
+            <Button Content="Remove Chip" Margin="0,0,57,24" Grid.Row="2" Grid.ColumnSpan="2" Grid.Column="7" FontSize="9"/>
+            <Button Content="Remove Chip" Margin="57,0,0,24" Grid.Row="2" Grid.ColumnSpan="2" Grid.Column="7" FontSize="9" />
 
 
 
@@ -102,7 +110,8 @@
 
 
         </Grid>
-        <Label x:Name="txtBalance_Copy" Content="Pot: " FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Top" Width="129" Height="37" Foreground="White" Margin="-5,77,0,0"/>
+        <Button Focusable="False"  Content="Go Back" Command="{Binding DataContext.playViewCommand, RelativeSource={RelativeSource AncestorType={x:Type local:MainWindow}}}" Margin="0,147,70,0"/>
+        <Button x:Name="btnDraw" Content="Draw" HorizontalAlignment="Left" Margin="0,64,0,0" VerticalAlignment="Top" Height="50" Width="58" Click="btnHold_Click" />
     </Grid>
 
 </UserControl>
