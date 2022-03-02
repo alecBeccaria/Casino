@@ -50,9 +50,9 @@ namespace Casino
             SlotType slot1 = game.Slots[0];
             SlotType slot2 = game.Slots[1];
             SlotType slot3 = game.Slots[2];
-            lblSlotOne.Content = slot1.ToString();
-            lblSlotTwo.Content = slot2.ToString();
-            lblSlotThree.Content = slot3.ToString();
+            SlotOne.Source = (ImageSource)ReturnImageForSlot(slot1);
+            SlotTwo.Source =(ImageSource) ReturnImageForSlot(slot2);
+            SlotThree.Source = (ImageSource)ReturnImageForSlot(slot3);
             if (game.CheckSlotsWin())
             {
                 lblWin.Content = "You Won!";
@@ -74,6 +74,24 @@ namespace Casino
                 lblActiveBet.Content = slotGameBet.ToString();
                 Player.chips -= slotGameBet;
                 lblBalance.Content = Player.chips.ToString();
+            }
+        }
+        private Object ReturnImageForSlot(SlotType slot)
+        {
+            switch (slot)
+            {
+                case SlotType.Cherry:
+                    return FindResource("Cherry");
+                case SlotType.Seven:
+                    return FindResource("Seven");
+                case SlotType.Bells:
+                    return FindResource("Bells");
+                case SlotType.Bars:
+                    return FindResource("Bars");
+                default:
+                    lblBalance.Content = "An Error has Occured";
+                    return null;
+
             }
         }
     }

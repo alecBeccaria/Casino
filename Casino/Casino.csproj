@@ -90,6 +90,10 @@
     <None Remove="Resources\Overall UI\Generic Felt Mat.jpeg" />
     <None Remove="Resources\PokerTable.png" />
     <None Remove="Resources\Poker\PokerTable.png" />
+    <None Remove="Resources\Slots\Wheel - Bars.png" />
+    <None Remove="Resources\Slots\Wheel - Bell.png" />
+    <None Remove="Resources\Slots\Wheel - Cherry.png" />
+    <None Remove="Resources\Slots\Wheel - Seven.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -174,6 +178,10 @@
     <Resource Include="Resources\Overall UI\Generic Felt Mat.jpeg" />
     <Resource Include="Resources\PokerTable.png" />
     <Resource Include="Resources\Poker\PokerTable.png" />
+    <Resource Include="Resources\Slots\Wheel - Bars.png" />
+    <Resource Include="Resources\Slots\Wheel - Bell.png" />
+    <Resource Include="Resources\Slots\Wheel - Cherry.png" />
+    <Resource Include="Resources\Slots\Wheel - Seven.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />
