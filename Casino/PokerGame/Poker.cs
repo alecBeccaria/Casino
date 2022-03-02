@@ -1,20 +1,29 @@
 ﻿using Casino.Models;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Diagnostics;
 
 namespace Casino.PokerGame
 {
-    class Poker
+    class Poker : INotifyPropertyChanged
     {
         public Deck deck { get; set; }
 
         public Deck discardDeck { get; set; }
 
-        public Dictionary<string, int> potValues;
+        private Dictionary<string, int> potValues;
 
         public bool[] heldCards = new bool[] { false, false, false, false, false };
 
-
+        public Dictionary<string, int> PotValues
+        {
+            get { return potValues; }
+            set
+            {
+                potValues = value;
+                OnPropertyChanged("potValues");
+            }
+        }
 
         public string url { get; set; }
         public void initialize()
@@ -46,6 +55,15 @@ namespace Casino.PokerGame
         {
 
         }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        protected void OnPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+
 
     }
 }
