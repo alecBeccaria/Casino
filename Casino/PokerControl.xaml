@@ -92,7 +92,7 @@
                 <Label x:Name="txtChip5" Content="0"  Margin="1,0,1,0"  Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
             </Border>
             <Label Foreground="White" HorizontalAlignment="Center" Grid.Row="2" VerticalAlignment="Center" Width="178" Height="49" Grid.ColumnSpan="3"/>
-            <Button x:Name="btnPlaceBet" Content="Place Bet" Grid.Column="3" HorizontalAlignment="Center" Grid.Row="2" VerticalAlignment="Center" Height="29" Width="60" Click="btnPlaceBet_Click"/>
+            <Button x:Name="btnPlaceBet" Content="Place Bet" Grid.Column="3" HorizontalAlignment="Left" Grid.Row="2" VerticalAlignment="Center" Height="29" Width="60" Click="btnPlaceBet_Click" Grid.ColumnSpan="2" Margin="57,0,0,0"/>
         </Grid>
         <Button Focusable="False"  Content="Go Back" Command="{Binding DataContext.playViewCommand, RelativeSource={RelativeSource AncestorType={x:Type local:MainWindow}}}" Margin="0,147,70,0" Height="30" VerticalAlignment="Top"/>
         <Button x:Name="btnDraw" Content="Draw" HorizontalAlignment="Left" Margin="0,110,0,0" VerticalAlignment="Top" Height="27" Width="63" Click="btnDraw_Click" />
