@@ -31,8 +31,8 @@
                 </Grid.RowDefinitions>
                 <Button Content="Blackjack" Grid.Column="1" Grid.Row="1"/>
                 <Button Content="5 Card Poker" Command="{Binding DataContext.pokerViewCommand, RelativeSource={RelativeSource AncestorType={x:Type local:MainWindow}}}" Grid.Column="1" Grid.Row="5"/>
-                <Button Content="Slots" Grid.Column="3" Grid.Row="3"/>
-                <Button Content="Craps" Grid.Column="5" Grid.Row="5"/>
+                <Button Content="Slots" Command="{Binding DataContext.slotsViewCommand, RelativeSource={RelativeSource AncestorType={x:Type local:MainWindow}}}" Grid.Column="3" Grid.Row="3"/>
+                <Button Content="Craps Coming Soon" Grid.Column="5" Grid.Row="5"/>
                 <Button Content="Roulette" Command="{Binding DataContext.rouletteViewCommand, RelativeSource={RelativeSource AncestorType={x:Type local:MainWindow}}}" Grid.Column="5" Grid.Row="1"/>
                 <Button Focusable="False"  Content="Go Back" Grid.Column="0" Grid.Row="6" Command="{Binding DataContext.dashViewCommand, RelativeSource={RelativeSource AncestorType={x:Type local:MainWindow}}}"/>
                 <Button Content="Bank" Command="{Binding DataContext.bankViewCommand, RelativeSource={RelativeSource AncestorType={x:Type local:MainWindow}}}" Grid.Column="6" Grid.Row="6"/>
