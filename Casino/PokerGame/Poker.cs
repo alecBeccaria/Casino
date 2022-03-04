@@ -15,7 +15,7 @@ namespace Casino.PokerGame
 
         private Dictionary<string, int> potValues;
 
-        
+        public int pot { get; set; } = 0;
 
         public Dictionary<string, int> PotValues
         {
@@ -43,22 +43,35 @@ namespace Casino.PokerGame
                 {"1K", 0},
                 {"5K", 0}
             };
-            List<Card> cardList = deck.getDeck();
-            Trace.WriteLine(cardList[0].suit.ToString());
-            Trace.WriteLine(cardList[0].value.ToString());
-            Trace.WriteLine(cardList[0].name.ToString());
-
+            //fixFaceCardValues();
             deck.shuffleDeck();
+            List<Card> cardList = deck.getDeck();
+            for (int i = 0; i < cardList.Count; i++)
+            {
+                Trace.WriteLine($"{i+1} " + cardList[i].value.ToString() +" " + cardList[i].suit.ToString()+ " " + cardList[i].name.ToString());
+
+            }
         }
 
-        public List<Card> getNextHand()
+        
+
+        public List<Card> getNextHand(int numberOfCards)
         {
-            
             List<Card> hand = new List<Card>();
-            for(int i = deckIndex; i < deckIndex+5; i++)
+            int toAddToDeckIndex = 0;
+
+            for(int i = deckIndex; i < deckIndex+numberOfCards; i++)
             {
+                if(i == deck.getDeck().Count)
+                {
+                    deck.shuffleDeck();
+                    deckIndex = 0;
+                    i = 0;
+                }
                 hand.Add(deck.getDeck()[i]);
+                toAddToDeckIndex++;
             }
+            deckIndex += toAddToDeckIndex;
 
             return hand;
         }

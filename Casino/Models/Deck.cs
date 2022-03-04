@@ -76,7 +76,7 @@ namespace Casino.Models
                 else
                 {
                     string suit = card.suit.ToString();
-                    Trace.WriteLine(card.name);
+                    
                     image.Source = new BitmapImage(
                     new Uri($"pack://application:,,,/Resources/BlackJack/Cards/card{suit}{card.value.ToString()}.png"));
 

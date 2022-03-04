@@ -35,7 +35,7 @@
         <Image x:Name="card4" Margin="20,70,42,0" Width="112" Height="152" Grid.Row="1" Grid.Column="3" VerticalAlignment="Top"/>
         <Image x:Name="card5" Margin="13,70,5,0" Width="112" Height="152" Grid.Row="1" Grid.Column="4" VerticalAlignment="Top"/>
         <Image x:Name="imgDeck" Margin="10,0,8,10" Source="/Resources/BlackJack/Cards/cardBack_blue5.png" Width="112" Height="152" VerticalAlignment="Bottom" Grid.Column="4"/>
-        <Label x:Name="txtBalance" Content="Balance: " FontSize="15" HorizontalAlignment="Center" VerticalAlignment="Top" Width="129" Height="54" Foreground="White" Margin="0,10,0,0"/>
+        <Label x:Name="txtBalance" Content="Balance: " FontSize="15" HorizontalAlignment="Center" VerticalAlignment="Top" Width="129" Height="31" Foreground="White" Margin="0,10,0,0"/>
         <Grid Grid.Column="1" Grid.ColumnSpan="3">
             <Grid.RowDefinitions>
                 <RowDefinition Height="11*"/>
@@ -91,16 +91,12 @@
             <Border Grid.Column="1" Grid.Row="1">
                 <Label x:Name="txtChip5" Content="0"  Margin="1,0,1,0"  Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
             </Border>
-
-
-
-
-
-
-
+            <Label Foreground="White" HorizontalAlignment="Center" Grid.Row="2" VerticalAlignment="Center" Width="178" Height="49" Grid.ColumnSpan="3"/>
+            <Button x:Name="btnPlaceBet" Content="Place Bet" Grid.Column="3" HorizontalAlignment="Center" Grid.Row="2" VerticalAlignment="Center" Height="29" Width="60" Click="btnPlaceBet_Click"/>
         </Grid>
-        <Button Focusable="False"  Content="Go Back" Command="{Binding DataContext.playViewCommand, RelativeSource={RelativeSource AncestorType={x:Type local:MainWindow}}}" Margin="0,147,70,0"/>
-        <Button x:Name="btnDraw" Content="Draw" HorizontalAlignment="Left" Margin="0,64,0,0" VerticalAlignment="Top" Height="50" Width="58" Click="btnDraw_Click" />
+        <Button Focusable="False"  Content="Go Back" Command="{Binding DataContext.playViewCommand, RelativeSource={RelativeSource AncestorType={x:Type local:MainWindow}}}" Margin="0,147,70,0" Height="30" VerticalAlignment="Top"/>
+        <Button x:Name="btnDraw" Content="Draw" HorizontalAlignment="Left" Margin="0,110,0,0" VerticalAlignment="Top" Height="27" Width="63" Click="btnDraw_Click" />
+        <Label x:Name="txtPot" Content="Bet: 0" FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Top" Width="129" Height="31" Foreground="White" Margin="0,41,0,0"/>
     </Grid>
 
 </UserControl>
