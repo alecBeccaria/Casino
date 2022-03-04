@@ -75,8 +75,6 @@ namespace Casino.PokerGame
 
             for (int i = deckIndex; i < deckIndex + numberOfCards; i++)
             {
-
-
                 if (i == deck.getDeck().Count)
                 {
                     deck.shuffleDeck();
@@ -86,9 +84,9 @@ namespace Casino.PokerGame
                 if (!checkForDuplicateCards(deck.getDeck()[i]))
                 {
                     hand.Add(deck.getDeck()[i]);
-
+                    toAddToDeckIndex++;
                 }
-                toAddToDeckIndex++;
+
             }
             deckIndex += toAddToDeckIndex;
 

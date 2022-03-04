@@ -1,7 +1,6 @@
 ﻿using Casino.Models;
 using Casino.PokerGame;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
@@ -104,7 +103,7 @@ namespace Casino
                     if (!currentHand[i].isHeld)
                     {
                         List<Card> nextHand = pokerGame.getNextHand(1);
-                        Trace.WriteLine(nextHand[0].value, nextHand[0].suit.ToString());
+
                         pokerGame.discardDeck.Add(currentHand[i]);
                         currentHand[i] = nextHand[0];
                     }
