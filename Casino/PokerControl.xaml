@@ -28,13 +28,13 @@
         <Button x:Name="btnHold2" Content="Hold" HorizontalAlignment="Left" Margin="71,10,0,0" VerticalAlignment="Top" Height="50" Width="56" Grid.Row="1" Grid.Column="1" Click="btnHold2_Click"/>
         <Button x:Name="btnHold3" Content="Hold" HorizontalAlignment="Left" Margin="58,10,0,0" VerticalAlignment="Top" Height="50" Width="58" Grid.Row="1" Grid.Column="2" Click="btnHold3_Click"/>
         <Button x:Name="btnHold4" Content="Hold" Margin="49,11,67,0" VerticalAlignment="Top" Height="50" Grid.Row="1" Grid.Column="3" Click="btnHold4_Click"/>
-        <Button x:Name="btnHold5" Content="Hold" HorizontalAlignment="Left" Margin="61,10,0,0" VerticalAlignment="Top" Height="50" Width="58" Grid.Row="1" Grid.Column="4" Click="btnHold5_Click"/>
-        <Image x:Name="card1" Margin="10,68,27,34" Grid.Row="1" />
-        <Image x:Name="card2" Margin="43,64,32,30" Grid.Row="1" Grid.Column="1"/>
-        <Image x:Name="card3" Margin="28,70,41,32" Grid.Row="1" Grid.Column="2"/>
-        <Image x:Name="card4" Margin="27,63,52,25" Width="95" Grid.Row="1" Grid.Column="3"/>
-        <Image x:Name="card5" Margin="25,66,10,21" Width="95" Grid.Row="1" Grid.Column="4"/>
-        <Image x:Name="imgDeck" Height="136" Margin="25,42,10,18" Width="95" Grid.Column="4" Source="/Resources/BlackJack/Cards/cardBack_blue5.png"/>
+        <Button x:Name="btnHold5" Content="Hold" HorizontalAlignment="Left" Margin="48,10,0,0" VerticalAlignment="Top" Height="50" Width="58" Grid.Row="1" Grid.Column="4" Click="btnHold5_Click"/>
+        <Image x:Name="card1" Margin="2,68,19,0" Grid.Row="1" Width="112" Height="152" VerticalAlignment="Top" />
+        <Image x:Name="card2" Margin="39,68,32,0" Grid.Row="1" Grid.Column="1" Width="112" Height="152" VerticalAlignment="Top"/>
+        <Image x:Name="card3" Margin="28,70,41,0" Grid.Row="1" Grid.Column="2" Width="112" Height="152" VerticalAlignment="Top"/>
+        <Image x:Name="card4" Margin="20,70,42,0" Width="112" Height="152" Grid.Row="1" Grid.Column="3" VerticalAlignment="Top"/>
+        <Image x:Name="card5" Margin="13,70,5,0" Width="112" Height="152" Grid.Row="1" Grid.Column="4" VerticalAlignment="Top"/>
+        <Image x:Name="imgDeck" Margin="10,0,8,10" Source="/Resources/BlackJack/Cards/cardBack_blue5.png" Width="112" Height="152" VerticalAlignment="Bottom" Grid.Column="4"/>
         <Label x:Name="txtBalance" Content="Balance: " FontSize="15" HorizontalAlignment="Center" VerticalAlignment="Top" Width="129" Height="54" Foreground="White" Margin="0,10,0,0"/>
         <Grid Grid.Column="1" Grid.ColumnSpan="3">
             <Grid.RowDefinitions>
@@ -100,7 +100,7 @@
 
         </Grid>
         <Button Focusable="False"  Content="Go Back" Command="{Binding DataContext.playViewCommand, RelativeSource={RelativeSource AncestorType={x:Type local:MainWindow}}}" Margin="0,147,70,0"/>
-        <Button x:Name="btnDraw" Content="Draw" HorizontalAlignment="Left" Margin="0,64,0,0" VerticalAlignment="Top" Height="50" Width="58" Click="btnHold_Click" />
+        <Button x:Name="btnDraw" Content="Draw" HorizontalAlignment="Left" Margin="0,64,0,0" VerticalAlignment="Top" Height="50" Width="58" Click="btnDraw_Click" />
     </Grid>
 
 </UserControl>

@@ -13,6 +13,8 @@ namespace Casino.Models
         public enum Suit { Hearts, Spades, Diamonds, Clubs }
         public enum Color { Black, Red }
 
+        public bool isHeld = false;
+
         public Image image { get; set; }
 
        

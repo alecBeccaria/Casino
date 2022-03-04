@@ -92,6 +92,7 @@
     <None Remove="Resources\Poker\PokerTable.png" />
     <None Remove="Resources\Roulette\RouletteWheel_SingleZero.png" />
     <None Remove="Resources\Roulette\Roulette_SingleZero.png" />
+    
   </ItemGroup>
 
   <ItemGroup>
@@ -176,6 +177,8 @@
     <Resource Include="Resources\Overall UI\Generic Felt Mat.jpeg" />
     <Resource Include="Resources\PokerTable.png" />
     <Resource Include="Resources\Poker\PokerTable.png" />
+    <Resource Include="Resources\Roulette\RouletteWheel_SingleZero.png" />
+    <Resource Include="Resources\Roulette\Roulette_SingleZero.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />

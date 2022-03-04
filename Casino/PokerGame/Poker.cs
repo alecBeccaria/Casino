@@ -11,9 +11,11 @@ namespace Casino.PokerGame
 
         public Deck discardDeck { get; set; }
 
+        public int deckIndex { get; set; } = 0;
+
         private Dictionary<string, int> potValues;
 
-        public bool[] heldCards = new bool[] { false, false, false, false, false };
+        
 
         public Dictionary<string, int> PotValues
         {
@@ -40,15 +42,25 @@ namespace Casino.PokerGame
                 {"500", 0},
                 {"1K", 0},
                 {"5K", 0}
-
             };
-
             List<Card> cardList = deck.getDeck();
             Trace.WriteLine(cardList[0].suit.ToString());
             Trace.WriteLine(cardList[0].value.ToString());
             Trace.WriteLine(cardList[0].name.ToString());
 
             deck.shuffleDeck();
+        }
+
+        public List<Card> getNextHand()
+        {
+            
+            List<Card> hand = new List<Card>();
+            for(int i = deckIndex; i < deckIndex+5; i++)
+            {
+                hand.Add(deck.getDeck()[i]);
+            }
+
+            return hand;
         }
 
         public void draw()

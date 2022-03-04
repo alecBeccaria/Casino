@@ -12,9 +12,11 @@ namespace Casino
     /// </summary>
     public partial class PokerControl : UserControl
     {
-        Poker pokerGame;
+        private Poker pokerGame;
 
-        string keyValue;
+        private List<Card> currentHand;
+
+        
 
 
 
@@ -23,33 +25,47 @@ namespace Casino
         {
 
             InitializeComponent();
-
-
             pokerGame = new Poker();
             pokerGame.initialize();
-            DataContext = pokerGame;
-            List<Card> deck = pokerGame.deck.getDeck();
+            DataContext = this;
+            currentHand = pokerGame.getNextHand();
             updateBalance(0);
+            setCurrentHand();
+            
+        }
+
+        private void btnDraw_Click(object sender, RoutedEventArgs e)
+        {
+            foreach (Card card in currentHand)
+            {
+                if (card.isHeld)
+                {
+
+                }
+            }
+        }
+
+        private void setCurrentHand()
+        {
             for (int i = 0; i < 5; i++)
             {
                 switch (i)
                 {
                     case 0:
-                        card1.Source = deck[i].image.Source;
+                        card1.Source = currentHand[i].image.Source;
                         break;
                     case 1:
-                        card2.Source = deck[i].image.Source;
+                        card2.Source = currentHand[i].image.Source;
                         break;
                     case 2:
-                        card3.Source = deck[i].image.Source;
+                        card3.Source = currentHand[i].image.Source;
                         break;
                     case 3:
-                        card4.Source = deck[i].image.Source;
+                        card4.Source = currentHand[i].image.Source;
                         break;
                     case 4:
-                        card5.Source = deck[i].image.Source;
+                        card5.Source = currentHand[i].image.Source;
                         break;
-
                 }
             }
         }
@@ -64,12 +80,12 @@ namespace Casino
         {
             if (btnHold1.Content.Equals("Hold"))
             {
-                pokerGame.heldCards[0] = true;
+                currentHand[0].isHeld = true;
                 btnHold1.Content = "un-hold";
             }
             else
             {
-                pokerGame.heldCards[0] = false;
+                currentHand[0].isHeld = false;
                 btnHold1.Content = "Hold";
             }
         }
@@ -78,12 +94,12 @@ namespace Casino
         {
             if (btnHold2.Content.Equals("Hold"))
             {
-                pokerGame.heldCards[1] = true;
+                currentHand[1].isHeld = true;
                 btnHold2.Content = "un-hold";
             }
             else
             {
-                pokerGame.heldCards[1] = false;
+                currentHand[1].isHeld = false;
                 btnHold2.Content = "Hold";
             }
         }
@@ -92,12 +108,12 @@ namespace Casino
         {
             if (btnHold3.Content.Equals("Hold"))
             {
-                pokerGame.heldCards[2] = true;
+                currentHand[2].isHeld = true;
                 btnHold3.Content = "un-hold";
             }
             else
             {
-                pokerGame.heldCards[2] = false;
+                currentHand[2].isHeld = false;
                 btnHold3.Content = "Hold";
             }
         }
@@ -106,12 +122,12 @@ namespace Casino
         {
             if (btnHold4.Content.Equals("Hold"))
             {
-                pokerGame.heldCards[3] = true;
+                currentHand[3].isHeld = true;
                 btnHold4.Content = "un-hold";
             }
             else
             {
-                pokerGame.heldCards[3] = false;
+                currentHand[3].isHeld = false;
                 btnHold4.Content = "Hold";
             }
         }
@@ -120,12 +136,12 @@ namespace Casino
         {
             if (btnHold5.Content.Equals("Hold"))
             {
-                pokerGame.heldCards[4] = true;
+                currentHand[4].isHeld = true;
                 btnHold5.Content = "un-hold";
             }
             else
             {
-                pokerGame.heldCards[4] = false;
+                currentHand[4].isHeld = false;
                 btnHold5.Content = "Hold";
             }
         }
@@ -133,7 +149,6 @@ namespace Casino
         private void chip1Click(object sender, MouseButtonEventArgs e)
         {
             pokerGame.PotValues["1"]++;
-
             updateBalance(1);
             txtChip1.Content = pokerGame.PotValues["1"].ToString();
         }
@@ -197,11 +212,7 @@ namespace Casino
             txtChip5K.Content = pokerGame.PotValues["5K"].ToString();
         }
 
-        private void btnHold_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
+        
         private void btnRemoveChip1_Click(object sender, MouseButtonEventArgs e)
         {
             pokerGame.PotValues["1"]--;
@@ -264,10 +275,5 @@ namespace Casino
             updateBalance(-5000);
             txtChip5K.Content = pokerGame.PotValues["5K"].ToString();
         }
-
-
-
-
-
     }
 }
