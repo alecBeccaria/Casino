@@ -94,6 +94,10 @@
     <None Remove="Resources\Roulette\Roulette_SingleZero.png" />
     <None Remove="RouletteWheel_SingleZero.png" />
     <None Remove="Roulette_SingleZero.png" />
+    <None Remove="Resources\Slots\Wheel - Bars.png" />
+    <None Remove="Resources\Slots\Wheel - Bell.png" />
+    <None Remove="Resources\Slots\Wheel - Cherry.png" />
+    <None Remove="Resources\Slots\Wheel - Seven.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -182,6 +186,10 @@
     <Resource Include="Resources\Roulette\Roulette_SingleZero.png" />
     <Resource Include="RouletteWheel_SingleZero.png" />
     <Resource Include="Roulette_SingleZero.png" />
+    <Resource Include="Resources\Slots\Wheel - Bars.png" />
+    <Resource Include="Resources\Slots\Wheel - Bell.png" />
+    <Resource Include="Resources\Slots\Wheel - Cherry.png" />
+    <Resource Include="Resources\Slots\Wheel - Seven.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />
