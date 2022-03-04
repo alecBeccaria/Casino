@@ -33,8 +33,6 @@ namespace Casino
         {
             Button bet = (Button)sender;
 
-            MessageBox.Show(bet.Name);
-
             switch (bet.Name)
             {
                 case "_1Button":
@@ -70,12 +68,9 @@ namespace Casino
 
         private void ClickAddBetAmt(object sender, RoutedEventArgs e)
         {
-            Button button = (Button)sender;
-
-            MessageBox.Show(numChoice.ToString());
-
             if (numChoice == 0)
             {
+                Button button = (Button)sender;
                 button.Content = null;
                 switch (button.Name)
                 {
@@ -230,8 +225,13 @@ namespace Casino
             }
             else
             {
-                BitmapImage imagez = new BitmapImage(new Uri(@"\Chips" + numChoice.ToString() + ".png", UriKind.Relative)); ;
-                button.Content = imagez;
+                Button button = (Button)sender;
+                Image image = new Image();
+
+                image.Source = new BitmapImage(
+                    new Uri($"pack://application:,,,/Resources/Overall UI/Chip{numChoice.ToString()}.png"));
+                button.Content = image;
+
                 switch (button.Name)
                 {
                     case "_0Bet":
