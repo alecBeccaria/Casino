@@ -6,9 +6,61 @@
              xmlns:local="clr-namespace:Casino" xmlns:viewModel="clr-namespace:Casino.ViewModels"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-
+    <UserControl.Resources>
+        <Style x:Key="RoundCorner" TargetType="{x:Type Button}">
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="1"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid x:Name="grid">
+                            <Border x:Name="border" CornerRadius="8" BorderBrush="Black" BorderThickness="2">
+                                <ContentPresenter HorizontalAlignment="Center"
+                                          VerticalAlignment="Center"
+                                          TextElement.FontWeight="Bold">
+                                </ContentPresenter>
+                            </Border>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="BorderBrush" TargetName="border" Value="White"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        
+        <Style x:Key="MainText" TargetType="{x:Type Label}">
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="1"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Label}">
+                        <Grid x:Name="grid">
+                            <Label x:Name="lblContent" Content="Pick a Game!" Foreground="White"></Label>
+                            <Border x:Name="border" CornerRadius="8" BorderBrush="Black" BorderThickness="2">
+                                <ContentPresenter HorizontalAlignment="Center"
+                                          VerticalAlignment="Center"
+                                          TextElement.FontWeight="Bold">
+                                </ContentPresenter>
+                            </Border>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Content" TargetName="lblContent" Value="Gimmie Your Money!"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
     <DockPanel>
-        <Label Content="CONTROLS" FontSize="32" DockPanel.Dock="Top" HorizontalAlignment="Center"/>
+        <Label FontSize="32" DockPanel.Dock="Top" HorizontalAlignment="Center" Style="{DynamicResource MainText}"/>
         <Border BorderBrush="Black" BorderThickness="3">
             <Grid>
                 <Grid.ColumnDefinitions>
@@ -29,13 +81,13 @@
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
-                <Button Content="Blackjack" Grid.Column="1" Grid.Row="1"/>
-                <Button Content="5 Card Poker" Command="{Binding DataContext.pokerViewCommand, RelativeSource={RelativeSource AncestorType={x:Type local:MainWindow}}}" Grid.Column="1" Grid.Row="5"/>
-                <Button Content="Slots" Command="{Binding DataContext.slotsViewCommand, RelativeSource={RelativeSource AncestorType={x:Type local:MainWindow}}}" Grid.Column="3" Grid.Row="3"/>
-                <Button Content="Craps Coming Soon" Grid.Column="5" Grid.Row="5"/>
-                <Button Content="Roulette" Command="{Binding DataContext.rouletteViewCommand, RelativeSource={RelativeSource AncestorType={x:Type local:MainWindow}}}" Grid.Column="5" Grid.Row="1"/>
-                <Button Focusable="False"  Content="Go Back" Grid.Column="0" Grid.Row="6" Command="{Binding DataContext.dashViewCommand, RelativeSource={RelativeSource AncestorType={x:Type local:MainWindow}}}"/>
-                <Button Content="Bank" Command="{Binding DataContext.bankViewCommand, RelativeSource={RelativeSource AncestorType={x:Type local:MainWindow}}}" Grid.Column="6" Grid.Row="6"/>
+                <Button Content="Blackjack" Grid.Column="1" Grid.Row="1" Style="{DynamicResource RoundCorner}"/>
+                <Button Content="5 Card Poker" Command="{Binding DataContext.pokerViewCommand, RelativeSource={RelativeSource AncestorType={x:Type local:MainWindow}}}" Grid.Column="1" Grid.Row="5" Style="{DynamicResource RoundCorner}"/>
+                <Button Content="Slots" Command="{Binding DataContext.slotsViewCommand, RelativeSource={RelativeSource AncestorType={x:Type local:MainWindow}}}" Grid.Column="3" Grid.Row="3" Style="{DynamicResource RoundCorner}"/>
+                <Button Content="Craps Coming Soon" Grid.Column="5" Grid.Row="5" Style="{DynamicResource RoundCorner}"/>
+                <Button Content="Roulette" Command="{Binding DataContext.rouletteViewCommand, RelativeSource={RelativeSource AncestorType={x:Type local:MainWindow}}}" Grid.Column="5" Grid.Row="1" Style="{DynamicResource RoundCorner}"/>
+                <Button Focusable="False"  Content="Go Back" Grid.Column="0" Grid.Row="6" Command="{Binding DataContext.dashViewCommand, RelativeSource={RelativeSource AncestorType={x:Type local:MainWindow}}}" Style="{DynamicResource RoundCorner}"/>
+                <Button Content="Bank" Command="{Binding DataContext.bankViewCommand, RelativeSource={RelativeSource AncestorType={x:Type local:MainWindow}}}" Grid.Column="6" Grid.Row="6" Style="{DynamicResource RoundCorner}"/>
             </Grid>
         </Border>
     </DockPanel>
