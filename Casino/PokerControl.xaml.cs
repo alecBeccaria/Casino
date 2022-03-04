@@ -44,7 +44,7 @@ namespace Casino
             btnHold3.IsEnabled = false;
             btnHold4.IsEnabled = false;
             btnHold5.IsEnabled = false;
-            
+
         }
 
         private void btnPlaceBet_Click(object sender, RoutedEventArgs e)
@@ -60,7 +60,7 @@ namespace Casino
                 btnHold4.IsEnabled = true;
                 btnHold5.IsEnabled = true;
                 btnPlaceBet.IsEnabled = false;
-                
+
 
             }
             else
@@ -78,24 +78,9 @@ namespace Casino
 
         }
 
-        private bool checkIfOneCardHeld()
-        {
-            bool held = false;
-            foreach(Card card in currentHand)
-            {
-                if (card.isHeld)
-                {
-                    held = true;
-                }
-            }
-            return held;
-        }
-
-        
-
         private void btnDraw_Click(object sender, RoutedEventArgs e)
         {
-            
+
             if (betPlaced)
             {
                 if (modInc % 2 == 1)
@@ -120,6 +105,7 @@ namespace Casino
                     {
                         List<Card> nextHand = pokerGame.getNextHand(1);
                         Trace.WriteLine(nextHand[0].value, nextHand[0].suit.ToString());
+                        pokerGame.discardDeck.Add(currentHand[i]);
                         currentHand[i] = nextHand[0];
                     }
                     else
@@ -128,7 +114,7 @@ namespace Casino
 
                     }
                 }
-                
+
                 btnHold1.Content = "Hold";
                 btnHold2.Content = "Hold";
                 btnHold3.Content = "Hold";
@@ -143,16 +129,16 @@ namespace Casino
                 btnPlaceBet.IsEnabled = true;
                 newRound = false;
             }
-            
-            
-            
+
+
+
         }
 
-       
+
 
         private void setCurrentHand()
         {
-            currentHand = currentHand.OrderBy(x => x.value).ToList(); 
+            currentHand = currentHand.OrderBy(x => x.value).ToList();
             for (int i = 0; i < 5; i++)
             {
                 switch (i)
@@ -262,18 +248,18 @@ namespace Casino
                 updateBalance(1);
                 txtChip1.Content = pokerGame.PotValues["1"].ToString();
             }
-            
+
         }
 
         private void chip5Click(object sender, MouseButtonEventArgs e)
         {
-            if (!betPlaced) 
+            if (!betPlaced)
             {
                 pokerGame.PotValues["5"]++;
                 updateBalance(5);
                 txtChip5.Content = pokerGame.PotValues["5"].ToString();
             }
-            
+
 
         }
 
@@ -348,7 +334,7 @@ namespace Casino
             }
         }
 
-        
+
         private void btnRemoveChip1_Click(object sender, MouseButtonEventArgs e)
         {
             if (pokerGame.PotValues["1"] != 0 && !betPlaced)
@@ -357,7 +343,7 @@ namespace Casino
                 updateBalance(-1);
                 txtChip1.Content = pokerGame.PotValues["1"].ToString();
             }
-            
+
         }
 
         private void btnRemoveChip5_Click(object sender, MouseButtonEventArgs e)
@@ -368,7 +354,7 @@ namespace Casino
                 updateBalance(-5);
                 txtChip5.Content = pokerGame.PotValues["5"].ToString();
             }
-           
+
         }
 
         private void btnRemoveChip10_Click(object sender, MouseButtonEventArgs e)
@@ -379,7 +365,7 @@ namespace Casino
                 updateBalance(-10);
                 txtChip10.Content = pokerGame.PotValues["10"].ToString();
             }
-            
+
         }
 
         private void btnRemoveChip20_Click(object sender, MouseButtonEventArgs e)
@@ -390,7 +376,7 @@ namespace Casino
                 updateBalance(-20);
                 txtChip20.Content = pokerGame.PotValues["20"].ToString();
             }
-            
+
         }
 
         private void btnRemoveChip50_Click(object sender, MouseButtonEventArgs e)
@@ -401,7 +387,7 @@ namespace Casino
                 updateBalance(-50);
                 txtChip50.Content = pokerGame.PotValues["50"].ToString();
             }
-            
+
         }
 
         private void btnRemoveChip100_Click(object sender, MouseButtonEventArgs e)
@@ -412,7 +398,7 @@ namespace Casino
                 updateBalance(-100);
                 txtChip100.Content = pokerGame.PotValues["100"].ToString();
             }
-            
+
         }
 
         private void btnRemoveChip500_Click(object sender, MouseButtonEventArgs e)
@@ -423,7 +409,7 @@ namespace Casino
                 updateBalance(-500);
                 txtChip500.Content = pokerGame.PotValues["500"].ToString();
             }
-            
+
         }
 
         private void btnRemoveChip1K_Click(object sender, MouseButtonEventArgs e)
@@ -434,7 +420,7 @@ namespace Casino
                 updateBalance(-1000);
                 txtChip1K.Content = pokerGame.PotValues["1K"].ToString();
             }
-            
+
         }
 
         private void btnRemoveChip5K_Click(object sender, MouseButtonEventArgs e)
@@ -582,7 +568,7 @@ namespace Casino
                 Player.chips -= pokerGame.pot;
                 txtBalance.Content = $"Balance: {Player.chips}";
                 MessageBox.Show($"You lost {pokerGame.pot} chips");
-                
+
             }
             //newRound = true;
             return win;

@@ -9,7 +9,7 @@ namespace Casino.PokerGame
     {
         public Deck deck { get; set; }
 
-        public Deck discardDeck { get; set; }
+        public List<Card> discardDeck { get; set; }
 
         public int deckIndex { get; set; } = 0;
 
@@ -30,6 +30,7 @@ namespace Casino.PokerGame
         public string url { get; set; }
         public void initialize()
         {
+            discardDeck = new List<Card>();
             deck = new Deck();
             potValues = new Dictionary<string, int>()
             {
@@ -48,27 +49,45 @@ namespace Casino.PokerGame
             List<Card> cardList = deck.getDeck();
             for (int i = 0; i < cardList.Count; i++)
             {
-                Trace.WriteLine($"{i+1} " + cardList[i].value.ToString() +" " + cardList[i].suit.ToString()+ " " + cardList[i].name.ToString());
+                Trace.WriteLine($"{i + 1} " + cardList[i].value.ToString() + " " + cardList[i].suit.ToString() + " " + cardList[i].name.ToString());
 
             }
         }
 
-        
+        private bool checkForDuplicateCards(Card cardToCompare)
+        {
+            bool dupe = false;
+            foreach (Card card in discardDeck)
+            {
+                if (card == cardToCompare)
+                {
+                    dupe = true;
+                }
+            }
+            return dupe;
+        }
+
 
         public List<Card> getNextHand(int numberOfCards)
         {
             List<Card> hand = new List<Card>();
             int toAddToDeckIndex = 0;
 
-            for(int i = deckIndex; i < deckIndex+numberOfCards; i++)
+            for (int i = deckIndex; i < deckIndex + numberOfCards; i++)
             {
-                if(i == deck.getDeck().Count)
+
+
+                if (i == deck.getDeck().Count)
                 {
                     deck.shuffleDeck();
                     deckIndex = 0;
                     i = 0;
                 }
-                hand.Add(deck.getDeck()[i]);
+                if (!checkForDuplicateCards(deck.getDeck()[i]))
+                {
+                    hand.Add(deck.getDeck()[i]);
+
+                }
                 toAddToDeckIndex++;
             }
             deckIndex += toAddToDeckIndex;
@@ -76,10 +95,6 @@ namespace Casino.PokerGame
             return hand;
         }
 
-        public void draw()
-        {
-
-        }
 
         public event PropertyChangedEventHandler PropertyChanged;
 
