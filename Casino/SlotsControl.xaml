@@ -23,8 +23,9 @@
         -->
 
     </UserControl.Resources>
+
     <Grid>
-        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width="272" Height="330">
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width="272" Height="347">
             <Label Name="lblBalance" Content="Balance"/>
             <StackPanel>
                 <TextBox x:Name="txtBet" Height="50" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="15" PreviewTextInput="NumberValidationTextBox" ></TextBox>
@@ -53,6 +54,7 @@
             </Grid>
             <Label Name="lblWin" HorizontalAlignment="Center"></Label>
             <Button Content="Give it a spin!" Click="Button_Click"/>
+            <Button Focusable="False"  Content="Go Back" Command="{Binding DataContext.playViewCommand, RelativeSource={RelativeSource AncestorType={x:Type local:MainWindow}}}" RenderTransformOrigin="2.661,-0.275" Height="38" Width="100"/>
         </StackPanel>
     </Grid>
 </UserControl>
