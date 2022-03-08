@@ -87,7 +87,9 @@ namespace Casino
                     if (checkWin())
                     {
                         txtBalance.Content = $"Balance: {Player.chips}";
+                        txtPot.Content = $"Bet: {pokerGame.pot}";
                         MessageBox.Show("Congratulations, you have won: " + amountWon + " chips!!!");
+
                     }
                     btnDraw.Content = "Draw";
                 }
@@ -564,7 +566,6 @@ namespace Casino
             }
             else
             {
-                Player.chips -= pokerGame.pot;
                 txtBalance.Content = $"Balance: {Player.chips}";
                 MessageBox.Show($"You lost {pokerGame.pot} chips");
 

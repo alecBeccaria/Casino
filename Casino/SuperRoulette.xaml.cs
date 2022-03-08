@@ -402,7 +402,7 @@ namespace Casino
                     }
                     else
                     {
-                        amountWon -= 36 * betChoices[i];
+                        amountWon -= betChoices[i];
                     }
                 }
             }
@@ -493,7 +493,7 @@ namespace Casino
                 }
                 else
                 {
-                    amountWon += 3 * betChoices[40];
+                    amountWon -= betChoices[40];
                 }
             }
 
@@ -505,7 +505,7 @@ namespace Casino
                 }
                 else
                 {
-                    amountWon += 3 * betChoices[41];
+                    amountWon -= betChoices[41];
                 }
             }
 
@@ -517,7 +517,7 @@ namespace Casino
                 }
                 else
                 {
-                    amountWon += 3 * betChoices[42];
+                    amountWon -= betChoices[42];
                 }
             }
 
