@@ -7,6 +7,11 @@
              xmlns:viewModel="clr-namespace:Casino.ViewModels"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
+
+    <UserControl.Background>
+        <ImageBrush ImageSource="/Resources/Overall UI/Generic Felt Mat.jpeg" />
+    </UserControl.Background>
+    
     <DockPanel>
         <Grid>
             <Grid.RowDefinitions>

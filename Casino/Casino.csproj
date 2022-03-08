@@ -187,6 +187,7 @@
     <Resource Include="Resources\Slots\Wheel - Seven.png" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="NavStore\" />
     <Folder Include="Properties\" />
   </ItemGroup>
 
