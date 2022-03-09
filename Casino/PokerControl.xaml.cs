@@ -48,33 +48,51 @@ namespace Casino
 
         private void btnPlaceBet_Click(object sender, RoutedEventArgs e)
         {
+
+
+
+
             if (newRound)
             {
                 currentHand = pokerGame.getNextHand(5);
                 setCurrentHand();
-                betPlaced = true;
-                btnHold1.IsEnabled = true;
-                btnHold2.IsEnabled = true;
-                btnHold3.IsEnabled = true;
-                btnHold4.IsEnabled = true;
-                btnHold5.IsEnabled = true;
-                btnPlaceBet.IsEnabled = false;
-
-
             }
-            else
-            {
-                setCurrentHand();
-                betPlaced = true;
-                btnHold1.IsEnabled = true;
-                btnHold2.IsEnabled = true;
-                btnHold3.IsEnabled = true;
-                btnHold4.IsEnabled = true;
-                btnHold5.IsEnabled = true;
-                btnPlaceBet.IsEnabled = false;
-            }
+            betPlaced = true;
+            btnHold1.IsEnabled = true;
+            btnHold2.IsEnabled = true;
+            btnHold3.IsEnabled = true;
+            btnHold4.IsEnabled = true;
+            btnHold5.IsEnabled = true;
+            btnPlaceBet.IsEnabled = false;
 
 
+        }
+
+
+        private void resetPot()
+        {
+            pokerGame.pot = 0;
+            pokerGame.PotValues["1"] = 0;
+            pokerGame.PotValues["5"] = 0;
+            pokerGame.PotValues["10"] = 0;
+            pokerGame.PotValues["20"] = 0;
+            pokerGame.PotValues["50"] = 0;
+            pokerGame.PotValues["100"] = 0;
+            pokerGame.PotValues["500"] = 0;
+            pokerGame.PotValues["1K"] = 0;
+            pokerGame.PotValues["5K"] = 0;
+
+            txtChip1.Content = "0";
+            txtChip5.Content = "0";
+            txtChip10.Content = "0";
+            txtChip20.Content = "0";
+            txtChip50.Content = "0";
+            txtChip100.Content = "0";
+            txtChip500.Content = "0";
+            txtChip1K.Content = "0";
+            txtChip5K.Content = "0";
+
+            updateBalance(0);
         }
 
         private void btnDraw_Click(object sender, RoutedEventArgs e)
@@ -82,26 +100,59 @@ namespace Casino
 
             if (betPlaced)
             {
+
+
+
                 if (modInc % 2 == 1)
                 {
                     if (checkWin())
                     {
-                        pokerGame.pot = 0;
                         txtBalance.Content = $"Balance: {Player.chips}";
                         txtPot.Content = $"Bet: {pokerGame.pot}";
+                        resetPot();
                         MessageBox.Show("Congratulations, you have won: " + amountWon + " chips!!!");
+                        betPlaced = false;
+                        newRound = true;
+
+                    }
+                    else
+                    {
+
+                        txtBalance.Content = $"Balance: {Player.chips}";
+                        MessageBox.Show($"You lost {pokerGame.pot} chips");
+                        resetPot();
+                        betPlaced = false;
+                        newRound = true;
 
                     }
                     btnDraw.Content = "Draw";
+
+
                 }
                 else
                 {
+                    for (int i = 0; i < 5; i++)
+                    {
+                        if (!currentHand[i].isHeld)
+                        {
+                            List<Card> nextHand = pokerGame.getNextHand(1);
+
+                            pokerGame.discardDeck.Add(currentHand[i]);
+                            currentHand[i] = nextHand[0];
+                        }
+                        else
+                        {
+                            currentHand[i].isHeld = false;
+
+                        }
+                    }
+
+                    setCurrentHand();
                     btnDraw.Content = "Check Win";
+                    newRound = false;
                 }
 
-                modInc++;
-
-                for (int i = 0; i < 5; i++)
+                /*for (int i = 0; i < 5; i++)
                 {
                     if (!currentHand[i].isHeld)
                     {
@@ -115,8 +166,12 @@ namespace Casino
                         currentHand[i].isHeld = false;
 
                     }
-                }
+                }*/
 
+                modInc++;
+
+
+                //setCurrentHand();
                 btnHold1.Content = "Hold";
                 btnHold2.Content = "Hold";
                 btnHold3.Content = "Hold";
@@ -127,11 +182,8 @@ namespace Casino
                 btnHold3.IsEnabled = false;
                 btnHold4.IsEnabled = false;
                 btnHold5.IsEnabled = false;
-                betPlaced = false;
-                btnPlaceBet.IsEnabled = true;
-                newRound = false;
-            }
 
+            }
 
 
         }
@@ -519,7 +571,7 @@ namespace Casino
                 && currentHand[3].value + 1 == currentHand[4].value)
             {
                 win = true;
-                amountWon = pokerGame.pot * 25 + pokerGame.pot; ;
+                amountWon = pokerGame.pot * 20 + pokerGame.pot;
                 Player.chips += amountWon;
             }
 
@@ -567,34 +619,10 @@ namespace Casino
                 amountWon = pokerGame.pot + pokerGame.pot;
                 Player.chips += amountWon;
             }
-            else
-            {
-                Player.chips -= pokerGame.pot;
-                txtBalance.Content = $"Balance: {Player.chips}";
-                MessageBox.Show($"You lost {pokerGame.pot} chips");
 
-                txtChip1.Content = "0";
-                txtChip5.Content = "0";
-                txtChip10.Content = "0";
-                txtChip20.Content = "0";
-                txtChip50.Content = "0";
-                txtChip100.Content = "0";
-                txtChip500.Content = "0";
-                txtChip1K.Content = "0";
-                txtChip5K.Content = "0";
 
-                pokerGame.PotValues["1"] = 0;
-                pokerGame.PotValues["5"] = 0;
-                pokerGame.PotValues["10"] = 0;
-                pokerGame.PotValues["20"] = 0;
-                pokerGame.PotValues["50"] = 0;
-                pokerGame.PotValues["100"] = 0;
-                pokerGame.PotValues["500"] = 0;
-                pokerGame.PotValues["1K"] = 0;
-                pokerGame.PotValues["5K"] = 0;
-
-            }
-            //newRound = true;
+            newRound = true;
+            btnPlaceBet.IsEnabled = true;
             return win;
         }
     }

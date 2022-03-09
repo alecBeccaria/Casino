@@ -89,7 +89,8 @@ namespace Casino.PokerGame
 
             }
             deckIndex += toAddToDeckIndex;
-
+            foreach (Card card in hand)
+                Trace.WriteLine(card.name + " " + card.suit.ToString());
             return hand;
         }
 
