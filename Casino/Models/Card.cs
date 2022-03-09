@@ -1,10 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Windows.Controls;
 
 
 namespace Casino.Models
 {
-    class Card
+    public class Card
     {
         public int value { get; set; }
         public string name { get; set; }
@@ -14,9 +15,6 @@ namespace Casino.Models
         public enum Color { Black, Red }
 
         public Image image { get; set; }
-
-       
-
 
         public Card()
         {
@@ -30,9 +28,5 @@ namespace Casino.Models
             this.suit = suit;
             this.color = color;
         }
-
-
-
-
     }
 }

@@ -180,8 +180,6 @@
     <Resource Include="Resources\Poker\PokerTable.png" />
     <Resource Include="Resources\Roulette\RouletteWheel_SingleZero.png" />
     <Resource Include="Resources\Roulette\Roulette_SingleZero.png" />
-    <Resource Include="RouletteWheel_SingleZero.png" />
-    <Resource Include="Roulette_SingleZero.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />

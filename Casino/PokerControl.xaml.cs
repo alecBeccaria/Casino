@@ -13,14 +13,12 @@ namespace Casino
     public partial class PokerControl : UserControl
     {
         Poker pokerGame;
-
-
         public PokerControl()
         {
             InitializeComponent();
             pokerGame = new Poker();
             pokerGame.initialize();
-            List<Card> deck = pokerGame.deck.getDeck();
+            List<Card> deck = pokerGame.deck.GetDeck();
             updateBalance(0);
             for (int i = 0; i < 5; i++)
             {
@@ -41,7 +39,6 @@ namespace Casino
                     case 4:
                         card5.Source = deck[i].image.Source;
                         break;
-
                 }
             }
         }

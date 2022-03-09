@@ -34,12 +34,12 @@ namespace Casino.PokerGame
 
             };
 
-            List<Card> cardList = deck.getDeck();
+            List<Card> cardList = deck.GetDeck();
             Trace.WriteLine(cardList[0].suit.ToString());
             Trace.WriteLine(cardList[0].value.ToString());
             Trace.WriteLine(cardList[0].name.ToString());
 
-            deck.shuffleDeck();
+            deck.ShuffleDeck();
         }
 
         public void draw()

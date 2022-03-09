@@ -6,7 +6,7 @@ using System.Windows.Media.Imaging;
 
 namespace Casino.Models
 {
-    class Deck
+    public class Deck
     {
         private List<Card> deck = new List<Card>();
 
@@ -17,11 +17,12 @@ namespace Casino.Models
 
         public Deck()
         {
-            createDeck();
-            setCardImages();
+            CreateDeck();
+            SetCardImages();
         }
-        public void createDeck()
+        public void CreateDeck()
         {
+            deck.Clear();
             for (int i = 0; i < 13; i++)
             {
                 deck.Add(new Card((i + 1), cardNames[i], Card.Suit.Spades, Card.Color.Black));
@@ -29,9 +30,10 @@ namespace Casino.Models
                 deck.Add(new Card((i + 1), cardNames[i], Card.Suit.Hearts, Card.Color.Red));
                 deck.Add(new Card((i + 1), cardNames[i], Card.Suit.Diamonds, Card.Color.Red));
             }
+            SetCardImages();
         }
 
-        public void shuffleDeck()
+        public void ShuffleDeck()
         {
             Random random = new Random();
 
@@ -45,7 +47,7 @@ namespace Casino.Models
             }
         }
 
-        public void setCardImages()
+        public void SetCardImages()
         {
 
             foreach (Card card in deck)
@@ -88,7 +90,7 @@ namespace Casino.Models
             }
         }
 
-        public List<Card> getDeck()
+        public List<Card> GetDeck()
         {
             return deck;
         }
