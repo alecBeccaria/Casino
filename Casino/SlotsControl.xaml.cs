@@ -56,7 +56,7 @@ namespace Casino
             if (game.CheckSlotsWin())
             {
                 lblWin.Content = "You Won!";
-                Player.chips = game.GetWinnings(slotGameBet);
+                Player.chips += game.GetWinnings(slotGameBet);
             }
             else
             {
