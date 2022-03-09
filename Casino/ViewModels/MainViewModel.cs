@@ -1,4 +1,5 @@
 ﻿using Casino.Commands;
+using System;
 using System.Diagnostics;
 
 namespace Casino.ViewModels
