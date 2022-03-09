@@ -23,9 +23,8 @@ namespace Casino
 
         private void Exit(object sender, RoutedEventArgs e)
         {
-
+            System.Windows.Application.Current.Shutdown();
         }
 
-        
     }
 }
