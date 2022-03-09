@@ -30,6 +30,10 @@
             <local:BJControl/>
         </DataTemplate>
 
+        
+        <DataTemplate DataType="{x:Type viewModel:SlotsViewModel}">
+            <local:SlotsControl/>
+        </DataTemplate>
 
     </Application.Resources>
 </Application>

@@ -9,6 +9,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="NavStore\**" />
+    <EmbeddedResource Remove="NavStore\**" />
+    <None Remove="NavStore\**" />
+    <Page Remove="NavStore\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="Resources\BlackJack\BlackJackTable.png" />
     <None Remove="Resources\BlackJack\Cards\cardBack_blue1.png" />
     <None Remove="Resources\BlackJack\Cards\cardBack_blue2.png" />
@@ -92,8 +99,7 @@
     <None Remove="Resources\Poker\PokerTable.png" />
     <None Remove="Resources\Roulette\RouletteWheel_SingleZero.png" />
     <None Remove="Resources\Roulette\Roulette_SingleZero.png" />
-    <None Remove="RouletteWheel_SingleZero.png" />
-    <None Remove="Roulette_SingleZero.png" />
+    
   </ItemGroup>
 
   <ItemGroup>
@@ -180,6 +186,12 @@
     <Resource Include="Resources\Poker\PokerTable.png" />
     <Resource Include="Resources\Roulette\RouletteWheel_SingleZero.png" />
     <Resource Include="Resources\Roulette\Roulette_SingleZero.png" />
+    <Resource Include="RouletteWheel_SingleZero.png" />
+    <Resource Include="Roulette_SingleZero.png" />
+    <Resource Include="Resources\Slots\Wheel - Bars.png" />
+    <Resource Include="Resources\Slots\Wheel - Bell.png" />
+    <Resource Include="Resources\Slots\Wheel - Cherry.png" />
+    <Resource Include="Resources\Slots\Wheel - Seven.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />

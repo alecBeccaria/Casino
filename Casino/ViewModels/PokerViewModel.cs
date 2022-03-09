@@ -1,12 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Casino.ViewModels
+﻿namespace Casino.ViewModels
 {
-    public class PokerViewModel
+    public class PokerViewModel : ViewModelBase
     {
+        /*private object currentView;
+        public object CurrentView
+        {
+            get { return currentView; }
+            set
+            {
+                
+                OnPropertyChanged();
+            }
+        }*/
     }
 }

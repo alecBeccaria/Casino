@@ -1,0 +1,60 @@
+﻿<UserControl x:Class="Casino.SlotsControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Casino"
+             xmlns:viewModel="clr-namespace:Casino.ViewModels"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Background>
+        <ImageBrush ImageSource="/Resources/Overall UI/Generic Felt Mat.jpeg" />
+    </UserControl.Background>
+    <UserControl.Resources>
+        <BitmapImage x:Key="Bells" UriSource="Resources/Slots/Wheel - Bell.png"/>
+        <BitmapImage x:Key="Seven" UriSource="Resources/Slots/Wheel - Seven.png"/>
+        <BitmapImage x:Key="Bars" UriSource="Resources/Slots/Wheel - Bars.png"/>
+        <BitmapImage x:Key="Cherry" UriSource="Resources/Slots/Wheel - Cherry.png"/>
+        <!--
+        <Image x:Key="Bells" Source="Resources/Slots/Wheel - Bell.png"/>
+        <Image x:Key="Seven" Source="Resources/Slots/Wheel - Seven.png"/>
+        <Image x:Key="Bars" Source="Resources/Slots/Wheel - Bars.png"/>
+        <Image x:Key="Cherry" Source="Resources/Slots/Wheel - Cherry.png"/>
+        -->
+
+    </UserControl.Resources>
+
+    <Grid>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width="272" Height="347">
+            <Label Name="lblBalance" Content="Balance"/>
+            <StackPanel>
+                <TextBox x:Name="txtBet" Height="50" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="15" PreviewTextInput="NumberValidationTextBox" ></TextBox>
+                <Button Width="200" Click="onBetClick">Bet This Amount</Button>
+                <Label Name="lblActiveBet" HorizontalAlignment="Center" Content="No Bet"/>
+            </StackPanel>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <!--
+                <Label Name="lblSlotOne" Content="{DynamicResource Seven}" Grid.Column="0"/>
+                <Label Name="lblSlotTwo" Content="{DynamicResource Seven}" Grid.Column="1"/>
+                <Label Name="lblSlotThree" Content="Slot 3" Grid.Column="2"/>
+                -->
+
+                <Image x:Name="SlotOne" Source="{DynamicResource Seven}" Grid.Column="0"/>
+                <Image x:Name="SlotTwo" Source="{DynamicResource Seven}" Grid.Column="1" />
+                <Image x:Name="SlotThree" Source="{DynamicResource Seven}" Grid.Column="2"/>
+            </Grid>
+            <Label Name="lblWin" HorizontalAlignment="Center"></Label>
+            <Button Content="Give it a spin!" Click="Button_Click"/>
+            <Button Focusable="False"  Content="Go Back" Command="{Binding DataContext.playViewCommand, RelativeSource={RelativeSource AncestorType={x:Type local:MainWindow}}}" RenderTransformOrigin="2.661,-0.275" Height="38" Width="100"/>
+        </StackPanel>
+    </Grid>
+</UserControl>

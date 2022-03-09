@@ -8,15 +8,8 @@ namespace Casino.SlotsGame
 {
     class SlotsGame
     {
-        
-        enum SlotType
-        {
-            Cherry,
-            Bells,
-            Bars,
-            Seven
-        }
-        SlotType[] Slots = new SlotType[3];
+       
+        public SlotType[] Slots = new SlotType[3];
         Random Rnd = new Random();
         private bool IsWin = false;
         public SlotsGame()
@@ -43,8 +36,17 @@ namespace Casino.SlotsGame
             }
             return SlotsText.ToString();
         }
-
-        private bool CheckSlotsWin()
+        public int GetWinnings(int betAmount)
+        {
+            switch(Slots[0]){
+                case SlotType.Cherry: return betAmount * 15; break;
+                case SlotType.Bells: return betAmount * 35; break;
+                case SlotType.Bars: return betAmount * 100; break;
+                case SlotType.Seven: return betAmount * 1000; break;
+                default: return betAmount;
+            }
+        }
+        public bool CheckSlotsWin()
         {
             IsWin =  Slots.Distinct().Count() == 1;
             return IsWin;
