@@ -109,6 +109,7 @@ namespace Casino
                 {
                     if (checkWin())
                     {
+                        amountWon -= pokerGame.pot;
                         txtBalance.Content = $"Balance: {Player.chips}";
                         txtPot.Content = $"Bet: {pokerGame.pot}";
                         resetPot();
@@ -147,7 +148,7 @@ namespace Casino
                             currentHand[i].isHeld = false;
 
                         }
-                        nextHand.Clear();
+                        //nextHand.Clear();
                     }
 
                     setCurrentHand();

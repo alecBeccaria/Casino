@@ -44,7 +44,7 @@ namespace Casino.PokerGame
                 {"1K", 0},
                 {"5K", 0}
             };
-            //fixFaceCardValues();
+
             deck.shuffleDeck();
             List<Card> cardList = deck.getDeck();
             for (int i = 0; i < cardList.Count; i++)
@@ -64,9 +64,6 @@ namespace Casino.PokerGame
                     dupe = true;
                 }
             }
-
-            
-
             return dupe;
         }
 
@@ -83,12 +80,14 @@ namespace Casino.PokerGame
                     deck.shuffleDeck();
                     deckIndex = 0;
                     i = 0;
+                    Trace.WriteLine("End of Deck, Shuffling...");
                 }
                 if (!checkForDuplicateCards(deck.getDeck()[i]))
                 {
                     hand.Add(deck.getDeck()[i]);
                     toAddToDeckIndex++;
-                } else
+                }
+                else
                 {
                     Card tempCard = deck.getDeck()[i];
 
@@ -103,7 +102,9 @@ namespace Casino.PokerGame
             }
             deckIndex += toAddToDeckIndex;
             foreach (Card card in hand)
+            {
                 Trace.WriteLine(card.name + " " + card.suit.ToString());
+            }
             return hand;
         }
 
