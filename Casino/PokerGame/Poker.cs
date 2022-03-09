@@ -64,6 +64,9 @@ namespace Casino.PokerGame
                     dupe = true;
                 }
             }
+
+            
+
             return dupe;
         }
 
@@ -83,6 +86,16 @@ namespace Casino.PokerGame
                 }
                 if (!checkForDuplicateCards(deck.getDeck()[i]))
                 {
+                    hand.Add(deck.getDeck()[i]);
+                    toAddToDeckIndex++;
+                } else
+                {
+                    Card tempCard = deck.getDeck()[i];
+
+                    deck.getDeck().Add(tempCard);
+
+                    deck.getDeck().RemoveAt(i);
+
                     hand.Add(deck.getDeck()[i]);
                     toAddToDeckIndex++;
                 }

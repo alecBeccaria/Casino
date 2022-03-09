@@ -1,6 +1,7 @@
 ﻿using Casino.Models;
 using Casino.PokerGame;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
@@ -14,6 +15,8 @@ namespace Casino
     public partial class PokerControl : UserControl
     {
         private Poker pokerGame;
+
+        private List<Card> nextHand;
 
         private List<Card> currentHand;
 
@@ -104,9 +107,12 @@ namespace Casino
                 {
                     if (!currentHand[i].isHeld)
                     {
-                        List<Card> nextHand = pokerGame.getNextHand(1);
+                        nextHand = pokerGame.getNextHand(1);
+
+                        Debug.WriteLine(nextHand.Count);
 
                         pokerGame.discardDeck.Add(currentHand[i]);
+
                         currentHand[i] = nextHand[0];
                     }
                     else
@@ -114,6 +120,11 @@ namespace Casino
                         currentHand[i].isHeld = false;
 
                     }
+
+                    
+
+                    nextHand.Clear();
+
                 }
 
                 btnHold1.Content = "Hold";
