@@ -86,8 +86,11 @@ namespace Casino
                 {
                     if (checkWin())
                     {
+                        pokerGame.pot = 0;
                         txtBalance.Content = $"Balance: {Player.chips}";
+                        txtPot.Content = $"Bet: {pokerGame.pot}";
                         MessageBox.Show("Congratulations, you have won: " + amountWon + " chips!!!");
+
                     }
                     btnDraw.Content = "Draw";
                 }
@@ -451,7 +454,7 @@ namespace Casino
                 && currentHand[3].value == 13)
             {
                 win = true;
-                amountWon = pokerGame.pot * 100000;
+                amountWon = pokerGame.pot * 100000 + pokerGame.pot; ;
                 Player.chips += amountWon;
             }
 
@@ -466,7 +469,7 @@ namespace Casino
                 && currentHand[3].suit == currentHand[4].suit)
             {
                 win = true;
-                amountWon = pokerGame.pot * 10000;
+                amountWon = pokerGame.pot * 10000 + pokerGame.pot; ;
                 Player.chips += amountWon;
             }
 
@@ -480,7 +483,7 @@ namespace Casino
                     && currentHand[3].name == currentHand[4].name))
             {
                 win = true;
-                amountWon = pokerGame.pot * 1000;
+                amountWon = pokerGame.pot * 1000 + pokerGame.pot; ;
                 Player.chips += amountWon;
             }
 
@@ -494,7 +497,7 @@ namespace Casino
                     && currentHand[3].name == currentHand[4].name))
             {
                 win = true;
-                amountWon = pokerGame.pot * 100;
+                amountWon = pokerGame.pot * 100 + pokerGame.pot; ;
                 Player.chips += amountWon;
             }
 
@@ -505,7 +508,7 @@ namespace Casino
                     && currentHand[3].suit == currentHand[4].suit)
             {
                 win = true;
-                amountWon = pokerGame.pot * 50;
+                amountWon = pokerGame.pot * 50 + pokerGame.pot; ;
                 Player.chips += amountWon;
             }
 
@@ -516,7 +519,7 @@ namespace Casino
                 && currentHand[3].value + 1 == currentHand[4].value)
             {
                 win = true;
-                amountWon = pokerGame.pot * 25;
+                amountWon = pokerGame.pot * 25 + pokerGame.pot; ;
                 Player.chips += amountWon;
             }
 
@@ -531,7 +534,7 @@ namespace Casino
                     && currentHand[2].name == currentHand[3].name))
             {
                 win = true;
-                amountWon = pokerGame.pot * 10;
+                amountWon = pokerGame.pot * 10 + pokerGame.pot; ;
                 Player.chips += amountWon;
             }
 
@@ -546,7 +549,7 @@ namespace Casino
                     && currentHand[3].name == currentHand[4].name))
             {
                 win = true;
-                amountWon = pokerGame.pot * 5;
+                amountWon = pokerGame.pot * 5 + pokerGame.pot;
                 Player.chips += amountWon;
 
             }
@@ -561,12 +564,34 @@ namespace Casino
                 (currentHand[3].name == currentHand[4].name))
             {
                 win = true;
+                amountWon = pokerGame.pot + pokerGame.pot;
+                Player.chips += amountWon;
             }
             else
             {
                 Player.chips -= pokerGame.pot;
                 txtBalance.Content = $"Balance: {Player.chips}";
                 MessageBox.Show($"You lost {pokerGame.pot} chips");
+
+                txtChip1.Content = "0";
+                txtChip5.Content = "0";
+                txtChip10.Content = "0";
+                txtChip20.Content = "0";
+                txtChip50.Content = "0";
+                txtChip100.Content = "0";
+                txtChip500.Content = "0";
+                txtChip1K.Content = "0";
+                txtChip5K.Content = "0";
+
+                pokerGame.PotValues["1"] = 0;
+                pokerGame.PotValues["5"] = 0;
+                pokerGame.PotValues["10"] = 0;
+                pokerGame.PotValues["20"] = 0;
+                pokerGame.PotValues["50"] = 0;
+                pokerGame.PotValues["100"] = 0;
+                pokerGame.PotValues["500"] = 0;
+                pokerGame.PotValues["1K"] = 0;
+                pokerGame.PotValues["5K"] = 0;
 
             }
             //newRound = true;
