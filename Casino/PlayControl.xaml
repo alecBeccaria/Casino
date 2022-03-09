@@ -6,6 +6,10 @@
              xmlns:local="clr-namespace:Casino" xmlns:viewModel="clr-namespace:Casino.ViewModels"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Background>
+        <ImageBrush ImageSource="/Resources/Overall UI/Generic Felt Mat.jpeg" />
+    </UserControl.Background>
+    
     <UserControl.Resources>
         <Style x:Key="RoundCorner" TargetType="{x:Type Button}">
             <Setter Property="HorizontalContentAlignment" Value="Center"/>

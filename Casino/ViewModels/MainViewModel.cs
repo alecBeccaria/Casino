@@ -1,5 +1,4 @@
 ﻿using Casino.Commands;
-using Casino.NavStore;
 using System;
 using System.Diagnostics;
 
@@ -19,7 +18,7 @@ namespace Casino.ViewModels
         public BaseCommand rouletteViewCommand { get; set; }
 
 
-        public DashboardViewModel dashViewModel { get; set; } 
+        public DashboardViewModel dashViewModel { get; set; }
 
         public PlayViewmodel playViewmodel { get; set; }
 
@@ -68,12 +67,13 @@ namespace Casino.ViewModels
             bankViewModel = new BankViewModel();
             rouletteViewModel = new RouletteViewModel();
             slotsViewModel = new SlotsViewModel();
-            
+
 
 
             currentView = dashViewModel;
 
-            dashViewCommand = new BaseCommand(o => {
+            dashViewCommand = new BaseCommand(o =>
+            {
                 Debug.WriteLine("DashCommand fired");
                 CurrentView = dashViewModel;
             });

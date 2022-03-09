@@ -15,6 +15,8 @@ namespace Casino
     {
         private Poker pokerGame;
 
+        private List<Card> nextHand;
+
         private List<Card> currentHand;
 
         private bool betPlaced = false;
@@ -145,6 +147,7 @@ namespace Casino
                             currentHand[i].isHeld = false;
 
                         }
+                        nextHand.Clear();
                     }
 
                     setCurrentHand();
@@ -152,21 +155,7 @@ namespace Casino
                     newRound = false;
                 }
 
-                /*for (int i = 0; i < 5; i++)
-                {
-                    if (!currentHand[i].isHeld)
-                    {
-                        List<Card> nextHand = pokerGame.getNextHand(1);
 
-                        pokerGame.discardDeck.Add(currentHand[i]);
-                        currentHand[i] = nextHand[0];
-                    }
-                    else
-                    {
-                        currentHand[i].isHeld = false;
-
-                    }
-                }*/
 
                 modInc++;
 
@@ -619,8 +608,6 @@ namespace Casino
                 amountWon = pokerGame.pot + pokerGame.pot;
                 Player.chips += amountWon;
             }
-
-
             newRound = true;
             btnPlaceBet.IsEnabled = true;
             return win;

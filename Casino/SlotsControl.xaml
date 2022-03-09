@@ -7,9 +7,9 @@
              xmlns:viewModel="clr-namespace:Casino.ViewModels"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <UserControl.DataContext>
-        <viewModel:MainViewModel/>
-    </UserControl.DataContext>
+    <UserControl.Background>
+        <ImageBrush ImageSource="/Resources/Overall UI/Generic Felt Mat.jpeg" />
+    </UserControl.Background>
     <UserControl.Resources>
         <BitmapImage x:Key="Bells" UriSource="Resources/Slots/Wheel - Bell.png"/>
         <BitmapImage x:Key="Seven" UriSource="Resources/Slots/Wheel - Seven.png"/>
