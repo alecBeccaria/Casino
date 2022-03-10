@@ -32,6 +32,7 @@ namespace Casino
             InitializeComponent();
             imgDeck.IsEnabled = false;
             btnPlayHand.IsEnabled = false;
+            lblBalance.Content = $"Balance: {Player.cash}";
             chipState(false);
         }
 
@@ -83,33 +84,41 @@ namespace Casino
                     MessageBox.Show("You busted!");
                     btnGoBack.IsEnabled = true;
                     bet = 0;
+                    lblBalance.Content = $"Balance: {Player.cash}";
                     break;
                 case "p21":
                     MessageBox.Show("You got Black Jack!");
                     btnGoBack.IsEnabled = true;
-                    Player.cash += bet * 2;
+                    Player.cash += bet * 3;
+                    bet = 0;
+                    lblBalance.Content = $"Balance: {Player.cash}";
                     break;
                 case "hWin":
                     MessageBox.Show("You lose!");
                     btnGoBack.IsEnabled = true;
                     bet = 0;
+                    lblBalance.Content = $"Balance: {Player.cash}";
                     break;
                 case "5card":
                     MessageBox.Show("5 card Charlie!");
                     btnGoBack.IsEnabled = true;
-                    Player.cash += bet * 3;
+                    Player.cash += bet * 4;
                     bet = 0;
+                    lblBalance.Content = $"Balance: {Player.cash}";
                     break;
                 case "pWin":
                     MessageBox.Show("You Win!");
                     btnGoBack.IsEnabled = true;
-                    Player.cash += bet;
+                    Player.cash += bet * 2;
                     bet = 0;
+                    lblBalance.Content = $"Balance: {Player.cash}";
                     break;
                 case "draw":
                     MessageBox.Show("Draw!");
                     btnGoBack.IsEnabled = true;
                     Player.cash += bet;
+                    bet = 0;
+                    lblBalance.Content = $"Balance: {Player.cash}";
                     break;
             }
             Debug.WriteLine(Player.cash);
@@ -138,6 +147,9 @@ namespace Casino
             } else if (houseVal < bJ.GetHandValue(bJ.playerHand))
             {
                 CheckWin("pWin");
+            } else if (bJ.GetHandValue(bJ.playerHand) == 21)
+            {
+                CheckWin("p21");
             } else
             {
                 CheckWin("draw");
@@ -145,17 +157,13 @@ namespace Casino
         }
         private void updateBalance(int value)
         {
-            Player.chips -= value;
-            lblBalance.Content = $"Balance: {Player.chips}";
+            Player.cash -= value;
+            lblBalance.Content = $"Balance: {Player.cash}";
         }
         private void imgDeck_MouseDown(object sender, MouseButtonEventArgs e)
         {
+            chipState(false);
             bJ.DrawCard(bJ.playerHand);
-            //for (int i = 0; i < bJ.playerHand.GetDeck().Count; i++)
-            //{
-            //    Debug.WriteLine(bJ.playerHand.GetDeck()[i].name + bJ.playerHand.GetDeck()[i].suit);
-            //}
-            
             playerCardImage(playerCardCount, bJ.playerHand.GetDeck()[^1].image.Source);
             if (bJ.GetHandValue(bJ.playerHand) > 21)
             {
@@ -164,6 +172,9 @@ namespace Casino
             if (playerCardCount == 6 && bJ.GetHandValue(bJ.playerHand) < 22)
             {
                 CheckWin("5card");
+            }
+            if (bJ.GetHandValue(bJ.playerHand) == 21) {
+                CheckWin("p21");
             }
             Debug.WriteLine(bJ.playerHand.GetDeck()[^1].image.Source.ToString());
         }
@@ -259,7 +270,7 @@ namespace Casino
 
         private void chip1Click(object sender, MouseButtonEventArgs e)
         {
-            if (Player.cash > 1)
+            if (Player.cash >= 1)
             {
                 bet += 1;
                 bJ.potValues["1"]++;
@@ -273,15 +284,21 @@ namespace Casino
             if (bet >= 0)
             {
                 bet -= 1;
+                bJ.potValues["1"]--;
+                updateBalance(-1);
+                txtChip1.Content = bJ.potValues["1"].ToString();
             }
         }
 
         private void chip5Click(object sender, MouseButtonEventArgs e)
         {
-            bet += 5;
-            bJ.potValues["5"]++;
-            updateBalance(5);
-            txtChip5.Content = bJ.potValues["5"].ToString();
+            if (Player.cash >= 5)
+            {
+                bet += 5;
+                bJ.potValues["5"]++;
+                updateBalance(5);
+                txtChip5.Content = bJ.potValues["5"].ToString();
+            }
         }
 
         private void btnRemoveChip5_Click(object sender, MouseButtonEventArgs e)
@@ -289,15 +306,22 @@ namespace Casino
             if (bet >= 5)
             {
                 bet -= 5;
+                bJ.potValues["5"]--;
+                updateBalance(-5);
+                txtChip5.Content = bJ.potValues["5"].ToString();
             }
         }
 
         private void chip10Click(object sender, MouseButtonEventArgs e)
         {
-            bet += 10;
-            bJ.potValues["10"]++;
-            updateBalance(10);
-            txtChip10.Content = bJ.potValues["10"].ToString();
+            if (Player.cash >= 10)
+            {
+                bet += 10;
+                bJ.potValues["10"]++;
+                updateBalance(10);
+                txtChip10.Content = bJ.potValues["10"].ToString();
+            }
+
         }
 
         private void btnRemoveChip10_Click(object sender, MouseButtonEventArgs e)
@@ -305,15 +329,21 @@ namespace Casino
             if (bet >= 10)
             {
                 bet -= 10;
+                bJ.potValues["10"]--;
+                updateBalance(-10);
+                txtChip10.Content = bJ.potValues["10"].ToString();
             }
         }
 
         private void chip20Click(object sender, MouseButtonEventArgs e)
         {
-            bet += 20;
-            bJ.potValues["20"]++;
-            updateBalance(20);
-            txtChip1.Content = bJ.potValues["20"].ToString();
+            if (Player.cash >= 20)
+            {
+                bet += 20;
+                bJ.potValues["20"]++;
+                updateBalance(20);
+                txtChip20.Content = bJ.potValues["20"].ToString();
+            }
         }
 
         private void btnRemoveChip20_Click(object sender, MouseButtonEventArgs e)
@@ -321,15 +351,21 @@ namespace Casino
             if (bet >= 20)
             {
                 bet -= 20;
+                bJ.potValues["20"]--;
+                updateBalance(-20);
+                txtChip20.Content = bJ.potValues["20"].ToString();
             }
         }
 
         private void chip50Click(object sender, MouseButtonEventArgs e)
         {
-            bet += 50;
-            bJ.potValues["50"]++;
-            updateBalance(50);
-            txtChip1.Content = bJ.potValues["50"].ToString();
+            if (Player.cash >= 50)
+            {
+                bet += 50;
+                bJ.potValues["50"]++;
+                updateBalance(50);
+                txtChip50.Content = bJ.potValues["50"].ToString();
+            }
         }
 
         private void btnRemoveChip50_Click(object sender, MouseButtonEventArgs e)
@@ -337,15 +373,21 @@ namespace Casino
             if (bet >= 50)
             {
                 bet -= 50;
+                bJ.potValues["50"]--;
+                updateBalance(-50);
+                txtChip50.Content = bJ.potValues["50"].ToString();
             }
         }
 
         private void chip100Click(object sender, MouseButtonEventArgs e)
         {
-            bet += 100;
-            bJ.potValues["100"]++;
-            updateBalance(100);
-            txtChip1.Content = bJ.potValues["100"].ToString();
+            if (Player.cash >= 100)
+            {
+                bet += 100;
+                bJ.potValues["100"]++;
+                updateBalance(100);
+                txtChip100.Content = bJ.potValues["100"].ToString();
+            }
         }
 
         private void btnRemoveChip100_Click(object sender, MouseButtonEventArgs e)
@@ -353,15 +395,21 @@ namespace Casino
             if (bet >= 100)
             {
                 bet -= 100;
+                bJ.potValues["100"]--;
+                updateBalance(-100);
+                txtChip100.Content = bJ.potValues["100"].ToString();
             }
         }
 
         private void chip500Click(object sender, MouseButtonEventArgs e)
         {
-            bet += 500;
-            bJ.potValues["500"]++;
-            updateBalance(500);
-            txtChip1.Content = bJ.potValues["500"].ToString();
+            if (Player.cash >= 500)
+            {
+                bet += 500;
+                bJ.potValues["500"]++;
+                updateBalance(500);
+                txtChip500.Content = bJ.potValues["500"].ToString();
+            }
         }
 
         private void btnRemoveChip500_Click(object sender, MouseButtonEventArgs e)
@@ -369,15 +417,21 @@ namespace Casino
             if (bet >= 500)
             {
                 bet -= 500;
+                bJ.potValues["500"]--;
+                updateBalance(-500);
+                txtChip500.Content = bJ.potValues["500"].ToString();
             }
         }
 
         private void chip1KClick(object sender, MouseButtonEventArgs e)
         {
-            bet += 1000;
-            bJ.potValues["1000"]++;
-            updateBalance(1000);
-            txtChip1.Content = bJ.potValues["1000"].ToString();
+            if (Player.cash >= 1000)
+            {
+                bet += 1000;
+                bJ.potValues["1K"]++;
+                updateBalance(1000);
+                txtChip1K.Content = bJ.potValues["1K"].ToString();
+            }
         }
 
         private void btnRemoveChip1K_Click(object sender, MouseButtonEventArgs e)
@@ -385,15 +439,21 @@ namespace Casino
             if (bet >= 1000)
             {
                 bet -= 1000;
+                bJ.potValues["1K"]--;
+                updateBalance(-1000);
+                txtChip1K.Content = bJ.potValues["1K"].ToString();
             }
         }
 
         private void chip5KClick(object sender, MouseButtonEventArgs e)
         {
-            bet += 5000;
-            bJ.potValues["5000"]++;
-            updateBalance(5000);
-            txtChip1.Content = bJ.potValues["5000"].ToString();
+            if (Player.cash >= 5000)
+            {
+                bet += 5000;
+                bJ.potValues["5K"]++;
+                updateBalance(5000);
+                txtChip5K.Content = bJ.potValues["5K"].ToString();
+            }
         }
 
         private void btnRemoveChip5K_Click(object sender, MouseButtonEventArgs e)
@@ -401,6 +461,9 @@ namespace Casino
             if (bet >= 5000)
             {
                 bet -= 5000;
+                bJ.potValues["5K"]--;
+                updateBalance(-5000);
+                txtChip5K.Content = bJ.potValues["5K"].ToString();
             }
         }
     }
