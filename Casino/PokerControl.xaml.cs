@@ -120,7 +120,7 @@ namespace Casino
                     }
                     else
                     {
-
+                        amountWon -= pokerGame.pot;
                         txtBalance.Content = $"Balance: {Player.chips}";
                         MessageBox.Show($"You lost {pokerGame.pot} chips");
                         resetPot();
