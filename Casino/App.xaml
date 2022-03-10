@@ -25,6 +25,11 @@
         <DataTemplate DataType="{x:Type viewModel:RouletteViewModel}">
             <local:SuperRoulette></local:SuperRoulette>
         </DataTemplate>
+
+        <DataTemplate DataType="{x:Type viewModel:BJViewModel}">
+            <local:BJControl/>
+        </DataTemplate>
+
         
         <DataTemplate DataType="{x:Type viewModel:SlotsViewModel}">
             <local:SlotsControl/>

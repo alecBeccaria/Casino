@@ -17,6 +17,8 @@ namespace Casino.ViewModels
 
         public BaseCommand rouletteViewCommand { get; set; }
 
+        public BaseCommand bjViewCommand { get; set; }
+
 
         public DashboardViewModel dashViewModel { get; set; }
 
@@ -27,6 +29,7 @@ namespace Casino.ViewModels
         public BankViewModel bankViewModel { get; set; }
 
         public RouletteViewModel rouletteViewModel { get; set; }
+        public BJViewModel bjViewModel { get; set; }
 
         //NEW SLOTS CODE
         public SlotsViewModel slotsViewModel { get; set; }
@@ -66,6 +69,7 @@ namespace Casino.ViewModels
             pokerViewModel = new PokerViewModel();
             bankViewModel = new BankViewModel();
             rouletteViewModel = new RouletteViewModel();
+            bjViewModel = new BJViewModel();
             slotsViewModel = new SlotsViewModel();
 
 
@@ -88,6 +92,12 @@ namespace Casino.ViewModels
             {
                 Debug.WriteLine("Poker Command fired");
                 CurrentView = pokerViewModel;
+            });
+
+            bjViewCommand = new BaseCommand(o =>
+            {
+                Debug.WriteLine("BJ Command fired");
+                CurrentView = bjViewModel;
             });
 
             bankViewCommand = new BaseCommand(o =>

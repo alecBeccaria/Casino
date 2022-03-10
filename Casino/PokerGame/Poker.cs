@@ -45,8 +45,8 @@ namespace Casino.PokerGame
                 {"5K", 0}
             };
 
-            deck.shuffleDeck();
-            List<Card> cardList = deck.getDeck();
+            deck.ShuffleDeck();
+            List<Card> cardList = deck.GetDeck();
             for (int i = 0; i < cardList.Count; i++)
             {
                 Trace.WriteLine($"{i + 1} " + cardList[i].value.ToString() + " " + cardList[i].suit.ToString() + " " + cardList[i].name.ToString());
@@ -75,27 +75,27 @@ namespace Casino.PokerGame
 
             for (int i = deckIndex; i < deckIndex + numberOfCards; i++)
             {
-                if (i == deck.getDeck().Count)
+                if (i == deck.GetDeck().Count)
                 {
-                    deck.shuffleDeck();
+                    deck.ShuffleDeck();
                     deckIndex = 0;
                     i = 0;
                     Trace.WriteLine("End of Deck, Shuffling...");
                 }
-                if (!checkForDuplicateCards(deck.getDeck()[i]))
+                if (!checkForDuplicateCards(deck.GetDeck()[i]))
                 {
-                    hand.Add(deck.getDeck()[i]);
+                    hand.Add(deck.GetDeck()[i]);
                     toAddToDeckIndex++;
                 }
                 else
                 {
-                    Card tempCard = deck.getDeck()[i];
+                    Card tempCard = deck.GetDeck()[i];
 
-                    deck.getDeck().Add(tempCard);
+                    deck.GetDeck().Add(tempCard);
 
-                    deck.getDeck().RemoveAt(i);
+                    deck.GetDeck().RemoveAt(i);
 
-                    hand.Add(deck.getDeck()[i]);
+                    hand.Add(deck.GetDeck()[i]);
                     toAddToDeckIndex++;
                 }
 

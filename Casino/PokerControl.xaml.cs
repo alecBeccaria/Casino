@@ -15,8 +15,6 @@ namespace Casino
     {
         private Poker pokerGame;
 
-        private List<Card> nextHand;
-
         private List<Card> currentHand;
 
         private bool betPlaced = false;

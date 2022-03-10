@@ -1,0 +1,120 @@
+﻿<UserControl x:Class="Casino.BJControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Casino"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <Style x:Key="RoundCorner" TargetType="{x:Type Button}">
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="1"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid x:Name="grid">
+                            <Border x:Name="border" CornerRadius="8" BorderBrush="Black" BorderThickness="2">
+                                <ContentPresenter HorizontalAlignment="Center"
+                                          VerticalAlignment="Center"
+                                          TextElement.FontWeight="Bold">
+                                </ContentPresenter>
+                            </Border>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="BorderBrush" TargetName="border" Value="White"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
+    <StackPanel>
+        <Grid Grid.Column="1" Grid.ColumnSpan="3">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="75"/>
+                <RowDefinition Height="25"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Image x:Name="chip1" Grid.Column="0" Source="/Resources/Overall UI/Chip1.png" MouseLeftButtonDown="chip1Click" MouseRightButtonDown="btnRemoveChip1_Click"/>
+            <Image x:Name="chip5" Grid.Column="1" Source="/Resources/Overall UI/Chip5.png" MouseLeftButtonDown="chip5Click" MouseRightButtonDown="btnRemoveChip5_Click"/>
+            <Image x:Name="chip10" Grid.Column="2" Source="/Resources/Overall UI/Chip10.png" MouseLeftButtonDown="chip10Click" MouseRightButtonDown="btnRemoveChip10_Click"/>
+            <Image x:Name="chip20" Grid.Column="3" Source="/Resources/Overall UI/Chip20.png" MouseLeftButtonDown="chip20Click" MouseRightButtonDown="btnRemoveChip20_Click"/>
+            <Image x:Name="chip50" Grid.Column="4" Source="/Resources/Overall UI/Chip50.png" MouseLeftButtonDown="chip50Click" MouseRightButtonDown="btnRemoveChip50_Click"/>
+            <Image x:Name="chip100" Grid.Column="5" Source="/Resources/Overall UI/Chip100.png" MouseLeftButtonDown="chip100Click" MouseRightButtonDown="btnRemoveChip100_Click"/>
+            <Image x:Name="chip500" Grid.Column="6" Source="/Resources/Overall UI/Chip500.png" MouseLeftButtonDown="chip500Click" MouseRightButtonDown="btnRemoveChip500_Click"/>
+            <Image x:Name="chip1000" Grid.Column="7" Source="/Resources/Overall UI/Chip1000.png" MouseLeftButtonDown="chip1KClick" MouseRightButtonDown="btnRemoveChip1K_Click"/>
+            <Image x:Name="chip5000" Grid.Column="8" Source="/Resources/Overall UI/Chip5000.png" MouseLeftButtonDown="chip5KClick" MouseRightButtonDown="btnRemoveChip5K_Click"/>
+            <Border Grid.Row="1" >
+                <Label x:Name="txtChip1" Content="0" Grid.Row="1" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" />
+            </Border>
+            <Border Grid.Column="1" Grid.Row="1">
+                <Label x:Name="txtChip5" Content="0" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Border>
+            <Border Grid.Row="1" Grid.Column="2">
+                <Label x:Name="txtChip10" Content="0" Grid.Row="1" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Border>
+            <Border Grid.Row="1"  Grid.Column="3">
+                <Label x:Name="txtChip20" Content="0" Grid.Row="1" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Border>
+            <Border Grid.Row="1" Grid.Column="4">
+                <Label x:Name="txtChip50" Content="0" Grid.Row="1" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Border>
+            <Border Grid.Row="1" Grid.Column="5">
+                <Label x:Name="txtChip100" Content="0" Grid.Row="1" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Border>
+            <Border Grid.Row="1" Grid.Column="6">
+                <Label x:Name="txtChip500" Content="0" Grid.Row="1" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Border>
+            <Border Grid.Row="1" Grid.Column="7">
+                <Label x:Name="txtChip1K" Content="0" Grid.Row="1" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Border>
+            <Border Grid.Row="1" Grid.Column="8">
+                <Label x:Name="txtChip5K" Content="0" Grid.Row="1" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Border>
+        </Grid>
+        <Grid Height="300">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Image x:Name="imgDeck" Grid.Column="0" Grid.Row="1
+                   " Margin="15,5,15,5" Source="/Resources/BlackJack/Cards/cardBack_blue5.png" MouseDown="imgDeck_MouseDown" Stretch="Fill"/>
+            <Image x:Name="imgHouseCard1" Grid.Column="1" Grid.Row="0" Margin="15,5,15,5" Stretch="Fill"/>
+            <Image x:Name="imgHouseCard2" Grid.Column="2" Grid.Row="0" Margin="15,5,15,5" Stretch="Fill"/>
+            <Image x:Name="imgHouseCard3" Grid.Column="3" Grid.Row="0" Margin="15,5,15,5" Stretch="Fill"/>
+            <Image x:Name="imgHouseCard4" Grid.Column="4" Grid.Row="0" Margin="15,5,15,5" Stretch="Fill"/>
+            <Image x:Name="imgHouseCard5" Grid.Column="5" Grid.Row="0" Margin="15,5,15,5" Stretch="Fill"/>
+            <Image x:Name="imgPlayerCard1" Grid.Column="1" Grid.Row="1" Margin="15,5,15,5" Stretch="UniformToFill"/>
+            <Image x:Name="imgPlayerCard2" Grid.Column="2" Grid.Row="1" Margin="15,5,15,5" Stretch="UniformToFill"/>
+            <Image x:Name="imgPlayerCard3" Grid.Column="3" Grid.Row="1" Margin="15,5,15,5" Stretch="UniformToFill"/>
+            <Image x:Name="imgPlayerCard4" Grid.Column="4" Grid.Row="1" Margin="15,5,15,5" Stretch="UniformToFill"/>
+            <Image x:Name="imgPlayerCard5" Grid.Column="5" Grid.Row="1" Margin="15,5,15,5" Stretch="UniformToFill"/>
+            <Button x:Name="btnNewGame" Style="{DynamicResource RoundCorner}" Content="New Game" HorizontalAlignment="Center" VerticalAlignment="Center" Click="btnNewGame_Click"/>
+            <Button x:Name="btnGoBack" Style="{DynamicResource RoundCorner}" Content="Go Back" HorizontalAlignment="Center" Grid.Row="0" VerticalAlignment="Top" Margin="0,120,0,0" Command="{Binding DataContext.playViewCommand, RelativeSource={RelativeSource AncestorType={x:Type local:MainWindow}}}"/>
+            <Label x:Name="lblBalance" Content="0" HorizontalAlignment="Center" Margin="0,20,0,0" Grid.Row="0" VerticalAlignment="Top" Width="103"/>
+            <Button x:Name="btnPlayHand" Style="{DynamicResource RoundCorner}" Content="Play Hand" HorizontalAlignment="Center" Margin="0,90,0,0" Grid.Row="0" VerticalAlignment="Top" Click="btnPlayHand_Click"/>
+        </Grid>
+    </StackPanel>
+</UserControl>
